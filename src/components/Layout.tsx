@@ -6,11 +6,10 @@
  */
 
 import React from "react";
-import PropTypes from "prop-types";
 // import { useStaticQuery, graphql } from "gatsby";
 
 import Header from "./Navbar";
-import "./layout.css";
+import "../styles/css/combined.css";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   // const data = useStaticQuery(graphql`
@@ -47,9 +46,4 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     </>
   );
 };
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-};
-
 export default Layout;
