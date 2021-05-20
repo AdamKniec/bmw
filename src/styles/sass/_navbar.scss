@@ -1,0 +1,10 @@
+@use 'colors';
+
+.navbar {
+    background-color: colors.$bg-light-gray;
+    width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 50px;
+    padding: 5px;
+}

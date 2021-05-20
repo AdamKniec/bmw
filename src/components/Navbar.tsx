@@ -1,8 +1,8 @@
 import React from "react";
-
+// import "../styles/css/"
 import { Link } from "gatsby";
 
-const Header = () => (
+const Navbar = () => (
   // <header
   //   style={{
   //     background: `rebeccapurple`,
@@ -29,7 +29,7 @@ const Header = () => (
   //     </h1>
   //   </div>
   // </header>
-  <nav>
+  <nav className="navbar">
     <ul>
       <li>
         <Link to="blog">Artykuły</Link>
@@ -38,4 +38,4 @@ const Header = () => (
   </nav>
 );
 
-export default Header;
+export default Navbar;
