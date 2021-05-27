@@ -10,7 +10,7 @@ const Navbar = () => (
       <StaticImage
         src="../images/headache.svg"
         alt="Boli mnie Web - Strona główna"
-        width={40}
+        className="headache-svg"
       />
     </a>
     <ul>
