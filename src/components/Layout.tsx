@@ -8,7 +8,7 @@
 import React from "react";
 // import { useStaticQuery, graphql } from "gatsby";
 
-import Header from "./Navbar";
+import Navbar from "./Navbar";
 import "../styles/css/combined.css";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -24,11 +24,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <>
-      <Header />
+      <Navbar />
       <div
         style={{
           margin: `0 auto`,
-          maxWidth: 960,
+          maxWidth: 1200,
           padding: `0 1.0875rem 1.45rem`,
         }}
       >
@@ -38,9 +38,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             marginTop: `2rem`,
           }}
         >
-          © {new Date().getFullYear()}, Built with
+          {/* © {new Date().getFullYear()}, Built with
           {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <a href="https://www.gatsbyjs.com">Gatsby</a> */}
         </footer>
       </div>
     </>

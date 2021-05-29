@@ -21,4 +21,52 @@
   color: #3C3C42;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+}
+.header-container .mainHeader {
+  font-size: 8rem;
+  width: 915px;
+  font-family: "Roboto";
+  font-weight: normal;
+  color: #3C3C42;
+}
+.header-container .mainHeader .thin-header-part {
+  font-family: "Roboto-light";
+}
+.header-container .mainHeader .bold-header-part {
+  font-family: "Roboto-bold";
+}
+.header-container .mainHeader .bold-header-part::before {
+  content: "<";
+  color: #FF6B00;
+}
+.header-container .mainHeader .bold-header-part::after {
+  content: ">";
+  color: #FF6B00;
+}
+.header-container .mainHeader .name-surname {
+  font-size: 1rem;
+  color: #FF6B00;
+  font-family: "Roboto-light";
+}
+.header-container .decorative-circle {
+  width: 100px;
+  height: 100px;
+  background-color: #FF6B00;
+  border-radius: 50%;
+  border: 120px solid #FFF3E9;
+}
+
+.section-header {
+  color: #FF6B00;
+  font-family: Roboto-Bold;
+  font-size: 2rem;
+}
+.section-header::after {
+  content: ".";
+  color: #3C3C42;
+}
+
 /*# sourceMappingURL=combined.css.map */

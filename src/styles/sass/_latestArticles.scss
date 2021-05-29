@@ -1,0 +1,11 @@
+@use 'colors';
+
+.section-header {
+    color: colors.$main-orange;
+    font-family: Roboto-Bold;
+    font-size: 2rem;
+    &::after {
+        content: ".";
+        color: colors.$bg-gray;
+    }
+}
