@@ -1,0 +1,41 @@
+@use 'colors';
+.header-container {
+    display: flex;
+    align-items: center;
+    .mainHeader {
+    font-size: 8rem;
+    width: 915px;
+    font-family: 'Roboto';
+    font-weight: normal;
+    color: colors.$bg-gray;
+    .thin-header-part {
+        font-family: 'Roboto-light';
+    }
+    .bold-header-part {
+        font-family: 'Roboto-bold';
+        &::before {
+            content: '<';
+            color: colors.$main-orange;
+
+        }
+        &::after {
+            content: '>';
+            color: colors.$main-orange;
+        }
+    }
+    .name-surname {
+        font-size: 1rem;
+        color: colors.$main-orange;
+        font-family: 'Roboto-light';
+
+    }
+}
+.decorative-circle {
+    width: 100px;
+    height: 100px;
+    background-color: colors.$main-orange;
+    border-radius: 50%;
+    border: 120px solid colors.$orange-secondary;
+}
+}
+

@@ -1,32 +1,33 @@
 import * as React from "react";
-import { Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
+// import { Link } from "gatsby";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
-const IndexPage = () => {
-  const formats: any = ["AUTO", "WEBP", "AVIF"];
+const Header = () => {
   return (
     <Layout>
       <Seo title="Home" />
-      <h1>Hi people</h1>
-      <p>Welcome to your new Gatsby site.</p>
-      <p>Now go build something great.</p>
-      <StaticImage
-        src="../images/gatsby-astronaut.png"
-        width={300}
-        quality={95}
-        formats={formats}
-        alt="A Gatsby astronaut"
-        style={{ marginBottom: `1.45rem` }}
-      />
-      <p>
+      <header className="header-container">
+        <h1 className="mainHeader">
+          <span className="thin-header-part">Boli mnie</span>{" "}
+          <span className="bold-header-part">Web</span>
+          <span className="name-surname">by Adam Knieć</span>
+        </h1>
+        <div>
+          <div className="decorative-circle" />
+        </div>
+      </header>
+      <section className="latest-articles">
+        <h2 className="section-header">Ostatnie wpisy</h2>
+      </section>
+
+      {/* <p>
         <Link to="/page-2/">Go to page 2</Link> <br />
         <Link to="/using-typescript/">Go to &apos;Using TypeScript&apos;</Link>
-      </p>
+      </p> */}
     </Layout>
   );
 };
 
-export default IndexPage;
+export default Header;
