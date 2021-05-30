@@ -20,6 +20,26 @@ const Header = () => {
       </header>
       <section className="latest-articles">
         <h2 className="section-header">Ostatnie wpisy</h2>
+        <div className="latest-articles-container">
+          <div className="latest-article-box">
+            <p className="article-link-title">
+              TypeScript - praktyczne wprowadzenie
+            </p>
+            <p className="metadata-short">21.05.2021 (10min)</p>
+          </div>
+          <div className="latest-article-box">
+            <p className="article-link-title">
+              TypeScript - praktyczne wprowadzenie
+            </p>
+            <p className="metadata-short">21.05.2021 (10min)</p>
+          </div>
+          <div className="latest-article-box">
+            <p className="article-link-title">
+              TypeScript - praktyczne wprowadzenie
+            </p>
+            <p className="metadata-short">21.05.2021 (10min)</p>
+          </div>
+        </div>
       </section>
 
       {/* <p>
