@@ -13,12 +13,14 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-catch-links`,
+    "gatsby-transformer-remark",
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/src/pages`,
+        name: "pages",
       },
     },
     `gatsby-transformer-sharp`,

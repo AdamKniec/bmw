@@ -1,10 +1,29 @@
+import { graphql, Link } from "gatsby";
 import * as React from "react";
-// import { Link } from "gatsby";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
-const Header = () => {
+const Header = ({ data }: any) => {
+  // get rid of any
+  const latestBlogPosts = () =>
+    data.allMarkdownRemark.edges
+      .map((post) => {
+        return (
+          <div className="latest-article-box" key={post.node.id}>
+            <Link to={post.node.frontmatter.path}>
+              {post.node.frontmatter.title}
+            </Link>
+            <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p>
+          </div>
+        );
+      })
+      .sort((a: string, b: string) => {
+        // Turn your strings into dates, and then subtract them
+        // to get a value that is either negative, positive, or zero.
+        return new Date(b.date) - new Date(a.date);
+      });
+
   return (
     <Layout>
       <Seo title="Home" />
@@ -20,26 +39,7 @@ const Header = () => {
       </header>
       <section className="latest-articles">
         <h2 className="section-header">Ostatnie wpisy</h2>
-        <div className="latest-articles-container">
-          <div className="latest-article-box">
-            <p className="article-link-title">
-              TypeScript - praktyczne wprowadzenie
-            </p>
-            <p className="metadata-short">21.05.2021 (10min)</p>
-          </div>
-          <div className="latest-article-box">
-            <p className="article-link-title">
-              TypeScript - praktyczne wprowadzenie
-            </p>
-            <p className="metadata-short">21.05.2021 (10min)</p>
-          </div>
-          <div className="latest-article-box">
-            <p className="article-link-title">
-              TypeScript - praktyczne wprowadzenie
-            </p>
-            <p className="metadata-short">21.05.2021 (10min)</p>
-          </div>
-        </div>
+        <div className="latest-articles-container">{latestBlogPosts()}</div>
       </section>
 
       {/* <p>
@@ -49,5 +49,25 @@ const Header = () => {
     </Layout>
   );
 };
-
+export const latestBlogPosts = graphql`
+  query latestPostsQuery {
+    allMarkdownRemark(
+      limit: 3
+      sort: { fields: frontmatter___date, order: DESC }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            path
+            title
+            author
+            readTime
+            date
+          }
+        }
+      }
+    }
+  }
+`;
 export default Header;
