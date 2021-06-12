@@ -5,6 +5,13 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `images`,
+    //     path: `${__dirname}/src/images/`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
@@ -16,6 +23,7 @@ module.exports = {
     `gatsby-plugin-catch-links`,
     "gatsby-transformer-remark",
     `gatsby-plugin-image`,
+
     {
       resolve: `gatsby-source-filesystem`,
       options: {

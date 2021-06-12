@@ -6,22 +6,11 @@
  */
 
 import React from "react";
-// import { useStaticQuery, graphql } from "gatsby";
 
 import Navbar from "./Navbar";
 import "../styles/css/combined.css";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `);
-
   return (
     <>
       <Navbar />
@@ -37,11 +26,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           style={{
             marginTop: `2rem`,
           }}
-        >
-          {/* © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a> */}
-        </footer>
+        />
       </div>
     </>
   );

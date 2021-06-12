@@ -1,0 +1,16 @@
+@use 'colors';
+
+.main-blog-header {
+    font-size: 4rem;
+    max-width: 1000px;
+    font-family: 'Roboto-bold';
+    color: colors.$bg-gray;
+    margin-bottom: 20px;
+
+}
+
+
+.metadata-short {
+    color: colors.$text-gray;
+    font-family: 'Roboto';
+}

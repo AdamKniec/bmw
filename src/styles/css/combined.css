@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   font-family: "Roboto";
+  margin-top: 50px;
 }
 .navbar .headache-svg {
   width: 40px;
@@ -84,6 +85,19 @@
 }
 .latest-article-box .metadata-short {
   color: #848484;
+}
+
+.main-blog-header {
+  font-size: 4rem;
+  max-width: 1000px;
+  font-family: "Roboto-bold";
+  color: #3C3C42;
+  margin-bottom: 20px;
+}
+
+.metadata-short {
+  color: #848484;
+  font-family: "Roboto";
 }
 
 /*# sourceMappingURL=combined.css.map */
