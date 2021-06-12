@@ -5,5 +5,5 @@ title: "Typescript trzy"
 readTime: "130"
 author: "Adam Kniec"
 tags: ["React"]
-
+---
 That's the third blog post
