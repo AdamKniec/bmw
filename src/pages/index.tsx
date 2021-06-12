@@ -11,7 +11,10 @@ const Header = ({ data }: any) => {
       .map((post) => {
         return (
           <div className="latest-article-box" key={post.node.id}>
-            <Link to={post.node.frontmatter.path}>
+            <Link
+              to={post.node.frontmatter.path}
+              className="latest-article-link"
+            >
               {post.node.frontmatter.title}
             </Link>
             <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p>

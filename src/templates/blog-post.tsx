@@ -1,7 +1,6 @@
 import { graphql, Link } from "gatsby";
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-// import Img from "gatsby-image"; // UNINSTALL JAK NIE ZADZIALA
+
 import Layout from "../components/Layout";
 
 export default function Template({ data }) {
@@ -11,19 +10,15 @@ export default function Template({ data }) {
   return (
     <Layout>
       <div>
-        {/* <Link to="/blog">Go Back</Link> */}
         <h1 className="main-blog-header">{post.frontmatter.title}</h1>
-        {/* <p>Autor: {post.frontmatter.title}</p> */}
         <p className="metadata-short">
           {post.frontmatter.date} ({post.frontmatter.readTime} min.)
         </p>
-        {/* {data.markdownRemark.frontmatter.imgs.map((imgPath) => {
-          const imgPatha = `../images/${imgPath}`;
-
-          return <StaticImage src={imgPatha} alt="asdasd" />;
-        })} */}
-        <StaticImage src="../images." alt=" s" />
-        {/* <StaticImage src="../images/typescript.svg" alt="asdasd" /> */}
+        <div className="tags-container">
+          {data.markdownRemark.frontmatter.tags.map((tag: string) => {
+            return <span className="tag">{tag}</span>;
+          })}
+        </div>
       </div>
     </Layout>
   );
@@ -38,7 +33,7 @@ export const postQuery = graphql`
         readTime
         title
         author
-        imgs
+        tags
         date
       }
     }
