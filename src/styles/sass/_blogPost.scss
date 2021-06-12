@@ -9,8 +9,20 @@
 
 }
 
-
 .metadata-short {
     color: colors.$text-gray;
     font-family: 'Roboto';
+}
+
+.tags-container {
+    margin-top: 40px;
+    .tag {
+    color: colors.$bg-gray;
+    font-family: 'Roboto';
+    background-color: colors.$orange-secondary;
+    padding: 10px;
+    border-radius: 10px;
+    margin-right: 10px;
+
+}
 }
