@@ -1,4 +1,4 @@
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import React from "react";
 
 import Layout from "../components/Layout";
@@ -9,7 +9,7 @@ export default function Template({ data }) {
 
   return (
     <Layout>
-      <div>
+      <div className="blog-post-wrapper">
         <h1 className="main-blog-header">{post.frontmatter.title}</h1>
         <p className="metadata-short">
           {post.frontmatter.date} ({post.frontmatter.readTime} min.)
@@ -19,6 +19,10 @@ export default function Template({ data }) {
             return <span className="tag">{tag}</span>;
           })}
         </div>
+        <div
+          dangerouslySetInnerHTML={{ __html: post.html }}
+          className="content-wrapper"
+        />
       </div>
     </Layout>
   );
