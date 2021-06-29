@@ -1,0 +1,29 @@
+@use 'colors';
+
+.footer {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 10px;
+    height: 50px;
+    padding: 5px 5px 5px 20px;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto';
+    margin-top: 150px;
+    color: colors.$text-gray;
+    .footer-box {
+        margin-right: 20px;
+        width: 33%;
+        text-align: center;
+        .footer-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        .subpage-footer-link {
+            color: colors.$text-gray;
+            text-decoration: none;
+            margin-right: 10px;
+        }  
+    }
+}

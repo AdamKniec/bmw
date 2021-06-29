@@ -1,5 +1,4 @@
 .navbar {
-  background-color: #EDEDED;
   width: 1200px;
   margin: 0 auto;
   border-radius: 10px;
@@ -137,10 +136,41 @@
   border-radius: 10px;
   margin-right: 10px;
 }
+.blog-post-wrapper .content-wrapper h2 {
+  color: #FF6B00;
+}
 .blog-post-wrapper .content-wrapper p {
   font-size: 1.2rem;
   line-height: 2.2rem;
   color: #3C3C42;
+}
+
+.footer {
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  height: 50px;
+  padding: 5px 5px 5px 20px;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto";
+  margin-top: 150px;
+  color: #848484;
+}
+.footer .footer-box {
+  margin-right: 20px;
+  width: 33%;
+  text-align: center;
+}
+.footer .footer-box .footer-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.footer .footer-box .subpage-footer-link {
+  color: #848484;
+  text-decoration: none;
+  margin-right: 10px;
 }
 
 /*# sourceMappingURL=combined.css.map */

@@ -37,6 +37,9 @@
         }
     }
     .content-wrapper {
+        h2 {
+            color: colors.$main-orange;
+        }
         p {
             font-size: 1.2rem;
             line-height: 2.2rem;
