@@ -96,7 +96,7 @@ const Header = ({ data }: any) => {
           <Link to="blog" className="subpage-footer-link">
             Blog
           </Link>
-          <Link to="blog/pilot" className="subpage-footer-link">
+          <Link to="blog/fourth" className="subpage-footer-link">
             Pilot
           </Link>
         </div>

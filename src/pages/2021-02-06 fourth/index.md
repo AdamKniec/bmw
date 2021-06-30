@@ -1,5 +1,5 @@
 ---
-path: "/fourth"
+path: "/blog/fourth"
 date: "2021-06-02"
 title: "Pilot"
 readTime: "3"
