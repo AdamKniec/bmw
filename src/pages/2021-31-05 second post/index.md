@@ -1,7 +1,7 @@
 ---
 path: "/blog/second"
 date: "2021-05-31"
-title: "Second"
+title: "React-zaawansowane hooki"
 readTime: "120"
 author: "Adam Kniec"
 tags: ["React"]
