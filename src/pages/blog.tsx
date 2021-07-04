@@ -1,29 +1,40 @@
 import { graphql, Link } from "gatsby";
 import * as React from "react";
-// import { Link } from "gatsby";
-
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
+import Footer from "./footer";
 
 const Blog = (props) => {
-  console.log(props);
   return (
     <Layout>
       <Seo title="Blog" />
       <div className="articles-list">
+        <h1 className="blog-main-heading">Blog</h1>
         {props.data.allMarkdownRemark.edges.map((article) => {
           return (
-            <Link
-              to={article.node.frontmatter.path}
-              key={article.node.frontmatter.title}
-            >
-              {article.node.frontmatter.title}
-            </Link>
+            <article className="blog-post-short">
+              <Link
+                to={article.node.frontmatter.path}
+                key={article.node.frontmatter.title}
+                className="blog-post-link"
+              >
+                <span className="article-title">
+                  {article.node.frontmatter.title}
+                </span>
+                <div className="tags-wrapper">
+                  {article.node.frontmatter.tags.map((tag) => {
+                    return <span className="tag">{tag}</span>;
+                  })}
+                </div>
+                <p className="metadata-short">{`${article.node.frontmatter.date} (${article.node.frontmatter.readTime} min)`}</p>
+              </Link>
+            </article>
           );
           // console.log(article.node.frontmatter.title);
         })}
       </div>
       {/* <Link to="/">Go back to the homepage</Link> */}
+      <Footer />
     </Layout>
   );
 };

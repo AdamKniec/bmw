@@ -1,9 +1,9 @@
 import { graphql, Link } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
+import Footer from "./footer";
 
 const Header = ({ data }: any) => {
   // get rid of any
@@ -50,57 +50,7 @@ const Header = ({ data }: any) => {
         <Link to="/page-2/">Go to page 2</Link> <br />
         <Link to="/using-typescript/">Go to &apos;Using TypeScript&apos;</Link>
       </p> */}
-      <footer className="footer">
-        <div className="footer-box">
-          @2021 Created with Gatsby by Adam Knieć
-        </div>
-        <div className="footer-box">
-          <Link
-            aria-label="Link do mojego konta Linkedin"
-            target="_blank"
-            rel="noopener noreferrer"
-            to="https://www.linkedin.com/in/adamkniec/"
-          >
-            <StaticImage
-              src="../images/linkedin.svg"
-              alt="Linkedin logo"
-              className="footer-icon"
-            />
-          </Link>
-          <Link
-            aria-label="Link do mojego konta Stackoverflow"
-            target="_blank"
-            rel="noopener noreferrer"
-            to="https://stackexchange.com/users/16949824/adamkniec?tab=accounts"
-          >
-            <StaticImage
-              src="../images/stack-overflow.svg"
-              alt="Stackoverflow logo"
-              className="footer-icon"
-            />
-          </Link>
-          <Link
-            aria-label="Link do mojego Githuba"
-            target="_blank"
-            rel="noopener noreferrer"
-            to="https://github.com/AdamKniec"
-          >
-            <StaticImage
-              src="../images/github.svg"
-              alt="Github logo"
-              className="footer-icon"
-            />
-          </Link>
-        </div>
-        <div className="footer-box footer-subpage-link-wrapper">
-          <Link to="blog" className="subpage-footer-link">
-            Blog
-          </Link>
-          <Link to="blog/fourth" className="subpage-footer-link">
-            Pilot
-          </Link>
-        </div>
-      </footer>
+      <Footer />
     </Layout>
   );
 };

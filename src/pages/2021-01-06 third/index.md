@@ -1,7 +1,7 @@
 ---
 path: "/blog/third"
 date: "2021-06-01"
-title: "Typescript trzy"
+title: "Ag-Grid - wprowadzenie"
 readTime: "130"
 author: "Adam Kniec"
 tags: ["React"]
