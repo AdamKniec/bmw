@@ -9,8 +9,10 @@
     display: flex;
     align-items: center;
     font-family: 'Roboto';
-    margin-top: 150px;
+    margin-top: 200px;
     color: colors.$text-gray;
+
+    width: 100%;
     .footer-box {
         margin-right: 20px;
         width: 33%;
