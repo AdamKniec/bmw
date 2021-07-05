@@ -9,6 +9,7 @@ import React from "react";
 
 import Navbar from "./Navbar";
 import "../styles/css/combined.css";
+import Footer from "../pages/footer";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
@@ -22,11 +23,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        />
+        <Footer />
       </div>
     </>
   );

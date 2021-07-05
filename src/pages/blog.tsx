@@ -34,7 +34,6 @@ const Blog = (props) => {
         })}
       </div>
       {/* <Link to="/">Go back to the homepage</Link> */}
-      <Footer />
     </Layout>
   );
 };

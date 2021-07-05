@@ -1,0 +1,23 @@
+@use 'colors';
+.not-found-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto-light;
+    flex-direction: column;
+    color: colors.$bg-gray;
+
+    .headache-svg {
+        width: 200px;
+    }
+    .header-letter {
+        font-size: 17rem;
+    }
+    .not-found-sub-header {
+        color: colors.$main-orange;
+    }
+}
+
+// body {
+//     min-height: 100vh;
+// }

@@ -28,7 +28,7 @@
 .header-container .mainHeader {
   font-size: 8rem;
   width: 915px;
-  font-family: "Roboto";
+  font-family: "Roboto" !important;
   font-weight: normal;
   color: #3C3C42;
 }
@@ -154,8 +154,9 @@
   display: flex;
   align-items: center;
   font-family: "Roboto";
-  margin-top: 150px;
+  margin-top: 200px;
   color: #848484;
+  width: 100%;
 }
 .footer .footer-box {
   margin-right: 20px;
@@ -221,6 +222,24 @@
 }
 .articles-list .blog-post-short .blog-post-link .metadata-short {
   color: #848484;
+}
+
+.not-found-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto-light;
+  flex-direction: column;
+  color: #3C3C42;
+}
+.not-found-wrapper .headache-svg {
+  width: 200px;
+}
+.not-found-wrapper .header-letter {
+  font-size: 17rem;
+}
+.not-found-wrapper .not-found-sub-header {
+  color: #FF6B00;
 }
 
 /*# sourceMappingURL=combined.css.map */
