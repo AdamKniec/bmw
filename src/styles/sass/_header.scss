@@ -1,43 +1,61 @@
 @use 'colors';
+@use 'mixins';
 
 .header-container {
     display: flex;
     align-items: center;
     .mainHeader {
-    font-size: 8rem;
-    width: 915px;
-    font-family: 'Roboto' !important;
-    font-weight: normal;
-    color: colors.$bg-gray;
-    .thin-header-part {
-        font-family: 'Roboto-light';
-    }
-    .bold-header-part {
-        font-family: 'Roboto-bold';
-        &::before {
-            content: '<';
-            color: colors.$main-orange;
+        font-size: 8rem;
+        width: 915px;
+        font-family: 'Roboto';
+        font-weight: normal;
+        color: colors.$bg-gray;
+        @include mixins.breakpoint(tablet){
+            font-size: 6rem;
+            width: 400px;
+        }
+        @include mixins.breakpoint(mobileonly){
+            font-size: 4rem;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .thin-header-part {
+            font-family: 'Roboto-light';
+            
+        }
+        .bold-header-part {
+            font-family: 'Roboto-bold';
+            &::before {
+                content: '<';
+                color: colors.$main-orange;
 
+            }
+            &::after {
+                content: '>';
+                color: colors.$main-orange;
+            }
         }
-        &::after {
-            content: '>';
+        .name-surname {
+            font-size: 1rem;
             color: colors.$main-orange;
+            font-family: 'Roboto-light';
         }
     }
-    .name-surname {
-        font-size: 1rem;
-        color: colors.$main-orange;
-        font-family: 'Roboto-light';
+    .decorative-circle {
+        background: rgba(255, 121, 63, 1); // colors
+        box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
+        animation: pulse-orange 4s infinite;
+        border-radius: 50%;
+        width: 150px;
+        height: 150px;
+        margin-right: 100px;
+        @include mixins.breakpoint(tablet){
+            display: none;
+        }
     }
-}
-.decorative-circle {
-    background: rgba(255, 121, 63, 1);
-	box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
-	animation: pulse-orange 4s infinite;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-}
 
 }
 

@@ -1,9 +1,13 @@
 @use 'colors';
+@use 'mixins';
 
 .section-header {
     color: colors.$main-orange;
     font-family: Roboto-Bold;
     font-size: 2rem;
+    @include mixins.breakpoint(mobileonly){
+        font-size: 1.5rem;
+    }
     &::after {
         content: ".";
         color: colors.$bg-gray;
@@ -15,9 +19,12 @@
             padding: 15px;
             margin: 20px;
             border-radius: 10px;
-            width: 80%;
+            width: 70%;
             border-left: 5px solid colors.$main-orange;
             border-right: 5px solid colors.$main-orange;
+            @include mixins.breakpoint(mobileonly){
+                margin: 0;
+            }
 
             .latest-article-link {
                 text-decoration: none;

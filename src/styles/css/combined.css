@@ -1,5 +1,5 @@
 .navbar {
-  width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   border-radius: 10px;
   height: 50px;
@@ -28,9 +28,25 @@
 .header-container .mainHeader {
   font-size: 8rem;
   width: 915px;
-  font-family: "Roboto" !important;
+  font-family: "Roboto";
   font-weight: normal;
   color: #3C3C42;
+}
+@media (max-width: 880px) {
+  .header-container .mainHeader {
+    font-size: 6rem;
+    width: 400px;
+  }
+}
+@media (max-width: 760px) {
+  .header-container .mainHeader {
+    font-size: 4rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 .header-container .mainHeader .thin-header-part {
   font-family: "Roboto-light";
@@ -58,6 +74,12 @@
   border-radius: 50%;
   width: 150px;
   height: 150px;
+  margin-right: 100px;
+}
+@media (max-width: 880px) {
+  .header-container .decorative-circle {
+    display: none;
+  }
 }
 
 @keyframes pulse-orange {
@@ -79,6 +101,11 @@
   font-family: Roboto-Bold;
   font-size: 2rem;
 }
+@media (max-width: 760px) {
+  .section-header {
+    font-size: 1.5rem;
+  }
+}
 .section-header::after {
   content: ".";
   color: #3C3C42;
@@ -89,9 +116,14 @@
   padding: 15px;
   margin: 20px;
   border-radius: 10px;
-  width: 80%;
+  width: 70%;
   border-left: 5px solid #FF6B00;
   border-right: 5px solid #FF6B00;
+}
+@media (max-width: 760px) {
+  .latest-article-box {
+    margin: 0;
+  }
 }
 .latest-article-box .latest-article-link {
   text-decoration: none;
@@ -185,6 +217,11 @@
   font-size: 4rem;
   color: #FF6B00;
 }
+@media (max-width: 760px) {
+  .articles-list .blog-main-heading {
+    font-size: 3rem;
+  }
+}
 .articles-list .blog-post-short {
   border-left: 5px solid #FF6B00;
   border-radius: 10px;
@@ -193,6 +230,11 @@
   width: 60%;
   margin: 20px;
 }
+@media (max-width: 760px) {
+  .articles-list .blog-post-short {
+    width: 100%;
+  }
+}
 .articles-list .blog-post-short .blog-post-link {
   text-decoration: none;
   color: #3C3C42;
@@ -200,6 +242,11 @@
   padding: 15px;
   height: 100%;
   position: relative;
+}
+@media (max-width: 760px) {
+  .articles-list .blog-post-short .blog-post-link {
+    padding-top: 30px;
+  }
 }
 .articles-list .blog-post-short .blog-post-link .article-title {
   font-family: Roboto-bold;
