@@ -15,6 +15,7 @@
     @include mixins.breakpoint(phablet){
         display: flex;
         flex-direction: column;
+        margin-top: 50px;
     }
     .footer-box {
         margin-right: 20px;

@@ -1,4 +1,6 @@
 @use 'colors';
+@use 'mixins';
+
 .not-found-wrapper {
     display: flex;
     justify-content: center;
@@ -8,12 +10,23 @@
     color: colors.$bg-gray;
 
     .headache-svg {
-        width: 200px;
+        width: 140px;
+        @include mixins.breakpoint(phablet){
+            width: 60px;
+        }
     }
     .header-letter {
-        font-size: 17rem;
+        font-size: 12rem;
+        @include mixins.breakpoint(phablet){
+            font-size: 5rem;
+        }
     }
     .not-found-sub-header {
         color: colors.$main-orange;
+        @include mixins.breakpoint(phablet){
+            font-size: 1.2rem;
+            width: 400px;
+            text-align: center;
+        }
     }
 }
