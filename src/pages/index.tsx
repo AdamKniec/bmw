@@ -30,7 +30,7 @@ const Header = ({ data }: any) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <header className="header-container">
+      <div className="main-intro-wrapper">
         <h1 className="mainHeader">
           <span className="thin-header-part">Boli mnie</span>{" "}
           <span className="bold-header-part">Web</span>
@@ -39,7 +39,7 @@ const Header = ({ data }: any) => {
         <div>
           <div className="decorative-circle" />
         </div>
-      </header>
+      </div>
       <section className="latest-articles">
         <h2 className="section-header">Ostatnie wpisy</h2>
         <div className="latest-articles-container">{latestBlogPosts()}</div>
