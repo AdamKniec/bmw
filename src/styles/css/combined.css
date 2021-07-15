@@ -182,7 +182,6 @@
   margin: 0 auto;
   border-radius: 10px;
   height: 50px;
-  padding: 5px 5px 5px 20px;
   display: flex;
   align-items: center;
   font-family: "Roboto";
@@ -190,10 +189,22 @@
   color: #848484;
   width: 100%;
 }
+@media (max-width: 37.5em) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .footer .footer-box {
   margin-right: 20px;
   width: 33%;
   text-align: center;
+}
+@media (max-width: 37.5em) {
+  .footer .footer-box {
+    width: 100%;
+    margin-top: 25px;
+  }
 }
 .footer .footer-box .footer-icon {
   width: 20px;
