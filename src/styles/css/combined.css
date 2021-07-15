@@ -21,11 +21,11 @@
   color: #3C3C42;
 }
 
-.header-container {
+.main-intro-wrapper {
   display: flex;
   align-items: center;
 }
-.header-container .mainHeader {
+.main-intro-wrapper .mainHeader {
   font-size: 8rem;
   width: 915px;
   font-family: "Roboto";
@@ -33,13 +33,13 @@
   color: #3C3C42;
 }
 @media (max-width: 880px) {
-  .header-container .mainHeader {
+  .main-intro-wrapper .mainHeader {
     font-size: 6rem;
     width: 400px;
   }
 }
 @media (max-width: 760px) {
-  .header-container .mainHeader {
+  .main-intro-wrapper .mainHeader {
     font-size: 4rem;
     width: 100%;
     display: flex;
@@ -48,26 +48,26 @@
     align-items: center;
   }
 }
-.header-container .mainHeader .thin-header-part {
+.main-intro-wrapper .mainHeader .thin-header-part {
   font-family: "Roboto-light";
 }
-.header-container .mainHeader .bold-header-part {
+.main-intro-wrapper .mainHeader .bold-header-part {
   font-family: "Roboto-bold";
 }
-.header-container .mainHeader .bold-header-part::before {
+.main-intro-wrapper .mainHeader .bold-header-part::before {
   content: "<";
   color: #FF6B00;
 }
-.header-container .mainHeader .bold-header-part::after {
+.main-intro-wrapper .mainHeader .bold-header-part::after {
   content: ">";
   color: #FF6B00;
 }
-.header-container .mainHeader .name-surname {
+.main-intro-wrapper .mainHeader .name-surname {
   font-size: 1rem;
   color: #FF6B00;
   font-family: "Roboto-light";
 }
-.header-container .decorative-circle {
+.main-intro-wrapper .decorative-circle {
   background: #ff793f;
   box-shadow: 0 0 0 0 #ff793f;
   animation: pulse-orange 4s infinite;
@@ -77,7 +77,7 @@
   margin-right: 100px;
 }
 @media (max-width: 880px) {
-  .header-container .decorative-circle {
+  .main-intro-wrapper .decorative-circle {
     display: none;
   }
 }
