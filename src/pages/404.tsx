@@ -3,7 +3,6 @@ import * as React from "react";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
-import Footer from "./footer";
 
 const NotFoundPage = () => (
   <Layout>

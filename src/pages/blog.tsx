@@ -2,7 +2,6 @@ import { graphql, Link } from "gatsby";
 import * as React from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
-import Footer from "./footer";
 
 const Blog = (props) => {
   return (
@@ -30,10 +29,8 @@ const Blog = (props) => {
               </Link>
             </article>
           );
-          // console.log(article.node.frontmatter.title);
         })}
       </div>
-      {/* <Link to="/">Go back to the homepage</Link> */}
     </Layout>
   );
 };
