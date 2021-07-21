@@ -17,7 +17,6 @@ interface SeoProps {
   title: string;
 }
 const Seo = ({ description = " ", lang, meta, title }: SeoProps) => {
-  console.log(description);
   const { site } = useStaticQuery(
     graphql`
       query {
