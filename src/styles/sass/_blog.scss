@@ -7,7 +7,8 @@
     align-items: center;
     font-family: Roboto;
     .blog-main-heading {
-        font-family: Roboto-bold;
+        font-family: Roboto;
+        font-weight: bold;
         font-size: 4rem;
         color: colors.$main-orange;
         @include mixins.breakpoint(mobileonly) {
@@ -35,7 +36,8 @@
                 padding-top: 30px;
             }
             .article-title {
-                font-family: Roboto-bold;
+                font-family: Roboto;
+                font-weight: bold;
             }
             .tags-wrapper {
                 display: flex;

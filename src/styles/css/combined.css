@@ -49,10 +49,12 @@
   }
 }
 .main-intro-wrapper .mainHeader .thin-header-part {
-  font-family: "Roboto-light";
+  font-family: "Roboto";
+  font-weight: lighter;
 }
 .main-intro-wrapper .mainHeader .bold-header-part {
-  font-family: "Roboto-bold";
+  font-family: "Roboto";
+  font-weight: bold;
 }
 .main-intro-wrapper .mainHeader .bold-header-part::before {
   content: "<";
@@ -65,7 +67,8 @@
 .main-intro-wrapper .mainHeader .name-surname {
   font-size: 1rem;
   color: #FF6B00;
-  font-family: "Roboto-light";
+  font-family: "Roboto";
+  font-weight: lighter;
 }
 .main-intro-wrapper .decorative-circle {
   background: #ff793f;
@@ -98,7 +101,8 @@
 }
 .section-header {
   color: #FF6B00;
-  font-family: Roboto-Bold;
+  font-family: Roboto;
+  font-weight: bold;
   font-size: 2rem;
 }
 @media (max-width: 760px) {
@@ -112,7 +116,6 @@
 }
 
 .latest-article-box {
-  font-family: Roboto;
   padding: 15px;
   margin: 20px;
   border-radius: 10px;
@@ -128,10 +131,12 @@
 .latest-article-box .latest-article-link {
   text-decoration: none;
   color: #3C3C42;
-  font-family: Roboto-Bold;
+  font-family: Roboto;
+  font-weight: bold;
 }
 .latest-article-box .metadata-short {
   color: #848484;
+  font-family: Roboto;
 }
 
 *::selection {
@@ -145,7 +150,8 @@
 }
 .blog-post-wrapper .main-blog-header {
   font-size: 4rem;
-  font-family: "Roboto-bold";
+  font-family: "Roboto";
+  font-weight: bold;
   color: #3C3C42;
   margin-bottom: 20px;
   text-align: center;
@@ -225,7 +231,8 @@
   font-family: Roboto;
 }
 .articles-list .blog-main-heading {
-  font-family: Roboto-bold;
+  font-family: Roboto;
+  font-weight: bold;
   font-size: 4rem;
   color: #FF6B00;
 }
@@ -261,7 +268,8 @@
   }
 }
 .articles-list .blog-post-short .blog-post-link .article-title {
-  font-family: Roboto-bold;
+  font-family: Roboto;
+  font-weight: bold;
 }
 .articles-list .blog-post-short .blog-post-link .tags-wrapper {
   display: flex;
@@ -287,7 +295,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Roboto-light;
+  font-family: Roboto;
+  font-weight: lighter;
   flex-direction: column;
   color: #3C3C42;
 }
@@ -309,6 +318,8 @@
 }
 .not-found-wrapper .not-found-sub-header {
   color: #FF6B00;
+  max-width: 500px;
+  text-align: center;
 }
 @media (max-width: 37.5em) {
   .not-found-wrapper .not-found-sub-header {

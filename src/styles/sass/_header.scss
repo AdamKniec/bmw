@@ -23,11 +23,14 @@
             align-items: center;
         }
         .thin-header-part {
-            font-family: 'Roboto-light';
+            font-family: 'Roboto';
+            font-weight: lighter;
+            
             
         }
         .bold-header-part {
-            font-family: 'Roboto-bold';
+            font-family: 'Roboto';
+            font-weight: bold;
             &::before {
                 content: '<';
                 color: colors.$main-orange;
@@ -41,7 +44,9 @@
         .name-surname {
             font-size: 1rem;
             color: colors.$main-orange;
-            font-family: 'Roboto-light';
+            font-family: 'Roboto';
+            font-weight: lighter;
+
         }
     }
     .decorative-circle {

@@ -5,13 +5,7 @@ module.exports = {
     author: `Adam Knieć`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [`Roboto`, `Roboto:300`, `Roboto:400`, `Roboto:700`],
-        display: "swap",
-      },
-    },
+   
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     "gatsby-transformer-remark",
