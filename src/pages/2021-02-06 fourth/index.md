@@ -4,6 +4,7 @@ date: "2021-06-02"
 title: "Pilot"
 readTime: "3"
 author: "Adam Kniec"
+description: "Boli Mnie Web - Wprowadzenie do bloga !"
 tags: ["TypeScript", "React"]
 ---
 

@@ -6,7 +6,7 @@ import Seo from "../components/seo";
 
 const NotFoundPage = () => (
   <Layout>
-    <Seo title="404: Not found" />
+    <Seo title="Boli Mnie Web - Nie znaleziono strony" />
     <div className="not-found-wrapper">
       <h1>
         <span className="header-letter">4</span>

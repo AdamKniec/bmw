@@ -2,12 +2,17 @@ import { graphql } from "gatsby";
 import React from "react";
 
 import Layout from "../components/Layout";
+import Seo from "../components/seo";
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
 
   return (
     <Layout>
+      <Seo
+        title={`Boli Mnie Web  - ${post.frontmatter.title}`}
+        description={post.frontmatter.description}
+      />
       <div className="blog-post-wrapper">
         <h1 className="main-blog-header">{post.frontmatter.title}</h1>
         <p className="metadata-short">
@@ -38,6 +43,7 @@ export const postQuery = graphql`
         author
         tags
         date
+        description
       }
     }
   }

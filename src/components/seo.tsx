@@ -17,6 +17,7 @@ interface SeoProps {
   title: string;
 }
 const Seo = ({ description = " ", lang, meta, title }: SeoProps) => {
+  console.log(description);
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -32,7 +33,7 @@ const Seo = ({ description = " ", lang, meta, title }: SeoProps) => {
   );
 
   const metaDescription = description || site.siteMetadata.description;
-  const defaultTitle = site.siteMetadata?.title;
+  const defaultTitle = "Boli Mnie Web";
 
   return (
     <Helmet
@@ -40,7 +41,7 @@ const Seo = ({ description = " ", lang, meta, title }: SeoProps) => {
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s` : null}
       meta={[
         {
           name: `description`,

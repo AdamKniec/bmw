@@ -29,7 +29,10 @@ const Header = ({ data }: any) => {
 
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo
+        title="Boli Mnie Web by Adam Knieć"
+        description="Artykuły związane ze światem web-developmentu"
+      />
       <div className="main-intro-wrapper">
         <h1 className="mainHeader">
           <span className="thin-header-part">Boli mnie</span>{" "}
