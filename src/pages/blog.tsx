@@ -6,7 +6,10 @@ import Seo from "../components/seo";
 const Blog = (props) => {
   return (
     <Layout>
-      <Seo title="Blog" />
+      <Seo
+        title="Boli Mnie Web - Blog"
+        description="Artykuły związane ze światem web-developmentu"
+      />
       <div className="articles-list">
         <h1 className="blog-main-heading">Blog</h1>
         {props.data.allMarkdownRemark.edges.map((article) => {
