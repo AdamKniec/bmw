@@ -8,6 +8,7 @@
     "gatsby": "^3.4.1",
     "gatsby-plugin-catch-links": "^3.6.0",
     "gatsby-plugin-gatsby-cloud": "^2.4.1",
+    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-image": "^1.4.0",
     "gatsby-plugin-manifest": "^3.4.0",
     "gatsby-plugin-offline": "^4.4.0",
