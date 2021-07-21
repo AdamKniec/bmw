@@ -5,7 +5,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Roboto-light;
+    font-family: Roboto;
+    font-weight: lighter;
     flex-direction: column;
     color: colors.$bg-gray;
 
@@ -23,6 +24,8 @@
     }
     .not-found-sub-header {
         color: colors.$main-orange;
+        max-width: 500px;
+        text-align: center;
         @include mixins.breakpoint(phablet){
             font-size: 1.2rem;
             width: 400px;

@@ -3,7 +3,8 @@
 
 .section-header {
     color: colors.$main-orange;
-    font-family: Roboto-Bold;
+    font-family: Roboto;
+    font-weight: bold;
     font-size: 2rem;
     @include mixins.breakpoint(mobileonly){
         font-size: 1.5rem;
@@ -14,8 +15,6 @@
     }
 }
 .latest-article-box {
-            // background-color: colors.$orange-secondary;
-            font-family: Roboto;
             padding: 15px;
             margin: 20px;
             border-radius: 10px;
@@ -29,9 +28,11 @@
             .latest-article-link {
                 text-decoration: none;
                 color: colors.$bg-gray;
-                font-family: Roboto-Bold;
+                font-family: Roboto;
+                font-weight: bold;
             }
             .metadata-short {
                 color: colors.$text-gray;
+                font-family: Roboto;
             }
         }
