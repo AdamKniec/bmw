@@ -22,9 +22,8 @@ Kubek kawy z drippera napełniony do połowy. Mdła muzyka się nasila. W tle pa
 
 Nie jestem algorytmicznym ekseprtem. Nie programuję od 3 roku życia i nie zostałem poczęty kablem USB-C. Nie łykam wiedzy w tempie Neo z Matrixa i nie gardzą tymi, którzy czasem ośmielą się odejść od kodu. Nie jestem też typem dwudziestoparoletniego dupka z IT, który w młodym wieku zaczął zarabiać dobre pieniądze i pozjadał wszystkie rozumy.
 
-Jestem zwykłym gościem, który zarabia na życie programując, nie jest oderwany od rzeczywistości i wie jak wymagająca jest branża IT. Jeśli jestem w stanie to pomagam innym. Uwielbiam rozwiązywać problemy a każda napisana funkcjonalność sprawia mi mega frajdę. Znam sporo narzędzi, dobrych praktyk i lubię robić notatki (stąd pomysł na tego bloga :) ).
-
 Nazywam się Adam Knieć. Od kilku lat pracuję w branży. Początkowo jako Tester Oprogramowania, obecnie jako Inżynier Oprogramowania. 
+Jestem zwykłym gościem, który zarabia na życie programując, nie jest oderwany od rzeczywistości i wie jak wymagająca jest branża IT. Jeśli jestem w stanie to pomagam innym. Uwielbiam rozwiązywać problemy a każda napisana funkcjonalność sprawia mi mega frajdę. Znam sporo narzędzi, dobrych praktyk i lubię robić notatki (stąd pomysł na tego bloga :) ).
 
 Lubię dzielić się tym co wiem i regularnie udzielam się w kilku miejscach:
 - SO
