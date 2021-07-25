@@ -45,7 +45,14 @@
             font-size: 1.2rem;
             line-height: 2.2rem;
             color: colors.$bg-gray;
-            // text-align: justify;
+        }
+        a {
+            color: colors.$bg-gray;
+            text-decoration: none;
+            border-bottom: 1px solid colors.$main-orange;
+        }
+        ul {
+            color: colors.$bg-gray;
         }
     }
 

@@ -182,6 +182,14 @@
   line-height: 2.2rem;
   color: #3C3C42;
 }
+.blog-post-wrapper .content-wrapper a {
+  color: #3C3C42;
+  text-decoration: none;
+  border-bottom: 1px solid #FF6B00;
+}
+.blog-post-wrapper .content-wrapper ul {
+  color: #3C3C42;
+}
 
 .footer {
   max-width: 1200px;
