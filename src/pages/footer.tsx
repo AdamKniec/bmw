@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-box">@2021 Created with Gatsby by Adam Knieć</div>
       <div className="footer-box">
-        <Link
+        <a
           aria-label="Link do mojego konta Linkedin"
           target="_blank"
           rel="noopener noreferrer"
@@ -18,8 +18,8 @@ const Footer = () => {
             alt="Linkedin logo"
             className="footer-icon"
           />
-        </Link>
-        <Link
+        </a>
+        <a
           aria-label="Link do mojego konta Stackoverflow"
           target="_blank"
           rel="noopener noreferrer"
@@ -30,8 +30,8 @@ const Footer = () => {
             alt="Stackoverflow logo"
             className="footer-icon"
           />
-        </Link>
-        <Link
+        </a>
+        <a
           aria-label="Link do mojego Githuba"
           target="_blank"
           rel="noopener noreferrer"
@@ -42,13 +42,13 @@ const Footer = () => {
             alt="Github logo"
             className="footer-icon"
           />
-        </Link>
+        </a>
       </div>
       <div className="footer-box footer-subpage-link-wrapper">
         <Link to="/blog" className="subpage-footer-link">
           Blog
         </Link>
-        <Link to="/blog/fourth" className="subpage-footer-link">
+        <Link to="/blog/pilot" className="subpage-footer-link">
           Pilot
         </Link>
       </div>

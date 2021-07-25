@@ -19,9 +19,15 @@ export default function Template({ data }) {
           {post.frontmatter.date} ({post.frontmatter.readTime} min.)
         </p>
         <div className="tags-container">
-          {data.markdownRemark.frontmatter.tags.map((tag: string) => {
-            return <span className="tag">{tag}</span>;
-          })}
+          {data.markdownRemark.frontmatter.tags.map(
+            (tag: string, index: number) => {
+              return (
+                <span className="tag" key={index.toString()}>
+                  {tag}
+                </span>
+              );
+            }
+          )}
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
