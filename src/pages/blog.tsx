@@ -24,9 +24,15 @@ const Blog = (props) => {
                   {article.node.frontmatter.title}
                 </span>
                 <div className="tags-wrapper">
-                  {article.node.frontmatter.tags.map((tag) => {
-                    return <span className="tag">{tag}</span>;
-                  })}
+                  {article.node.frontmatter.tags.map(
+                    (tag: string, index: number) => {
+                      return (
+                        <span className="tag" key={index.toString()}>
+                          {tag}
+                        </span>
+                      );
+                    }
+                  )}
                 </div>
                 <p className="metadata-short">{`${article.node.frontmatter.date} (${article.node.frontmatter.readTime} min)`}</p>
               </Link>
