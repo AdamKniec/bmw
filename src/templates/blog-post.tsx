@@ -1,8 +1,11 @@
 import { graphql } from "gatsby";
 import React from "react";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
+
+deckDeckGoHighlightElement();
 
 export default function Template({ data }) {
   const post = data.markdownRemark;

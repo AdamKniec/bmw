@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .navbar {
   max-width: 1200px;
   margin: 0 auto;
@@ -187,8 +188,31 @@
   text-decoration: none;
   border-bottom: 1px solid #FF6B00;
 }
-.blog-post-wrapper .content-wrapper ul {
+.blog-post-wrapper .content-wrapper ul, .blog-post-wrapper .content-wrapper ol {
   color: #3C3C42;
+  padding-left: 20px;
+  font-size: 1.2rem;
+  line-height: 2.2rem;
+}
+.blog-post-wrapper .content-wrapper ul {
+  list-style: none;
+}
+.blog-post-wrapper .content-wrapper ul li {
+  position: relative;
+}
+.blog-post-wrapper .content-wrapper ul li:before {
+  content: "•";
+  color: #FF6B00;
+  display: inline-block;
+  position: absolute;
+  left: -20px;
+  top: 2px;
+}
+.blog-post-wrapper .content-wrapper code {
+  background-color: #fff9f1;
+}
+.blog-post-wrapper .content-wrapper .deckgo-highlight-code-carbon {
+  font-size: 1rem;
 }
 
 .footer {

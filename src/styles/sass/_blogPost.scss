@@ -51,8 +51,30 @@
             text-decoration: none;
             border-bottom: 1px solid colors.$main-orange;
         }
-        ul {
+        ul,ol {
             color: colors.$bg-gray;
+            padding-left: 20px;
+            font-size: 1.2rem;
+            line-height: 2.2rem;
+        }
+        ul {
+            list-style: none;
+            li {
+                position: relative;
+                &:before {
+                    content: "•"; color: colors.$main-orange;;
+                    display: inline-block;
+                    position: absolute;
+                    left: -20px;
+                    top: 2px;
+                }
+            }
+        }
+        code {
+            background-color: #fff9f1;
+        }
+        .deckgo-highlight-code-carbon {
+            font-size: 1rem;
         }
     }
 
