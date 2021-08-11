@@ -208,11 +208,12 @@
   left: -20px;
   top: 2px;
 }
-.blog-post-wrapper .content-wrapper code {
-  background-color: #fff9f1;
+.blog-post-wrapper :not(pre) > code[class*=language-], .blog-post-wrapper pre[class*=language-] {
+  border-radius: 10px;
 }
-.blog-post-wrapper .content-wrapper .deckgo-highlight-code-carbon {
-  font-size: 1rem;
+.blog-post-wrapper .language-text {
+  background-color: #FFF3E9;
+  color: #3C3C42;
 }
 
 .footer {

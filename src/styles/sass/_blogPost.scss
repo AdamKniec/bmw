@@ -70,12 +70,12 @@
                 }
             }
         }
-        code {
-            background-color: #fff9f1;
-        }
-        .deckgo-highlight-code-carbon {
-            font-size: 1rem;
-        }
     }
-
+    :not(pre) > code[class*="language-"], pre[class*="language-"] {
+        border-radius: 10px;
+    }
+    .language-text {
+        background-color: colors.$orange-secondary;
+        color: colors.$bg-gray;
+    }
 }

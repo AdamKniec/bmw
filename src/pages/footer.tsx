@@ -11,7 +11,7 @@ const Footer = () => {
           aria-label="Link do mojego konta Linkedin"
           target="_blank"
           rel="noopener noreferrer"
-          to="https://www.linkedin.com/in/adamkniec/"
+          href="https://www.linkedin.com/in/adamkniec/"
         >
           <StaticImage
             src="../images/linkedin.svg"
@@ -23,7 +23,7 @@ const Footer = () => {
           aria-label="Link do mojego konta Stackoverflow"
           target="_blank"
           rel="noopener noreferrer"
-          to="https://stackexchange.com/users/16949824/adamkniec?tab=accounts"
+          href="https://stackexchange.com/users/16949824/adamkniec?tab=accounts"
         >
           <StaticImage
             src="../images/stack-overflow.svg"
@@ -35,7 +35,7 @@ const Footer = () => {
           aria-label="Link do mojego Githuba"
           target="_blank"
           rel="noopener noreferrer"
-          to="https://github.com/AdamKniec"
+          href="https://github.com/AdamKniec"
         >
           <StaticImage
             src="../images/github.svg"

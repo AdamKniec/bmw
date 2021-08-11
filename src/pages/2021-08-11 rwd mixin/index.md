@@ -1,6 +1,6 @@
 ---
 path: "/blog/rwd-mixin"
-date: "2021-07-26"
+date: "2021-08-11"
 title: "RWD Mixin"
 readTime: "5"
 author: "Adam Kniec"
@@ -52,7 +52,6 @@ RWD w tych czasach jest absolutnym standardem (a przynajmniej powinno być).
         display: block;
     }
 }
-
 ```
 Nie ma dramatu w takim odchudzonym przykładzie, jednak przy nieco większej ilości kodu zmuszało mnie do scrollowania pliku od góry do dołu setki razy co przyprawiało mnie o oczopląs. Gdyby tylko był sposób na trzymanie kodu z bloków `media` razem z daną regułą...
 
@@ -94,7 +93,7 @@ Powiedzmy, że chcemy sprawić aby nasz element o klasie `.box` zmieniał kolor
 Stworzyliśmy wyżej regułę, która:
 1. Zmienia kolor tła na czerwony i zmienia rozmiary elementu
 2. Korzystając z naszego mixina wewnątrz swojego ciała zmienia zachowanie elementu na większych ekranach nadając mu różowy kolor tła.
-3. Również korzystając z mixina breakpoint zmienia tło  elementu `.box`, jednak na nieco mniejszych ekranach.
+3. Również korzystając z mixina `breakpoint` zmienia tło  elementu `.box`, jednak na nieco mniejszych ekranach.
 
 Masz już pomysł co jest tym magicznym `@content`, o ktorym wspomniałem wyżej ? 
 Są nim poszczególne style jakie wrzucamy do środka naszego mixina podczaj gdy go używamy. Biorąc pod uwagę poprzedni przykład:
@@ -107,7 +106,8 @@ CodePen z przykładem znajdziesz poniżej. Pobaw się rozmiarami okna przegląda
 
 ## Podsumowanie
 
-Wpisem tym chciałem Ci pokazać prawdopodobnie jedno z wielu podejść do tematu RWD. Mi osobiście podoba się idea mixina, który wewnątrz reguły informuje nas jak powinien wyglądać / zachować się element na ekranie o danej rozdzielczości. Nie traktuj tego sposobu jako jedynej słusznej drogi.
+Wpisem tym chciałem Ci pokazać prawdopodobnie jedno z wielu podejść do tematu RWD. Mi osobiście podoba się idea mixina, który wewnątrz reguły informuje nas jak powinien wyglądać / zachować się element na ekranie o danej rozdzielczości. 
+Mimo wszystko pamiętaj o tym, żeby nie traktować tego sposobu jako jedynej słusznej drogi.
 
 Na koniec małe porównanie podejścia z mixinem i z regułami `@media` na dole pliku. Oba snippety modyfikują element w taki sam sposób.
 
