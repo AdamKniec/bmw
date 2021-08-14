@@ -47,16 +47,15 @@ const Blog = (props) => {
 
 export const allBlogPosts = graphql`
   query allPostsQuery {
-    allMarkdownRemark {
+    allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
-          id
           frontmatter {
+            date(locale: "")
+            tags
             path
             title
-            tags
             readTime
-            date
             author
           }
         }
@@ -64,4 +63,5 @@ export const allBlogPosts = graphql`
     }
   }
 `;
+
 export default Blog;
