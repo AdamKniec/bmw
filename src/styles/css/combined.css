@@ -126,7 +126,7 @@
 }
 @media (max-width: 760px) {
   .latest-article-box {
-    margin: 0;
+    margin: 20px 0;
   }
 }
 .latest-article-box .latest-article-link {
