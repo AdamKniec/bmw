@@ -15,7 +15,7 @@ const Footer = () => {
         >
           <StaticImage
             src="../images/linkedin.svg"
-            alt="Linkedin logo"
+            alt=""
             className="footer-icon"
           />
         </a>
@@ -27,7 +27,7 @@ const Footer = () => {
         >
           <StaticImage
             src="../images/stack-overflow.svg"
-            alt="Stackoverflow logo"
+            alt=""
             className="footer-icon"
           />
         </a>
@@ -39,7 +39,19 @@ const Footer = () => {
         >
           <StaticImage
             src="../images/github.svg"
-            alt="Github logo"
+            alt=""
+            className="footer-icon"
+          />
+        </a>
+        <a
+          aria-label="Link do mojego Instagrama"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.instagram.com/bolimnieweb/"
+        >
+          <StaticImage
+            src="../images/instagram.svg"
+            alt=""
             className="footer-icon"
           />
         </a>
