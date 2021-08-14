@@ -28,6 +28,8 @@ https://www.instagram.com/bolimnieweb/
 
 https://www.instagram.com/adaskniec/
 
+Zgłoś Issue -> https://github.com/AdamKniec/bmw/issues
+
 ## Pomoc / Kontrybuowanie / Pomysły / Usprawnienia
 
 Projekt jest aktualnie w fazie, w której najważniejsze jest tworzenie nowych treści.
