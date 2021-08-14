@@ -8,7 +8,7 @@ Więcej informacji znajdziesz <a href="https://www.bolimnieweb.pl/blog/pilot">Tu
 ## Instalacja
 
 1) Sklonuj repozytorium
-2) Przejdż do niego przy pomocy terminala: cd <nazwaFolderu>
+2) Przejdż do niego przy pomocy terminala: cd nazwaFolderu
 3) Terminal: npm install - instalacja zależności
 4) Terminal: gatsby develop - uruchomienie aplikacji w trybie deweloperskim
 5) W osobnym oknie terminala: npx sass --watch src/styles/sass:src/styles/css - dynamiczne kompilowanie SCSS -> CSS
