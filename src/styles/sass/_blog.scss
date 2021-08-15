@@ -18,10 +18,10 @@
     .blog-post-short  {
         border-left: 5px solid colors.$main-orange;
         border-radius: 10px;
-        background-color: #fff9f1; // dodac do kolorow
         display: block;
         width: 60%;
         margin: 20px;
+        box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
         @include mixins.breakpoint(mobileonly) {
             width: 100%;
         }
