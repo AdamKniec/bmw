@@ -123,6 +123,7 @@
   width: 70%;
   border-left: 5px solid #FF6B00;
   border-right: 5px solid #FF6B00;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 @media (max-width: 760px) {
   .latest-article-box {
@@ -277,10 +278,10 @@
 .articles-list .blog-post-short {
   border-left: 5px solid #FF6B00;
   border-radius: 10px;
-  background-color: #fff9f1;
   display: block;
   width: 60%;
   margin: 20px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
 }
 @media (max-width: 760px) {
   .articles-list .blog-post-short {
