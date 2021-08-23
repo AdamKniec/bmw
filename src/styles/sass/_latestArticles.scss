@@ -14,26 +14,27 @@
         color: colors.$bg-gray;
     }
 }
-.latest-article-box {
-            padding: 15px;
-            margin: 20px;
-            border-radius: 10px;
-            width: 70%;
-            border-left: 5px solid colors.$main-orange;
-            border-right: 5px solid colors.$main-orange;
-            box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
-            @include mixins.breakpoint(mobileonly){
-                margin: 20px 0;
-            }
+.latest-article-link {
+    text-decoration: none;
+    color: colors.$bg-gray;
+    font-family: Roboto;
+    font-weight: normal;
+    display: block;
+    padding: 15px;
+    margin: 20px;
+    border-radius: 10px;
+    width: 70%;
+    border-left: 5px solid colors.$main-orange;
+    border-right: 5px solid colors.$main-orange;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
+    font-weight: bold;
+    @include mixins.breakpoint(mobileonly){
+        margin: 20px 0;
+    }
 
-            .latest-article-link {
-                text-decoration: none;
-                color: colors.$bg-gray;
-                font-family: Roboto;
-                font-weight: bold;
-            }
-            .metadata-short {
-                color: colors.$text-gray;
-                font-family: Roboto;
-            }
-        }
+    .metadata-short {
+        color: colors.$text-gray;
+        font-family: Roboto;
+        font-weight: lighter;
+    }
+}
