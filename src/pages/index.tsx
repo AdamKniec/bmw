@@ -9,12 +9,15 @@ const Header = ({ data }: any) => {
   const latestBlogPosts = () =>
     data.allMarkdownRemark.edges.map((post) => {
       return (
-        <div className="latest-article-box" key={post.node.id}>
-          <Link to={post.node.frontmatter.path} className="latest-article-link">
+        <>
+          <Link
+            to={post.node.frontmatter.path}
+            className="latest-article-link latest-article-box"
+          >
             {post.node.frontmatter.title}
+            <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p>
           </Link>
-          <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p>
-        </div>
+        </>
       );
     });
 
