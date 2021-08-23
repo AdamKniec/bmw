@@ -12,6 +12,12 @@ module.exports = {
         display: "swap",
       },
     },
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `bolimnieweb`,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-catch-links`,
     {

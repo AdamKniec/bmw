@@ -2,6 +2,8 @@ import { graphql } from "gatsby";
 import React from "react";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
+import { DiscussionEmbed } from "disqus-react";
+import Disqus from "../components/Disqus";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
@@ -9,6 +11,12 @@ deckDeckGoHighlightElement();
 
 export default function Template({ data }) {
   const post = data.markdownRemark;
+
+  const config = {
+    url: `https://www.bolimnieweb.pl/${post.frontmatter.path}`,
+    identifier: post.frontmatter.path,
+    title: post.frontmatter.title,
+  };
 
   return (
     <Layout>
@@ -37,6 +45,7 @@ export default function Template({ data }) {
           className="content-wrapper"
         />
       </div>
+      {/* <DiscussionEmbed shortname="bolimnieweb" config={config} /> */}
     </Layout>
   );
 }
