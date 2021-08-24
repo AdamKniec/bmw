@@ -177,6 +177,9 @@
   border-radius: 10px;
   margin-right: 10px;
 }
+.blog-post-wrapper .content-wrapper {
+  margin-bottom: 50px;
+}
 .blog-post-wrapper .content-wrapper h2 {
   color: #FF6B00;
 }

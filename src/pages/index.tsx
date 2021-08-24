@@ -9,7 +9,7 @@ const Header = ({ data }: any) => {
   const latestBlogPosts = () =>
     data.allMarkdownRemark.edges.map((post) => {
       return (
-        <>
+        <React.Fragment key={post.node.id}>
           <Link
             to={post.node.frontmatter.path}
             className="latest-article-link latest-article-box"
@@ -17,7 +17,7 @@ const Header = ({ data }: any) => {
             {post.node.frontmatter.title}
             <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p>
           </Link>
-        </>
+        </React.Fragment>
       );
     });
 
