@@ -11,7 +11,7 @@ deckDeckGoHighlightElement();
 export default function Template({ data }) {
   const post = data.markdownRemark;
 
-  const DisqusConfig = {
+  const disqusConfig = {
     url: `https://www.bolimnieweb.pl/${post.frontmatter.path}`,
     identifier: post.frontmatter.path,
     title: post.frontmatter.title,
@@ -44,7 +44,7 @@ export default function Template({ data }) {
           className="content-wrapper"
         />
       </div>
-      <DiscussionEmbed shortname="bolimnieweb" config={DisqusConfig} />
+      <DiscussionEmbed shortname="bolimnieweb" config={disqusConfig} />
     </Layout>
   );
 }
