@@ -2,8 +2,7 @@ import { graphql } from "gatsby";
 import React from "react";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
-import { DiscussionEmbed } from "disqus-react";
-import Disqus from "../components/Disqus";
+// import { DiscussionEmbed } from "disqus-react";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
