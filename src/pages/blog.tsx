@@ -4,7 +4,28 @@ import * as React from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
-const Blog = (props) => {
+interface blogProps {
+  data: {
+    allMarkdownRemark: {
+      edges: [
+        {
+          node: {
+            frontmatter: {
+              date: string;
+              readTime: string;
+              path: string;
+              title: string;
+              tags: string[];
+            };
+          };
+        }
+      ];
+    };
+  };
+}
+
+const Blog = (props: blogProps) => {
+  const { data } = props;
   return (
     <Layout>
       <Seo
@@ -13,7 +34,7 @@ const Blog = (props) => {
       />
       <div className="articles-list">
         <h1 className="blog-main-heading">Blog</h1>
-        {props.data.allMarkdownRemark.edges.map((article) => {
+        {data.allMarkdownRemark.edges.map((article) => {
           return (
             <article className="blog-post-short">
               <Link

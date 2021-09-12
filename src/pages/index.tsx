@@ -4,8 +4,28 @@ import React from "react";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
-const Header = ({ data }: any) => {
-  // get rid of any
+interface HeaderProps {
+  data: {
+    allMarkdownRemark: {
+      edges: [
+        {
+          node: {
+            id: number;
+            frontmatter: {
+              path: string;
+              title: string;
+              date: string;
+              readTime: string;
+            };
+          };
+        }
+      ];
+    };
+  };
+}
+
+const Header = (props: HeaderProps) => {
+  const { data } = props;
   const latestBlogPosts = () =>
     data.allMarkdownRemark.edges.map((post) => {
       return (
