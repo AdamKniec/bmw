@@ -8,7 +8,23 @@ import Seo from "../components/seo";
 
 deckDeckGoHighlightElement();
 
-export default function Template({ data }) {
+interface TemplateProps {
+  data: {
+    markdownRemark: {
+      html: string;
+      frontmatter: {
+        path: string;
+        title: string;
+        readTime: string;
+        description: string;
+        date: string;
+        tags: string[];
+      };
+    };
+  };
+}
+
+export default function Template({ data }: TemplateProps) {
   const post = data.markdownRemark;
 
   const disqusConfig = {
