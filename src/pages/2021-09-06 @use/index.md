@@ -2,7 +2,7 @@
 path: "/blog/@use"
 date: "2021-09-06"
 title: "@use"
-readTime: "15"
+readTime: "10"
 author: "Adam Knieć"
 description: "@import niedługo przejdzie na emeryturę. @use jest rekomendowaną alternatywą, która jest bardzo intuicyjna i rozwiązuje sporo problemów."
 tags: ["CSS"]
