@@ -318,12 +318,20 @@
   right: 0;
 }
 .articles-list .blog-post-short .blog-post-link .tags-wrapper .tag {
-  border: 2px solid #FF6B00;
   background-color: #FF6B00;
   padding: 5px;
   border-radius: 10px;
   margin-right: 10px;
   color: white;
+}
+.articles-list .blog-post-short .blog-post-link .tags-wrapper .typescript {
+  background-color: #3278c6;
+}
+.articles-list .blog-post-short .blog-post-link .tags-wrapper .css {
+  background-color: #cf649a;
+}
+.articles-list .blog-post-short .blog-post-link .tags-wrapper .tldr {
+  background-color: #FF6B00;
 }
 .articles-list .blog-post-short .blog-post-link .metadata-short {
   color: #848484;

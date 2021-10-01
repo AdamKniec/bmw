@@ -49,7 +49,10 @@ const Blog = (props: blogProps) => {
                   {article.node.frontmatter.tags.map(
                     (tag: string, index: number) => {
                       return (
-                        <span className="tag" key={index.toString()}>
+                        <span
+                          className={`tag ${tag.toLocaleLowerCase()}`}
+                          key={index.toString()}
+                        >
                           {tag}
                         </span>
                       );
