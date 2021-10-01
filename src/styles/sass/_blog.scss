@@ -47,12 +47,20 @@
                 top: -35px;
                 right: 0;
                 .tag {
-                    border: 2px solid colors.$main-orange;
                     background-color: colors.$main-orange;
                     padding: 5px;
                     border-radius: 10px;
                     margin-right: 10px;
                     color: white;
+                }
+                .typescript {
+                    background-color: colors.$typescript;
+                }
+                .css {
+                    background-color: colors.$css;
+                }
+                .tldr {
+                    background-color: colors.$main-orange;
                 }
             }
             .metadata-short {
