@@ -270,12 +270,12 @@ $-main-red: red; // prywatna zmienna
 @use  './colors.scss';
 
 body {
-    background-color: colors.$main-red;
+    background-color: colors.$-main-red;
 }
 
 // main.scss
 ```
-Rezultat: `Error: Undefined varaible background-color: colors.$main-red;`
+Rezultat: `Error: Private members can't be accessed from outside their modules.`
 
 ## Podsumowanie 
 
