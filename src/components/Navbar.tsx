@@ -8,7 +8,7 @@ const Navbar = () => (
   <nav className="navbar">
     <a href="/">
       <StaticImage
-        src="../images/headache.svg"
+        src="../images/headache.png"
         alt="Boli mnie Web - Strona główna"
         className="headache-svg"
       />
