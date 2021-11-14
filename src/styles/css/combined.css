@@ -37,6 +37,16 @@
   font-weight: bold;
   font-size: 7rem;
 }
+@media (max-width: 880px) {
+  .header-wrapper .mainHeader {
+    font-size: 5rem;
+  }
+}
+@media (max-width: 760px) {
+  .header-wrapper .mainHeader {
+    font-size: 3rem;
+  }
+}
 .header-wrapper .hero-intro-text {
   margin-top: 10px;
   line-height: 25px;
@@ -48,7 +58,16 @@
 .header-wrapper .brain-png {
   position: absolute;
   top: -100px;
-  right: 180px;
+  z-index: -1;
+  right: 10%;
+}
+@media (max-width: 880px) {
+  .header-wrapper .brain-png {
+    display: none;
+  }
+}
+.header-wrapper .header-link {
+  text-decoration: underline;
 }
 
 .section-header {

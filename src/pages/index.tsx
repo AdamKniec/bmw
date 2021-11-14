@@ -60,7 +60,7 @@ const Header = (props: HeaderProps) => {
         <StaticImage src="../images/brain.png" alt="" className="brain-png" />
         <div className="header-links">
           <span className="theme-red">-> </span> 
-          <a> github</a> | <a>instagram</a>
+          <a className="header-link"> github</a> | <a className="header-link">instagram</a>
         </div>
       </div>
       {/* <section className="latest-articles">

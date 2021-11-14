@@ -12,9 +12,14 @@
   .mainHeader {
     margin-top: 3rem;
     margin-bottom: 0;
-
     font-weight: bold;
     font-size: 7rem;
+    @include mixins.breakpoint(tablet) {
+      font-size: 5rem;
+    }
+    @include mixins.breakpoint(mobileonly) {
+      font-size: 3rem;
+    }
   }
   .hero-intro-text {
     margin-top: 10px;
@@ -28,6 +33,13 @@
   .brain-png {
     position: absolute;
     top: -100px;
-    right: 180px;
+    z-index: -1;
+    right: 10%;
+    @include mixins.breakpoint(tablet) {
+      display: none;
+    }
+  }
+  .header-link {
+    text-decoration: underline;
   }
 }
