@@ -23,7 +23,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );

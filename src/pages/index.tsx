@@ -1,4 +1,5 @@
 import { graphql, Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 
 import Layout from "../components/Layout";
@@ -47,20 +48,25 @@ const Header = (props: HeaderProps) => {
         title="Boli Mnie Web by Adam Knieć"
         description="Artykuły związane ze światem web-developmentu"
       />
-      <div className="main-intro-wrapper">
+      <div className="header-wrapper">
         <h1 className="mainHeader">
-          <span className="thin-header-part">Boli mnie</span>{" "}
-          <span className="bold-header-part">Web</span>
-          <span className="name-surname">by Adam Knieć</span>
+          boli mnie <span className="theme-red">web</span>.
         </h1>
+        <p className="hero-intro-text">
+          <span className="theme-red">blog</span> o technologiach i narzędziach
+          webowych oraz wszystkim co mnie interesuje / przeraża / wk*rwia / bawi
+          / odrzuca i smuci w branży <span className="theme-red">IT</span>{" "}
+        </p>
+        <StaticImage src="../images/brain.png" alt="" className="brain-png" />
         <div>
-          <div className="decorative-circle" />
+          <span className="theme-red">-> </span> 
+          <a className="header-link"> github</a> | <a className="header-link">instagram</a>
         </div>
       </div>
-      <section className="latest-articles">
+      {/* <section className="latest-articles">
         <h2 className="section-header">Ostatnie wpisy</h2>
         <div className="latest-articles-container">{latestBlogPosts()}</div>
-      </section>
+      </section> */}
     </Layout>
   );
 };
