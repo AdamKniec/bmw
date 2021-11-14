@@ -58,7 +58,7 @@ const Header = (props: HeaderProps) => {
           / odrzuca i smuci w branży <span className="theme-red">IT</span>{" "}
         </p>
         <StaticImage src="../images/brain.png" alt="" className="brain-png" />
-        <div className="header-links">
+        <div>
           <span className="theme-red">-> </span> 
           <a className="header-link"> github</a> | <a className="header-link">instagram</a>
         </div>
