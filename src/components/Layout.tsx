@@ -18,8 +18,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div
         style={{
           margin: `0 auto`,
-          // maxWidth: 1200,
-          // padding: `0 1.0875rem 1.45rem`,
         }}
       >
         <main>{children}</main>
