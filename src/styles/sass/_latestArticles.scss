@@ -1,43 +1,5 @@
 @use 'colors';
-// @use 'mixins';
 
-// .section-header {
-//     color: colors.$main-orange;
-//     font-family: Roboto;
-//     font-weight: bold;
-//     font-size: 2rem;
-//     @include mixins.breakpoint(mobileonly){
-//         font-size: 1.5rem;
-//     }
-//     &::after {
-//         content: ".";
-//         color: colors.$bg-gray;
-//     }
-// }
-// .latest-article-link {
-//     text-decoration: none;
-//     color: colors.$bg-gray;
-//     font-family: Roboto;
-//     font-weight: normal;
-//     display: block;
-//     padding: 15px;
-//     margin: 20px;
-//     border-radius: 10px;
-//     width: 70%;
-//     border-left: 5px solid colors.$main-orange;
-//     border-right: 5px solid colors.$main-orange;
-//     box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
-//     font-weight: bold;
-//     @include mixins.breakpoint(mobileonly){
-//         margin: 20px 0;
-//     }
-
-//     .metadata-short {
-//         color: colors.$text-gray;
-//         font-family: Roboto;
-//         font-weight: lighter;
-//     }
-// }
 .latest-articles {
   font-family: Roboto;
   background-color: colors.$bg-light-gray;
