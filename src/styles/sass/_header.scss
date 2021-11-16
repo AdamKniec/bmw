@@ -2,7 +2,14 @@
 @use 'mixins';
 
 .header-wrapper {
+  max-width: 1200px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   color: colors.$bg-gray;
   font-family: Roboto;
   .theme-red {
@@ -32,7 +39,7 @@
   }
   .brain-png {
     position: absolute;
-    top: -100px;
+    top: -70px;
     z-index: -1;
     right: 10%;
     @include mixins.breakpoint(tablet) {

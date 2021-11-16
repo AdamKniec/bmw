@@ -1,40 +1,60 @@
 @use 'colors';
-@use 'mixins';
 
-.section-header {
-    color: colors.$main-orange;
-    font-family: Roboto;
+.latest-articles {
+  font-family: Roboto;
+  background-color: colors.$bg-light-gray;
+  color: colors.$bg-gray;
+  .theme-red {
+    color: colors.$text-red;
     font-weight: bold;
-    font-size: 2rem;
-    @include mixins.breakpoint(mobileonly){
-        font-size: 1.5rem;
+  }
+  .inner-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    .section-header {
+      padding-top: 30px;
+      font-family: Roboto;
+      font-weight: bold;
+      font-size: 35px;
     }
-    &::after {
-        content: ".";
+    .latest-articles-container {
+      display: flex;
+      flex-wrap: wrap;
+
+      .latest-article-link {
+        position: relative;
+        border: 1px solid red;
+        margin-bottom: 50px;
+        width: 380px;
+        background-color: colors.$white;
+        border: 1px solid colors.$light-gray-border;
+        margin-right: 20px;
+        text-decoration: none;
         color: colors.$bg-gray;
+        font-weight: bold;
+        font-size: 20px;
+        padding: 20px;
+        padding-top: 30px;
+        box-sizing: border-box;
+        &:hover {
+          color: colors.$text-red;
+        }
+        .link-description {
+          color: colors.$text-lighter-gray;
+          font-family: Roboto;
+          font-weight: lighter;
+          font-size: 15px;
+        }
+        .category-img {
+          position: absolute;
+          top: -18px;
+          width: 30px;
+          height: 35px;
+          z-index: 10;
+        }
+      }
     }
-}
-.latest-article-link {
-    text-decoration: none;
-    color: colors.$bg-gray;
-    font-family: Roboto;
-    font-weight: normal;
-    display: block;
-    padding: 15px;
-    margin: 20px;
-    border-radius: 10px;
-    width: 70%;
-    border-left: 5px solid colors.$main-orange;
-    border-right: 5px solid colors.$main-orange;
-    box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
-    font-weight: bold;
-    @include mixins.breakpoint(mobileonly){
-        margin: 20px 0;
-    }
-
-    .metadata-short {
-        color: colors.$text-gray;
-        font-family: Roboto;
-        font-weight: lighter;
-    }
+  }
 }

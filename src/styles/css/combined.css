@@ -23,7 +23,14 @@
 }
 
 .header-wrapper {
+  max-width: 1200px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-left: 1rem;
+  padding-right: 1rem;
   color: #3c3c42;
   font-family: Roboto;
 }
@@ -57,7 +64,7 @@
 }
 .header-wrapper .brain-png {
   position: absolute;
-  top: -100px;
+  top: -70px;
   z-index: -1;
   right: 10%;
 }
@@ -70,46 +77,62 @@
   text-decoration: underline;
 }
 
-.section-header {
-  color: #ff6b00;
+.latest-articles {
   font-family: Roboto;
-  font-weight: bold;
-  font-size: 2rem;
-}
-@media (max-width: 760px) {
-  .section-header {
-    font-size: 1.5rem;
-  }
-}
-.section-header::after {
-  content: ".";
+  background-color: #f8f8f8;
   color: #3c3c42;
 }
-
-.latest-article-link {
+.latest-articles .theme-red {
+  color: #a64141;
+  font-weight: bold;
+}
+.latest-articles .inner-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.latest-articles .inner-wrapper .section-header {
+  padding-top: 30px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 35px;
+}
+.latest-articles .inner-wrapper .latest-articles-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.latest-articles .inner-wrapper .latest-articles-container .latest-article-link {
+  position: relative;
+  border: 1px solid red;
+  margin-bottom: 50px;
+  width: 380px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  margin-right: 20px;
   text-decoration: none;
   color: #3c3c42;
-  font-family: Roboto;
-  font-weight: normal;
-  display: block;
-  padding: 15px;
-  margin: 20px;
-  border-radius: 10px;
-  width: 70%;
-  border-left: 5px solid #ff6b00;
-  border-right: 5px solid #ff6b00;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   font-weight: bold;
+  font-size: 20px;
+  padding: 20px;
+  padding-top: 30px;
+  box-sizing: border-box;
 }
-@media (max-width: 760px) {
-  .latest-article-link {
-    margin: 20px 0;
-  }
+.latest-articles .inner-wrapper .latest-articles-container .latest-article-link:hover {
+  color: #a64141;
 }
-.latest-article-link .metadata-short {
-  color: #848484;
+.latest-articles .inner-wrapper .latest-articles-container .latest-article-link .link-description {
+  color: #585858;
   font-family: Roboto;
   font-weight: lighter;
+  font-size: 15px;
+}
+.latest-articles .inner-wrapper .latest-articles-container .latest-article-link .category-img {
+  position: absolute;
+  top: -18px;
+  width: 30px;
+  height: 35px;
+  z-index: 10;
 }
 
 *::selection {
@@ -343,6 +366,10 @@
     width: 400px;
     text-align: center;
   }
+}
+
+body {
+  margin: 0;
 }
 
 /*# sourceMappingURL=combined.css.map */
