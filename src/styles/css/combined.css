@@ -119,7 +119,7 @@
   box-sizing: border-box;
 }
 .latest-articles .inner-wrapper .latest-articles-container .latest-article-link:hover {
-  border: 1px solid #a64141;
+  color: #a64141;
 }
 .latest-articles .inner-wrapper .latest-articles-container .latest-article-link .link-description {
   color: #585858;

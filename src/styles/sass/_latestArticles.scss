@@ -76,10 +76,8 @@
         padding: 20px;
         padding-top: 30px;
         box-sizing: border-box;
-        // transition: border 0.2s;
         &:hover {
-          border: 1px solid colors.$text-red;
-          // transition: border 0.2s;
+          color: colors.$text-red;
         }
         .link-description {
           color: colors.$text-lighter-gray;
