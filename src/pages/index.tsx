@@ -104,9 +104,28 @@ const Header = (props: HeaderProps) => {
       <section className="latest-articles">
         <div className="inner-wrapper">
           <h2 className="section-header">
-            Ostatnie <span className="theme-red">wpisy</span>
+            ostatnie <span className="theme-red">wpisy</span>
           </h2>
           <div className="latest-articles-container">{latestBlogPosts()}</div>
+        </div>
+      </section>
+      <section className="statistics">
+        <h2>
+          blog w <span className="text-red">liczbach</span>
+        </h2>
+        <div className="stats-inner-wrapper">
+          <div className="numberBox">
+            <p className="number-value">55</p>
+            <p className="service">ohMyDev</p>
+          </div>
+          <div className="numberBox">
+            <p className="number-value">1268</p>
+            <p className="service">Stack Overflow</p>
+          </div>
+          <div className="numberBox">
+            <p className="number-value">366</p>
+            <p className="service">Stack Overflow - code review</p>
+          </div>
         </div>
       </section>
     </Layout>

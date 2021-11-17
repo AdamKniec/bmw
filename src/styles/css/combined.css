@@ -372,4 +372,48 @@ body {
   margin: 0;
 }
 
+.statistics {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Roboto;
+}
+.statistics h2 {
+  padding-top: 30px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 35px;
+}
+.statistics .text-red {
+  color: #a64141;
+}
+.statistics .stats-inner-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 80px;
+}
+.statistics .stats-inner-wrapper .numberBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 60px;
+  max-width: 220px;
+  text-align: center;
+}
+.statistics .stats-inner-wrapper .numberBox .number-value {
+  font-size: 25px;
+  color: #a64141;
+  margin-bottom: 5px;
+  font-family: Roboto;
+  font-weight: bold;
+}
+.statistics .stats-inner-wrapper .numberBox .service {
+  margin-top: 0;
+  color: #585858;
+}
+
 /*# sourceMappingURL=combined.css.map */
