@@ -384,6 +384,7 @@ body {
   font-family: Roboto;
   font-weight: bold;
   font-size: 35px;
+  color: #3c3c42;
 }
 .statistics .text-red {
   color: #a64141;
@@ -414,6 +415,45 @@ body {
 .statistics .stats-inner-wrapper .numberBox .service {
   margin-top: 0;
   color: #585858;
+}
+
+.info-section {
+  background-color: #f8f8f8;
+  font-family: Roboto;
+  padding-bottom: 20px;
+}
+.info-section .info-section-inner-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.info-section .info-section-inner-wrapper .section-header {
+  padding-top: 30px;
+  font-family: Roboto;
+  font-weight: bold;
+  font-size: 35px;
+  color: #3c3c42;
+}
+.info-section .info-section-inner-wrapper .theme-red {
+  color: #a64141;
+  font-weight: bold;
+}
+.info-section .info-section-inner-wrapper .issue-example {
+  margin-bottom: 30px;
+}
+.info-section .info-section-inner-wrapper .issue-example .question {
+  font-size: 20px;
+  margin-bottom: 0;
+  color: #3c3c42;
+}
+.info-section .info-section-inner-wrapper .issue-example .answer {
+  margin-top: 5px;
+  color: #585858;
+}
+.info-section .info-section-inner-wrapper .issue-example .answer .external-link {
+  text-decoration: underline;
+  color: unset;
 }
 
 /*# sourceMappingURL=combined.css.map */
