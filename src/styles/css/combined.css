@@ -215,6 +215,7 @@
 }
 
 .footer {
+  color: #3c3c42;
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 10px;
@@ -223,9 +224,7 @@
   align-items: center;
   font-family: "Roboto";
   justify-content: space-between;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  color: #848484;
+  padding: 1rem;
   width: 100%;
 }
 @media (max-width: 37.5em) {
@@ -254,6 +253,14 @@
   color: #848484;
   text-decoration: none;
   margin-right: 10px;
+}
+.footer .blog-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.footer .theme-red {
+  color: #a64141;
+  font-weight: bold;
 }
 
 .articles-list {

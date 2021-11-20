@@ -2,6 +2,7 @@
 @use 'mixins';
 
 .footer {
+  color: colors.$bg-gray;
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 10px;
@@ -10,9 +11,8 @@
   align-items: center;
   font-family: "Roboto";
   justify-content: space-between;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  color: colors.$text-gray;
+  padding: 1rem;
+
   width: 100%;
   @include mixins.breakpoint(phablet) {
     display: flex;
@@ -37,5 +37,13 @@
       text-decoration: none;
       margin-right: 10px;
     }
+  }
+  .blog-name {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  .theme-red {
+    color: colors.$text-red;
+    font-weight: bold;
   }
 }

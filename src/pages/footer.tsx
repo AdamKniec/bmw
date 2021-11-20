@@ -5,9 +5,12 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-box">boli mnie web</div>
+      <div className="footer-box blog-name">
+        boli mnie <span className="theme-red">web</span>
+      </div>
       <div className="footer-box">
-        Zaprojektowane i napisane przez: Adam Knieć
+        Zaprojektowane i napisane przez:{" "}
+        <span className="theme-red">Adam Knieć</span>
       </div>
       <div className="footer-box">
         <a
