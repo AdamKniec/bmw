@@ -91,12 +91,22 @@ const Header = (props: HeaderProps) => {
         <StaticImage src="../images/brain.png" alt="" className="brain-png" />
         <div>
           <span className="theme-red">{"->"} </span>
-          <a className="header-link" href="#asdasdasd">
+          <a
+            className="header-link"
+            href="https://github.com/AdamKniec/bmw"
+            target="_blank"
+            rel="noreferrer"
+          >
             {" "}
             github
           </a>{" "}
           |{" "}
-          <a className="header-link" href="#asdas">
+          <a
+            className="header-link"
+            href="https://www.instagram.com/bolimnieweb/"
+            target="_blank"
+            rel="noreferrer"
+          >
             instagram
           </a>
         </div>
@@ -137,7 +147,12 @@ const Header = (props: HeaderProps) => {
             <p className="question">Znalazłeś buga lub błąd merytoryczny?</p>
             <p className="answer">
               Zgłoś issue na{" "}
-              <a className="external-link" href="linkgithub">
+              <a
+                className="external-link"
+                href="https://github.com/AdamKniec/bmw/issues"
+                target="_blank"
+                rel="noreferrer"
+              >
                 githubie
               </a>{" "}
             </p>
@@ -155,7 +170,12 @@ const Header = (props: HeaderProps) => {
             <p className="question">Umiesz w instagramy?</p>
             <p className="answer">
               Zapraszam na mojego{" "}
-              <a className="external-link" href="instagrama">
+              <a
+                className="external-link"
+                href="https://www.instagram.com/bolimnieweb/"
+                rel="noreferrer"
+                target="_blank"
+              >
                 instagrama!
               </a>
             </p>

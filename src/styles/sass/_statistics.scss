@@ -23,6 +23,9 @@
     justify-content: center;
     flex-wrap: wrap;
     padding-bottom: 80px;
+    @include mixins.breakpoint(mobileonly) {
+      padding-bottom: 20px;
+    }
     .numberBox {
       display: flex;
       flex-direction: column;
@@ -31,6 +34,10 @@
       margin-right: 60px;
       max-width: 220px;
       text-align: center;
+      @include mixins.breakpoint(mobileonly) {
+        margin-right: 0;
+        width: 100%;
+      }
       .number-value {
         font-size: 30px;
         color: colors.$text-red;

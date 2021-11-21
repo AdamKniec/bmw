@@ -13,27 +13,40 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+
     position: relative;
     .blog-main-heading {
       font-family: Roboto;
       font-weight: bold;
       font-size: 4rem;
-      margin-bottom: 5rem;
+
       color: colors.$text-red;
-      @include mixins.breakpoint(mobileonly) {
+      @include mixins.breakpoint(phablet) {
         font-size: 3rem;
+        margin-bottom: 0;
       }
     }
     .brain-img {
       position: absolute;
       top: -50px;
-      width: 300px;
+      width: 25%;
       z-index: -1;
+
+      @include mixins.breakpoint(tablet) {
+        width: 150px;
+        top: -10px;
+        display: none;
+      }
     }
   }
   .articles-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 50px;
+    @include mixins.breakpoint(tablet) {
+      padding-top: 0;
+    }
     .latest-article-link {
       position: relative;
       border: 1px solid red;
