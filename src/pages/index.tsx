@@ -54,7 +54,7 @@ const Header = (props: HeaderProps) => {
                   src={
                     data.allImageSharp.edges.filter((item) =>
                       item.node.fluid.src.includes(tag)
-                    )[0].node.fluid.src
+                    )[0]?.node.fluid.src
                   }
                   className="category-img"
                 />
@@ -185,7 +185,9 @@ export const latestBlogPosts = graphql`
         }
       }
     }
-    allImageSharp(filter: { fluid: { src: { regex: "/typescript|css/" } } }) {
+    allImageSharp(
+      filter: { fluid: { src: { regex: "/typescript|blah|css/" } } }
+    ) {
       edges {
         node {
           id
