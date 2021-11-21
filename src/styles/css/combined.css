@@ -215,6 +215,7 @@
 }
 
 .footer {
+  color: #3c3c42;
   max-width: 1200px;
   margin: 0 auto;
   border-radius: 10px;
@@ -222,8 +223,8 @@
   display: flex;
   align-items: center;
   font-family: "Roboto";
-  margin-top: 200px;
-  color: #848484;
+  justify-content: space-between;
+  padding: 1rem;
   width: 100%;
 }
 @media (max-width: 37.5em) {
@@ -235,7 +236,6 @@
 }
 .footer .footer-box {
   margin-right: 20px;
-  width: 33%;
   text-align: center;
 }
 @media (max-width: 37.5em) {
@@ -253,6 +253,14 @@
   color: #848484;
   text-decoration: none;
   margin-right: 10px;
+}
+.footer .blog-name {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.footer .theme-red {
+  color: #a64141;
+  font-weight: bold;
 }
 
 .articles-list {
