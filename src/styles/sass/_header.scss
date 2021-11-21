@@ -12,6 +12,9 @@
   padding-right: 1rem;
   color: colors.$bg-gray;
   font-family: Roboto;
+  @include mixins.breakpoint(mobileonly) {
+    padding-bottom: 20px;
+  }
   .theme-red {
     color: colors.$text-red;
     font-weight: bold;
@@ -33,9 +36,11 @@
     line-height: 25px;
     font-size: 18px;
     font-weight: 100;
-
-    width: 430px;
+    max-width: 430px;
     color: colors.$text-lighter-gray;
+  }
+  .header-link {
+    color: colors.$bg-gray;
   }
   .brain-png {
     position: absolute;

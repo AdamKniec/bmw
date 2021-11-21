@@ -22,7 +22,7 @@
     .latest-articles-container {
       display: flex;
       flex-wrap: wrap;
-
+      justify-content: center;
       .latest-article-link {
         position: relative;
         border: 1px solid red;
