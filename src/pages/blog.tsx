@@ -1,4 +1,5 @@
 import { graphql, Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
 import Layout from "../components/Layout";
@@ -33,37 +34,42 @@ const Blog = (props: blogProps) => {
         description="Artykuły związane ze światem web-developmentu"
       />
       <div className="articles-list">
-        <h1 className="blog-main-heading">Blog</h1>
-        {data.allMarkdownRemark.edges.map((article) => {
-          return (
-            <article className="blog-post-short">
+        <div className="intro-wrapper">
+          <h1 className="blog-main-heading">Blog</h1>
+          <StaticImage src="../images/brain.png" alt="" className="brain-img" />
+        </div>
+        <div className="articles-container">
+          {data.allMarkdownRemark.edges.map((article) => {
+            return (
               <Link
                 to={article.node.frontmatter.path}
-                key={article.node.frontmatter.title}
-                className="blog-post-link"
+                className="latest-article-link latest-article-box"
               >
-                <span className="article-title">
-                  {article.node.frontmatter.title}
-                </span>
-                <div className="tags-wrapper">
-                  {article.node.frontmatter.tags.map(
-                    (tag: string, index: number) => {
-                      return (
-                        <span
-                          className={`tag ${tag.toLocaleLowerCase()}`}
-                          key={index.toString()}
-                        >
-                          {tag}
-                        </span>
-                      );
+                {/* {post.node.frontmatter.tags.map((tag) => {
+                return (
+                  <img
+                    alt="UZUPELNIC"
+                    src={
+                      data.allImageSharp.edges.filter((item) =>
+                        item.node.fluid.src.includes(tag)
+                      )[0].node.fluid.src
                     }
-                  )}
-                </div>
-                <p className="metadata-short">{`${article.node.frontmatter.date} (${article.node.frontmatter.readTime} min)`}</p>
+                    className="category-img"
+                  />
+                );
+              })} */}
+                {article.node.frontmatter.title}
+                {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
+
+                <p className="link-description">
+                  Załóżmy, że pracujesz nad nową aplikacją w JavaScripcie,
+                  czytasz wymagania biznesowe, wszystko jest jasne i klarowne...
+                  Aż do ostatniego podpunktu wymagań
+                </p>
               </Link>
-            </article>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </Layout>
   );

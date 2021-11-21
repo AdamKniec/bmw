@@ -1,72 +1,50 @@
-
 @use "colors";
 @use "mixins";
 .articles-list {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  .intro-wrapper {
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    font-family: Roboto;
     .blog-main-heading {
-        font-family: Roboto;
-        font-weight: bold;
-        font-size: 4rem;
-        color: colors.$main-orange;
-        @include mixins.breakpoint(mobileonly) {
-            font-size: 3rem;
-        }
+      font-family: Roboto;
+      font-weight: bold;
+      font-size: 4rem;
+      margin-bottom: 5rem;
+      color: colors.$text-red;
+      @include mixins.breakpoint(mobileonly) {
+        font-size: 3rem;
+      }
     }
-    .blog-post-short  {
-        border-left: 5px solid colors.$main-orange;
-        border-radius: 10px;
-        display: block;
-        width: 60%;
-        margin: 20px;
-        box-shadow: 0 3px 10px rgb(0 0 0 / 5%);
-        @include mixins.breakpoint(mobileonly) {
-            width: 100%;
-        }
-        .blog-post-link {
-            text-decoration: none;
-            color: colors.$bg-gray;
-            display: block;
-            padding: 15px;
-            height: 100%;
-            position: relative;
-            @include mixins.breakpoint(mobileonly) {
-                padding-top: 30px;
-            }
-            .article-title {
-                font-family: Roboto;
-                font-weight: bold;
-            }
-            .tags-wrapper {
-                display: flex;
-                margin-top: 20px;
-                font-size: 0.8rem;
-                position: absolute;
-                top: -35px;
-                right: 0;
-                .tag {
-                    background-color: colors.$main-orange;
-                    padding: 5px;
-                    border-radius: 10px;
-                    margin-right: 10px;
-                    color: white;
-                }
-                .typescript {
-                    background-color: colors.$typescript;
-                }
-                .css {
-                    background-color: colors.$css;
-                }
-                .tldr {
-                    background-color: colors.$main-orange;
-                }
-            }
-            .metadata-short {
-                color: colors.$text-gray;
-            }
-        }
+    .brain-img {
+      position: absolute;
+      top: 10px;
+      width: 300px;
+      z-index: -1;
     }
+  }
+  .articles-container {
+    display: flex;
+    flex-wrap: wrap;
+    .latest-article-link {
+      position: relative;
+      border: 1px solid red;
+      margin-bottom: 50px;
+      width: 380px;
+      background-color: colors.$white;
+      border: 1px solid colors.$light-gray-border;
+      margin-right: 20px;
+      text-decoration: none;
+      color: colors.$bg-gray;
+      font-weight: bold;
+      font-size: 20px;
+      padding: 20px;
+      padding-top: 30px;
+      box-sizing: border-box;
+    }
+  }
 }
-
