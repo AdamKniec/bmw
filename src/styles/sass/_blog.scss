@@ -1,15 +1,19 @@
 @use "colors";
 @use "mixins";
 .articles-list {
+  font-family: Roboto;
   padding-left: 1rem;
   padding-right: 1rem;
   max-width: 1200px;
   margin: 0 auto;
+
   .intro-wrapper {
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
+    position: relative;
     .blog-main-heading {
       font-family: Roboto;
       font-weight: bold;
@@ -22,7 +26,7 @@
     }
     .brain-img {
       position: absolute;
-      top: 10px;
+      top: -50px;
       width: 300px;
       z-index: -1;
     }
@@ -45,6 +49,21 @@
       padding: 20px;
       padding-top: 30px;
       box-sizing: border-box;
+      &:hover {
+        color: colors.$text-red;
+      }
+      .category-img {
+        position: absolute;
+        top: -18px;
+        width: 30px;
+        height: 35px;
+        z-index: 10;
+      }
+      .link-description {
+        color: colors.$text-lighter-gray;
+        font-weight: lighter;
+        font-size: 15px;
+      }
     }
   }
 }

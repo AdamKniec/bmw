@@ -264,6 +264,7 @@
 }
 
 .articles-list {
+  font-family: Roboto;
   padding-left: 1rem;
   padding-right: 1rem;
   max-width: 1200px;
@@ -274,6 +275,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 50px;
+  position: relative;
 }
 .articles-list .intro-wrapper .blog-main-heading {
   font-family: Roboto;
@@ -289,7 +292,7 @@
 }
 .articles-list .intro-wrapper .brain-img {
   position: absolute;
-  top: 10px;
+  top: -50px;
   width: 300px;
   z-index: -1;
 }
@@ -312,6 +315,21 @@
   padding: 20px;
   padding-top: 30px;
   box-sizing: border-box;
+}
+.articles-list .articles-container .latest-article-link:hover {
+  color: #a64141;
+}
+.articles-list .articles-container .latest-article-link .category-img {
+  position: absolute;
+  top: -18px;
+  width: 30px;
+  height: 35px;
+  z-index: 10;
+}
+.articles-list .articles-container .latest-article-link .link-description {
+  color: #585858;
+  font-weight: lighter;
+  font-size: 15px;
 }
 
 .not-found-wrapper {

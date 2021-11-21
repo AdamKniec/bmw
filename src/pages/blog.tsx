@@ -7,6 +7,15 @@ import Seo from "../components/seo";
 
 interface blogProps {
   data: {
+    allImageSharp: {
+      edges: {
+        node: {
+          fluid: {
+            src: string;
+          };
+        };
+      }[];
+    };
     allMarkdownRemark: {
       edges: [
         {
@@ -27,6 +36,7 @@ interface blogProps {
 
 const Blog = (props: blogProps) => {
   const { data } = props;
+
   return (
     <Layout>
       <Seo
@@ -35,7 +45,7 @@ const Blog = (props: blogProps) => {
       />
       <div className="articles-list">
         <div className="intro-wrapper">
-          <h1 className="blog-main-heading">Blog</h1>
+          <h1 className="blog-main-heading">blog</h1>
           <StaticImage src="../images/brain.png" alt="" className="brain-img" />
         </div>
         <div className="articles-container">
@@ -45,19 +55,19 @@ const Blog = (props: blogProps) => {
                 to={article.node.frontmatter.path}
                 className="latest-article-link latest-article-box"
               >
-                {/* {post.node.frontmatter.tags.map((tag) => {
-                return (
-                  <img
-                    alt="UZUPELNIC"
-                    src={
-                      data.allImageSharp.edges.filter((item) =>
-                        item.node.fluid.src.includes(tag)
-                      )[0].node.fluid.src
-                    }
-                    className="category-img"
-                  />
-                );
-              })} */}
+                {article.node.frontmatter.tags.map((tag) => {
+                  return (
+                    <img
+                      alt="UZUPELNIC"
+                      src={
+                        data.allImageSharp.edges.filter((item) =>
+                          item.node.fluid.src.includes(tag)
+                        )[0]?.node.fluid.src
+                      }
+                      className="category-img"
+                    />
+                  );
+                })}
                 {article.node.frontmatter.title}
                 {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
 
@@ -87,6 +97,18 @@ export const allBlogPosts = graphql`
             title
             readTime
             author
+          }
+        }
+      }
+    }
+    allImageSharp(
+      filter: { fluid: { src: { regex: "/typescript|css|blah/" } } }
+    ) {
+      edges {
+        node {
+          id
+          fluid {
+            src
           }
         }
       }
