@@ -15,6 +15,7 @@ interface HeaderProps {
             frontmatter: {
               path: string;
               tags: [];
+              intro: string;
               title: string;
               date: string;
               readTime: string;
@@ -63,11 +64,7 @@ const Header = (props: HeaderProps) => {
             {post.node.frontmatter.title}
             {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
 
-            <p className="link-description">
-              Załóżmy, że pracujesz nad nową aplikacją w JavaScripcie, czytasz
-              wymagania biznesowe, wszystko jest jasne i klarowne... Aż do
-              ostatniego podpunktu wymagań
-            </p>
+            <p className="link-description">{post.node.frontmatter.intro}</p>
           </Link>
         </React.Fragment>
       );
@@ -85,8 +82,8 @@ const Header = (props: HeaderProps) => {
         </h1>
         <p className="hero-intro-text">
           <span className="theme-red">blog</span> o technologiach i narzędziach
-          webowych oraz wszystkim co mnie interesuje / przeraża / wk*rwia / bawi
-          / odrzuca i smuci w branży <span className="theme-red">IT</span>{" "}
+          webowych oraz o wszystkim co mnie interesuje / wk*rwia / bawi i smuci
+          w branży <span className="theme-red">IT</span>{" "}
         </p>
         <StaticImage src="../images/brain.png" alt="" className="brain-png" />
         <div>
@@ -125,11 +122,11 @@ const Header = (props: HeaderProps) => {
         </h2>
         <div className="stats-inner-wrapper">
           <div className="numberBox">
-            <p className="number-value">55</p>
+            <p className="number-value">64</p>
             <p className="service">ohMyDev</p>
           </div>
           <div className="numberBox">
-            <p className="number-value">1268</p>
+            <p className="number-value">1255</p>
             <p className="service">Stack Overflow</p>
           </div>
           <div className="numberBox">
@@ -197,6 +194,7 @@ export const latestBlogPosts = graphql`
           frontmatter {
             path
             tags
+            intro
             title
             author
             readTime

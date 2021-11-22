@@ -4,6 +4,7 @@ date: "2021-10-10"
 title: "TypeScript - Generics"
 readTime: "10"
 author: "Adam Knieć"
+intro: "Jedno z ważniejszych zagadnień związanych z TypeScript-em. Sprawdzimy jak wykorzystać typy generyczne do tworzenia reużywalnych i elastycznych rozwiązań"
 description: "Wprowadzenie do typów generycznych (Generics) w TypeScript."
 tags: ["typescript"]
 ---

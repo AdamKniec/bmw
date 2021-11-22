@@ -41,11 +41,11 @@ export default function Template({ data }: TemplateProps) {
       />
       <div className="blog-post-wrapper">
         <h1 className="main-blog-header">{post.frontmatter.title}</h1>
-        <p className="metadata-short">
+        {/* <p className="metadata-short">
           {post.frontmatter.date} ({post.frontmatter.readTime} min.)
-        </p>
+        </p> */}
         <div className="tags-container">
-          {data.markdownRemark.frontmatter.tags.map(
+          {/* {data.markdownRemark.frontmatter.tags.map(
             (tag: string, index: number) => {
               return (
                 <span className="tag" key={index.toString()}>
@@ -53,7 +53,7 @@ export default function Template({ data }: TemplateProps) {
                 </span>
               );
             }
-          )}
+          )} */}
         </div>
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}

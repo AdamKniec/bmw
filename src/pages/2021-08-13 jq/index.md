@@ -5,6 +5,7 @@ title: "jQuery - czy warto?"
 readTime: "3"
 author: "Adam Knieć"
 description: "Czy warto uczyć się jQuery? To pytanie widzę i słyszę dość często. Postaram się przedstawić mój punkt widzenia"
+intro: "Moje podejście do odpowiedzi na pytanie, które pojawia się cyklicznie na każdym forum / grupie tematycznej związanej z programowaniem."
 tags: ["blah"]
 ---
 
