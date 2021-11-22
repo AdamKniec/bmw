@@ -5,54 +5,57 @@ title: "RWD Mixin"
 readTime: "5"
 author: "Adam Kniec"
 description: "Boli Mnie Web - RWD Mixin"
-tags: ["CSS"]
+intro: "Ciekawe (i jedno z wielu) podejść do tematu RWD. Mixin pozwalający nam w łatwy sposób tworzyć reguły @media i zarządzać nimi."
+tags: ["css"]
 ---
+
 ## Założenia wstępne
 
 Aby z łatwością zrozumieć i wdrożyć to co opiszę poniżej powinieneś:
+
 - umieć korzystać z preprocesora SASS / SCSS w stopniu podstawowym
 - wiedzieć czym jest funkcja
 - rozumieć działanie `@media-queries`
 - znać CSS
 - rozumieć koncepcję RWD (Responsive Web Design)
-  
+
 ## Problem
 
 RWD w tych czasach jest absolutnym standardem (a przynajmniej powinno być).
- Praktycznie każdą webową apkę trzeba w jakiś sposób zmodyfikować na większych lub mniejszych rozdzielczościach. Zdarzają się projekty, w których dość sporo kodu jest umieszczana w regułach `media`. W wielu przypadkach standardowe style są pisane przy zachowaniu naturalnego flow - od góry do dołu a następnie poszczególne klasy są nadpisywane w blokach `media query` na dole pliku. 
- Wygląda do w sporym uproszczeniu w taki sposób.
+Praktycznie każdą webową apkę trzeba w jakiś sposób zmodyfikować na większych lub mniejszych rozdzielczościach. Zdarzają się projekty, w których dość sporo kodu jest umieszczana w regułach `media`. W wielu przypadkach standardowe style są pisane przy zachowaniu naturalnego flow - od góry do dołu a następnie poszczególne klasy są nadpisywane w blokach `media query` na dole pliku.
+Wygląda do w sporym uproszczeniu w taki sposób.
 
 ```css
 .nav {
-    background-color: red;
+  background-color: red;
 }
 .intro {
-    width: 100px;
+  width: 100px;
 }
 .contact {
-    height: 200px;
+  height: 200px;
 }
 .footer {
-    display: flex;
+  display: flex;
 }
-
 
 /* Poniżej nadpisujemy reguły dla urządzeń mobilnych */
 @media (max-width: 760px) {
-    .nav {
-        background-color: teal;
-    }
-    .intro {
-        width: 200px;
-    }
-    .contact {
-        height: 25px;
-    }
-    .footer {
-        display: block;
-    }
+  .nav {
+    background-color: teal;
+  }
+  .intro {
+    width: 200px;
+  }
+  .contact {
+    height: 25px;
+  }
+  .footer {
+    display: block;
+  }
 }
 ```
+
 Nie ma dramatu w takim odchudzonym przykładzie, jednak przy nieco większej ilości kodu zmuszało mnie do scrollowania pliku od góry do dołu setki razy co przyprawiało mnie o oczopląs. Gdyby tylko był sposób na trzymanie kodu z bloków `media` razem z daną regułą...
 
 ## Mixiny
@@ -63,12 +66,17 @@ Tak się składa, żę dzieki mixinom możemy ugryźć temat modyfikacji związa
 
 ```css
 @mixin breakpoint($point) {
-   @if $point == mobile {
-     @media (max-width: 760px) { @content ; }}
-   @else if $point == laptop {
-     @media (max-width: 1400px) { @content ; }}
+  @if $point == mobile {
+    @media (max-width: 760px) {
+      @content;
+    }
+  } @else if $point == laptop {
+    @media (max-width: 1400px) {
+      @content;
+    }
+  }
 
-    /* Tutaj możesz dopisać więcej breakpointów. Tylko nie przesadź :) */
+  /* Tutaj możesz dopisać więcej breakpointów. Tylko nie przesadź :) */
 }
 ```
 
@@ -82,21 +90,24 @@ Powiedzmy, że chcemy sprawić aby nasz element o klasie `.box` zmieniał kolor
   width: 50px;
   height: 50px;
   background-color: red;
-  @include breakpoint(laptop){
+  @include breakpoint(laptop) {
     background-color: pink;
   }
-  @include breakpoint(mobile){
+  @include breakpoint(mobile) {
     background-color: teal;
   }
 }
 ```
+
 Stworzyliśmy wyżej regułę, która:
+
 1. Zmienia kolor tła na czerwony i zmienia rozmiary elementu
 2. Korzystając z naszego mixina wewnątrz swojego ciała zmienia zachowanie elementu na większych ekranach nadając mu różowy kolor tła.
-3. Również korzystając z mixina `breakpoint` zmienia tło  elementu `.box`, jednak na nieco mniejszych ekranach.
+3. Również korzystając z mixina `breakpoint` zmienia tło elementu `.box`, jednak na nieco mniejszych ekranach.
 
-Masz już pomysł co jest tym magicznym `@content`, o ktorym wspomniałem wyżej ? 
+Masz już pomysł co jest tym magicznym `@content`, o ktorym wspomniałem wyżej ?
 Są nim poszczególne style jakie wrzucamy do środka naszego mixina podczaj gdy go używamy. Biorąc pod uwagę poprzedni przykład:
+
 - `background-color: pink;` stał się `@content`-em dla `breakpoint(laptop)`
 - `background-color: teal;` stał się `@content`-em dla `breakpoint(mobile)`
 
@@ -106,7 +117,7 @@ CodePen z przykładem znajdziesz poniżej. Pobaw się rozmiarami okna przegląda
 
 ## Podsumowanie
 
-Wpisem tym chciałem Ci pokazać prawdopodobnie jedno z wielu podejść do tematu RWD. Mi osobiście podoba się idea mixina, który wewnątrz reguły informuje nas jak powinien wyglądać / zachować się element na ekranie o danej rozdzielczości. 
+Wpisem tym chciałem Ci pokazać prawdopodobnie jedno z wielu podejść do tematu RWD. Mi osobiście podoba się idea mixina, który wewnątrz reguły informuje nas jak powinien wyglądać / zachować się element na ekranie o danej rozdzielczości.
 Mimo wszystko pamiętaj o tym, żeby nie traktować tego sposobu jako jedynej słusznej drogi.
 
 Na koniec małe porównanie podejścia z mixinem i z regułami `@media` na dole pliku. Oba snippety modyfikują element w taki sam sposób.
@@ -117,14 +128,15 @@ Na koniec małe porównanie podejścia z mixinem i z regułami `@media` na dole 
   width: 50px;
   height: 50px;
   background-color: red;
-  @include breakpoint(laptop){
+  @include breakpoint(laptop) {
     background-color: pink;
   }
-  @include breakpoint(mobile){
+  @include breakpoint(mobile) {
     background-color: teal;
   }
 }
 ```
+
 ```css
 .box {
   width: 50px;
@@ -136,7 +148,6 @@ Na koniec małe porównanie podejścia z mixinem i z regułami `@media` na dole 
   .box {
     background-color: pink;
   }
-  
 }
 
 @media (max-width: 760px) {
@@ -147,6 +158,5 @@ Na koniec małe porównanie podejścia z mixinem i z regułami `@media` na dole 
 ```
 
 ## Źródła
-
 
 <a href="https://responsivedesign.is/articles/helpful-sass-mixins/" target="_blank">responsivedesign.is/articles/helpful-sass-mixins/</a>

@@ -1,82 +1,57 @@
 @use 'colors';
 @use 'mixins';
 
-.main-intro-wrapper {
-    display: flex;
-    align-items: center;
-    .mainHeader {
-        font-size: 8rem;
-        width: 915px;
-        font-family: 'Roboto';
-        font-weight: normal;
-        color: colors.$bg-gray;
-        @include mixins.breakpoint(tablet){
-            font-size: 6rem;
-            width: 400px;
-        }
-        @include mixins.breakpoint(mobileonly){
-            font-size: 4rem;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .thin-header-part {
-            font-family: 'Roboto';
-            font-weight: lighter;
-            
-            
-        }
-        .bold-header-part {
-            font-family: 'Roboto';
-            font-weight: bold;
-            &::before {
-                content: '<';
-                color: colors.$main-orange;
-
-            }
-            &::after {
-                content: '>';
-                color: colors.$main-orange;
-            }
-        }
-        .name-surname {
-            font-size: 1rem;
-            color: colors.$main-orange;
-            font-family: 'Roboto';
-            font-weight: lighter;
-
-        }
+.header-wrapper {
+  max-width: 1200px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-bottom: 100px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: colors.$bg-gray;
+  font-family: Roboto;
+  @include mixins.breakpoint(mobileonly) {
+    padding-bottom: 20px;
+  }
+  .theme-red {
+    color: colors.$text-red;
+    font-weight: bold;
+  }
+  .mainHeader {
+    margin-top: 3rem;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 7rem;
+    @include mixins.breakpoint(tablet) {
+      font-size: 5rem;
     }
-    .decorative-circle {
-        background: rgba(255, 121, 63, 1); // colors
-        box-shadow: 0 0 0 0 rgba(255, 121, 63, 1);
-        animation: pulse-orange 4s infinite;
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        margin-right: 100px;
-        @include mixins.breakpoint(tablet){
-            display: none;
-        }
+    @include mixins.breakpoint(mobileonly) {
+      font-size: 3rem;
     }
-
-}
-
-@keyframes pulse-orange {
-	0% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(255, 121, 63, 0.7);
-	}
-	
-	70% {
-		transform: scale(1);
-		box-shadow: 0 0 0 100px rgba(255, 121, 63, 0);
-	}
-	
-	100% {
-		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(255, 121, 63, 0);
-	}
+  }
+  .hero-intro-text {
+    margin-top: 10px;
+    line-height: 25px;
+    font-size: 18px;
+    font-weight: 100;
+    max-width: 430px;
+    color: colors.$text-lighter-gray;
+  }
+  .header-link {
+    color: colors.$bg-gray;
+  }
+  .brain-png {
+    position: absolute;
+    top: -70px;
+    z-index: -1;
+    right: 10%;
+    @include mixins.breakpoint(tablet) {
+      display: none;
+    }
+  }
+  .header-link {
+    text-decoration: underline;
+  }
 }

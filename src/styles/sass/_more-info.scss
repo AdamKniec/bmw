@@ -1,0 +1,40 @@
+@use 'colors';
+
+.info-section {
+  background-color: colors.$bg-light-gray;
+  font-family: Roboto;
+  padding-bottom: 20px;
+  .info-section-inner-wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    .section-header {
+      padding-top: 30px;
+      font-family: Roboto;
+      font-weight: bold;
+      font-size: 35px;
+      color: colors.$bg-gray;
+    }
+    .theme-red {
+      color: colors.$text-red;
+      font-weight: bold;
+    }
+    .issue-example {
+      margin-bottom: 30px;
+      .question {
+        font-size: 20px;
+        margin-bottom: 0;
+        color: colors.$bg-gray;
+      }
+      .answer {
+        margin-top: 5px;
+        color: colors.$text-lighter-gray;
+        .external-link {
+          text-decoration: underline;
+          color: unset;
+        }
+      }
+    }
+  }
+}

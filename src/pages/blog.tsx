@@ -1,4 +1,5 @@
 import { graphql, Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
 import Layout from "../components/Layout";
@@ -6,6 +7,15 @@ import Seo from "../components/seo";
 
 interface blogProps {
   data: {
+    allImageSharp: {
+      edges: {
+        node: {
+          fluid: {
+            src: string;
+          };
+        };
+      }[];
+    };
     allMarkdownRemark: {
       edges: [
         {
@@ -14,6 +24,7 @@ interface blogProps {
               date: string;
               readTime: string;
               path: string;
+              intro: string;
               title: string;
               tags: string[];
             };
@@ -26,6 +37,7 @@ interface blogProps {
 
 const Blog = (props: blogProps) => {
   const { data } = props;
+
   return (
     <Layout>
       <Seo
@@ -33,37 +45,40 @@ const Blog = (props: blogProps) => {
         description="Artykuły związane ze światem web-developmentu"
       />
       <div className="articles-list">
-        <h1 className="blog-main-heading">Blog</h1>
-        {data.allMarkdownRemark.edges.map((article) => {
-          return (
-            <article className="blog-post-short">
+        <div className="intro-wrapper">
+          <h1 className="blog-main-heading">blog</h1>
+          <StaticImage src="../images/brain.png" alt="" className="brain-img" />
+        </div>
+        <div className="articles-container">
+          {data.allMarkdownRemark.edges.map((article) => {
+            return (
               <Link
                 to={article.node.frontmatter.path}
-                key={article.node.frontmatter.title}
-                className="blog-post-link"
+                className="latest-article-link latest-article-box"
               >
-                <span className="article-title">
-                  {article.node.frontmatter.title}
-                </span>
-                <div className="tags-wrapper">
-                  {article.node.frontmatter.tags.map(
-                    (tag: string, index: number) => {
-                      return (
-                        <span
-                          className={`tag ${tag.toLocaleLowerCase()}`}
-                          key={index.toString()}
-                        >
-                          {tag}
-                        </span>
-                      );
-                    }
-                  )}
-                </div>
-                <p className="metadata-short">{`${article.node.frontmatter.date} (${article.node.frontmatter.readTime} min)`}</p>
+                {article.node.frontmatter.tags.map((tag) => {
+                  return (
+                    <img
+                      alt="UZUPELNIC"
+                      src={
+                        data.allImageSharp.edges.filter((item) =>
+                          item.node.fluid.src.includes(tag)
+                        )[0]?.node.fluid.src
+                      }
+                      className="category-img"
+                    />
+                  );
+                })}
+                {article.node.frontmatter.title}
+                {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
+
+                <p className="link-description">
+                  {article.node.frontmatter.intro}
+                </p>
               </Link>
-            </article>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
     </Layout>
   );
@@ -80,7 +95,20 @@ export const allBlogPosts = graphql`
             path
             title
             readTime
+            intro
             author
+          }
+        }
+      }
+    }
+    allImageSharp(
+      filter: { fluid: { src: { regex: "/typescript|css|blah/" } } }
+    ) {
+      edges {
+        node {
+          id
+          fluid {
+            src
           }
         }
       }

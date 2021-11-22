@@ -1,11 +1,16 @@
-import { Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-box">@2021 Created with Gatsby by Adam Knieć</div>
+      <div className="footer-box blog-name">
+        boli mnie <span className="theme-red">web</span>
+      </div>
+      <div className="footer-box">
+        Zaprojektowane i napisane przez:{" "}
+        <span className="theme-red">Adam Knieć</span>
+      </div>
       <div className="footer-box">
         <a
           aria-label="Link do mojego konta Linkedin"
@@ -55,14 +60,6 @@ const Footer = () => {
             className="footer-icon"
           />
         </a>
-      </div>
-      <div className="footer-box footer-subpage-link-wrapper">
-        <Link to="/blog" className="subpage-footer-link">
-          Blog
-        </Link>
-        <Link to="/blog/pilot" className="subpage-footer-link">
-          Pilot
-        </Link>
       </div>
     </footer>
   );
