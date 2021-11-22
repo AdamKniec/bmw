@@ -5,6 +5,7 @@ title: "@use"
 readTime: "10"
 author: "Adam Knieć"
 description: "@import niedługo przejdzie na emeryturę. @use jest rekomendowaną alternatywą, która jest bardzo intuicyjna i rozwiązuje sporo problemów."
+intro: "Że co? @import w SASS deprecated? W tym wpisie sprawdzimy jak możemy sobię z tą sytuacją poradzić. Krok po kroku."
 tags: ["css"]
 ---
 

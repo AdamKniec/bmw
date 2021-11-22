@@ -5,6 +5,7 @@ title: "Pilot"
 readTime: "3"
 author: "Adam Kniec"
 description: "Boli Mnie Web - Wprowadzenie do bloga !"
+intro: "Odcinek pilotażowy mojej telenoweli. Przybliżę w nim koncepcję, pomysł i motywację, którą kierowałem się tworząc tego bloga."
 tags: ["blah"]
 ---
 
@@ -30,7 +31,8 @@ Lubię dzielić się tym co wiem i regularnie udzielam się w kilku miejscach:
 - SO
 - SO - CR
 - FB - HTML,CSS, JS Pierwsze Kroki
-  Specjalizuję się w Web Devie. Znaczna większość moich kompetencji znajduje się po stronie frontendowej. Będzie ona prawdopodobnie stanowiła większość contentu na tym blogu, jednak nie chce się ogranicznać tylko do tej dziedziny. Jeśli uznam, że pewien temat może kogoś zainteresować - postaram się go przedstawić na swój sposób.
+
+Specjalizuję się w Web Devie. Znaczna większość moich kompetencji znajduje się po stronie frontendowej. Będzie ona prawdopodobnie stanowiła większość contentu na tym blogu, jednak nie chce się ogranicznać tylko do tej dziedziny. Jeśli uznam, że pewien temat może kogoś zainteresować - postaram się go przedstawić na swój sposób.
 
 ## Po co miałbyś tu wchodzić ?
 

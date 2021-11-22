@@ -24,6 +24,7 @@ interface blogProps {
               date: string;
               readTime: string;
               path: string;
+              intro: string;
               title: string;
               tags: string[];
             };
@@ -72,9 +73,7 @@ const Blog = (props: blogProps) => {
                 {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
 
                 <p className="link-description">
-                  Załóżmy, że pracujesz nad nową aplikacją w JavaScripcie,
-                  czytasz wymagania biznesowe, wszystko jest jasne i klarowne...
-                  Aż do ostatniego podpunktu wymagań
+                  {article.node.frontmatter.intro}
                 </p>
               </Link>
             );
@@ -96,6 +95,7 @@ export const allBlogPosts = graphql`
             path
             title
             readTime
+            intro
             author
           }
         }

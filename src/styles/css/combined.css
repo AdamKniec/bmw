@@ -145,13 +145,15 @@
 }
 
 *::selection {
-  background-color: #fff3e9;
+  background-color: #ffe8e8;
 }
 
 .blog-post-wrapper {
   font-family: "Roboto";
   margin: 0 auto;
   max-width: 800px;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .blog-post-wrapper .main-blog-header {
   font-size: 4rem;
@@ -174,7 +176,7 @@
 .blog-post-wrapper .tags-container .tag {
   color: black;
   font-family: "Roboto";
-  border: 2px solid #ff6b00;
+  border: 2px solid #a64141;
   padding: 10px;
   border-radius: 10px;
   margin-right: 10px;
@@ -183,7 +185,7 @@
   margin-bottom: 50px;
 }
 .blog-post-wrapper .content-wrapper h2 {
-  color: #ff6b00;
+  color: #a64141;
 }
 .blog-post-wrapper .content-wrapper p {
   font-size: 1.2rem;
@@ -193,9 +195,10 @@
 .blog-post-wrapper .content-wrapper a {
   color: #3c3c42;
   text-decoration: none;
-  border-bottom: 1px solid #ff6b00;
+  border-bottom: 1px solid #a64141;
 }
-.blog-post-wrapper .content-wrapper ul, .blog-post-wrapper .content-wrapper ol {
+.blog-post-wrapper .content-wrapper ul,
+.blog-post-wrapper .content-wrapper ol {
   color: #3c3c42;
   padding-left: 20px;
   font-size: 1.2rem;
@@ -209,17 +212,18 @@
 }
 .blog-post-wrapper .content-wrapper ul li:before {
   content: "•";
-  color: #ff6b00;
+  color: #a64141;
   display: inline-block;
   position: absolute;
   left: -20px;
   top: 2px;
 }
-.blog-post-wrapper :not(pre) > code[class*=language-], .blog-post-wrapper pre[class*=language-] {
+.blog-post-wrapper :not(pre) > code[class*=language-],
+.blog-post-wrapper pre[class*=language-] {
   border-radius: 10px;
 }
 .blog-post-wrapper .language-text {
-  background-color: #fff3e9;
+  background-color: #ffe8e8;
   color: #3c3c42;
 }
 

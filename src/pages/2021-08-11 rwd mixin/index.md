@@ -5,6 +5,7 @@ title: "RWD Mixin"
 readTime: "5"
 author: "Adam Kniec"
 description: "Boli Mnie Web - RWD Mixin"
+intro: "Ciekawe (i jedno z wielu) podejść do tematu RWD. Mixin pozwalający nam w łatwy sposób tworzyć reguły @media i zarządzać nimi."
 tags: ["css"]
 ---
 

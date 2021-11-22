@@ -1,6 +1,7 @@
 ---
 path: "/blog/typescript-podstawy"
 date: "2021-09-30"
+intro: "Integracja czystego JS-a z (równie czystym) alkoholem i jak TypeScript może nam w tym pomóc. Podstawowe typy, tuple, tablice, enumy i inne dziwne rzeczy."
 title: "TypeScript - pierwsza runda"
 readTime: "15"
 author: "Adam Knieć"
