@@ -228,6 +228,13 @@
   color: #3c3c42;
 }
 
+.disqus-wrapper {
+  max-width: 800px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+}
+
 .footer {
   color: #3c3c42;
   max-width: 1200px;
