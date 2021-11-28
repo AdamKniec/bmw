@@ -50,6 +50,7 @@
       color: colors.$bg-gray;
       text-decoration: none;
       border-bottom: 1px solid colors.$text-red;
+      word-wrap: break-word;
     }
     ul,
     ol {
