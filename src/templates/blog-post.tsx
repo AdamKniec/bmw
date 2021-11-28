@@ -60,7 +60,10 @@ export default function Template({ data }: TemplateProps) {
           className="content-wrapper"
         />
       </div>
-      <DiscussionEmbed shortname="bolimnieweb" config={disqusConfig} />
+      <div className="disqus-wrapper">
+        {" "}
+        <DiscussionEmbed shortname="bolimnieweb" config={disqusConfig} />
+      </div>
     </Layout>
   );
 }
