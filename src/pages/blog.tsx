@@ -102,7 +102,7 @@ export const allBlogPosts = graphql`
       }
     }
     allImageSharp(
-      filter: { fluid: { src: { regex: "/typescript|css|blah/" } } }
+      filter: { fluid: { src: { regex: "/typescript|css|blah|tools/" } } }
     ) {
       edges {
         node {

@@ -139,7 +139,7 @@
 .latest-articles .inner-wrapper .latest-articles-container .latest-article-link .category-img {
   position: absolute;
   top: -18px;
-  width: 30px;
+  width: auto;
   height: 35px;
   z-index: 10;
 }
@@ -364,7 +364,7 @@
 .articles-list .articles-container .latest-article-link .category-img {
   position: absolute;
   top: -18px;
-  width: 30px;
+  width: auto;
   height: 35px;
   z-index: 10;
 }
