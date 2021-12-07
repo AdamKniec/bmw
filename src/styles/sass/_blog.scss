@@ -65,13 +65,18 @@
       &:hover {
         color: colors.$text-red;
       }
-      .category-img {
+      .tags-wrapper {
         position: absolute;
-        top: -18px;
-        width: auto;
-        height: 35px;
-        z-index: 10;
+        top: -20px;
+        .category-img {
+          top: -18px;
+          width: auto;
+          height: 35px;
+          z-index: 10;
+          margin-right: 10px;
+        }
       }
+
       .link-description {
         color: colors.$text-lighter-gray;
         font-weight: lighter;

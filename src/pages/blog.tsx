@@ -56,19 +56,22 @@ const Blog = (props: blogProps) => {
                 to={article.node.frontmatter.path}
                 className="latest-article-link latest-article-box"
               >
-                {article.node.frontmatter.tags.map((tag) => {
-                  return (
-                    <img
-                      alt="UZUPELNIC"
-                      src={
-                        data.allImageSharp.edges.filter((item) =>
-                          item.node.fluid.src.includes(tag)
-                        )[0]?.node.fluid.src
-                      }
-                      className="category-img"
-                    />
-                  );
-                })}
+                <div className="tags-wrapper">
+                  {article.node.frontmatter.tags.map((tag) => {
+                    return (
+                      <img
+                        alt="UZUPELNIC"
+                        src={
+                          data.allImageSharp.edges.filter((item) =>
+                            item.node.fluid.src.includes(tag)
+                          )[0]?.node.fluid.src
+                        }
+                        className="category-img"
+                      />
+                    );
+                  })}
+                </div>
+
                 {article.node.frontmatter.title}
                 {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
 
@@ -102,7 +105,7 @@ export const allBlogPosts = graphql`
       }
     }
     allImageSharp(
-      filter: { fluid: { src: { regex: "/typescript|css|blah|tools/" } } }
+      filter: { fluid: { src: { regex: "/typescript|css|blah|tools|react/" } } }
     ) {
       edges {
         node {

@@ -6,7 +6,7 @@ readTime: "10"
 author: "Adam Knieć"
 intro: "Połącznie bibliotek Yup i Formik sprawia, że tworzenie i obsługa formularzy w React staje się znacznie przyjemniejsze. W tym wpisie dowiemy się jak z nich korzystać."
 description: "Znacznie łatwiejsze formularze dzięki bibliotekom Yup i Formik"
-tags: ["tools"]
+tags: ["tools", "react"]
 ---
 
 ## Założenia wstępne

@@ -48,19 +48,22 @@ const Header = (props: HeaderProps) => {
             to={post.node.frontmatter.path}
             className="latest-article-link latest-article-box"
           >
-            {post.node.frontmatter.tags.map((tag) => {
-              return (
-                <img
-                  alt="UZUPELNIC"
-                  src={
-                    data.allImageSharp.edges.filter((item) =>
-                      item.node.fluid.src.includes(tag)
-                    )[0]?.node.fluid.src
-                  }
-                  className="category-img"
-                />
-              );
-            })}
+            <div className="tags-wrapper">
+              {post.node.frontmatter.tags.map((tag) => {
+                return (
+                  <img
+                    alt="UZUPELNIC"
+                    src={
+                      data.allImageSharp.edges.filter((item) =>
+                        item.node.fluid.src.includes(tag)
+                      )[0]?.node.fluid.src
+                    }
+                    className="category-img"
+                  />
+                );
+              })}
+            </div>
+
             {post.node.frontmatter.title}
             <p className="link-description">{post.node.frontmatter.intro}</p>
           </Link>
@@ -202,7 +205,7 @@ export const latestBlogPosts = graphql`
       }
     }
     allImageSharp(
-      filter: { fluid: { src: { regex: "/typescript|blah|css|tools/" } } }
+      filter: { fluid: { src: { regex: "/typescript|blah|css|tools|react/" } } }
     ) {
       edges {
         node {

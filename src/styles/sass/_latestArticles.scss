@@ -47,12 +47,16 @@
           font-weight: lighter;
           font-size: 15px;
         }
-        .category-img {
+        .tags-wrapper {
           position: absolute;
-          top: -18px;
-          width: auto;
-          height: 35px;
-          z-index: 10;
+          top: -20px;
+          .category-img {
+            top: -18px;
+            width: auto;
+            height: 35px;
+            z-index: 10;
+            margin-right: 10px;
+          }
         }
       }
     }
