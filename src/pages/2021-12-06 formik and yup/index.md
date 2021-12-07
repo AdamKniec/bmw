@@ -1,7 +1,7 @@
 ---
 path: "/blog/yup-formik"
 date: "2021-12-06"
-title: "Formik + Yup"
+title: "Formik + Yup - tworzenie formularza"
 readTime: "10"
 author: "Adam Knieć"
 intro: "Połącznie bibliotek Yup i Formik sprawia, że tworzenie i obsługa formularzy w React staje się znacznie przyjemniejsze. W tym wpisie dowiemy się jak z nich korzystać."

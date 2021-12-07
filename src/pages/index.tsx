@@ -62,8 +62,6 @@ const Header = (props: HeaderProps) => {
               );
             })}
             {post.node.frontmatter.title}
-            {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
-
             <p className="link-description">{post.node.frontmatter.intro}</p>
           </Link>
         </React.Fragment>
@@ -204,7 +202,7 @@ export const latestBlogPosts = graphql`
       }
     }
     allImageSharp(
-      filter: { fluid: { src: { regex: "/typescript|blah|css/" } } }
+      filter: { fluid: { src: { regex: "/typescript|blah|css|tools/" } } }
     ) {
       edges {
         node {
