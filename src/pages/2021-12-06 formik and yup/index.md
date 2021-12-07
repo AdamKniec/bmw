@@ -38,6 +38,10 @@ npm install formik --save
 npm install -S yup
 ```
 
+Jeśli wolisz czytać dalszą częsć wpisu jednocześnie przeglądając repo to zapraszam na mojego githuba:
+
+<a href="https://github.com/AdamKniec/yupformik" target="_blank">github.com/AdamKniec/yupformik</a>
+
 ## Podstawowe style (opcjonalnie)
 
 Nie ma nic brzydszego niż nieostylowany formularz więc wciągniemy też do projektu style `Bootstrap-a`. Robię to najszybszym możliwym sposobem, który niekoniecznie jest najlepszy ale stylowanie i Bootstrap nie są w tym wpisie ważne.
@@ -434,4 +438,268 @@ Dodajmy go bezpośrednio pod znacznikiem Field definiującym pole `nameSurname`.
 
 Podajemy mu jako prop wartość `name`. Wewnątrz renderujemy `div-a`, który w środku przechowuje właściwą treść blędu. Komponent `ErrorMessage` potrafi automatycznie wyszukać dla nas odpowiedni błąd. Ważne jest aby string podany jako wartość propa `name` zgadzał się z nazwą widoczną w obiekcie `errors`.
 
-Jeśli teraz włączysz aplikację i klikniesz w przycisk "Wyślij" to Twoim oczom powinna się ukazac taka oto działająca walidacja
+Jeśli teraz włączysz aplikację i klikniesz w przycisk "Wyślij" (z pustym formularzem) to Twoim oczom powinien ukazać się następujący efekt:
+
+<img src="../2021-12-06 formik and yup/imgs/working-validation.png" />
+
+Stan komponentu formularza na chwilę obecną
+
+```jsx
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import "../src/form.css";
+
+const initialValues = {
+  nameSurname: "",
+  email: "",
+  gender: "",
+};
+
+const userValidationSchema = Yup.object().shape({
+  nameSurname: Yup.string().required("Pole wymagane"),
+});
+
+export const FormikForm = () => {
+  return (
+    <Formik
+      initialValues={initialValues}
+			// Przekazanie schemy walidacyjnej poniżej
+      validationSchema={userValidationSchema}
+    >
+      {(props) => {
+        console.log(props); -> cała magia formika
+        return (
+          <Form>
+            <div>
+              <label htmlFor="nameSurname">Imię i Nazwisko</label>
+              <Field
+                type="text"
+                id="nameSurname"
+                className="form-control"
+                value={props.values.nameSurname}
+              />
+							// Nasz nowy błąd poniżej
+              <ErrorMessage name="nameSurname">
+                {(msg) => <div className="text-danger">{msg}</div>}
+              </ErrorMessage>
+            </div>
+            <div>
+              <label htmlFor="email">E-mail</label>
+              <Field
+                type="text"
+                id="email"
+                className="form-control"
+                value={props.values.email}
+              />
+            </div>
+            <div>
+              <label htmlFor="gender" className="form-check-label">
+                Płeć
+              </label>
+              <div className="radio-wrapper form-check">
+                <div>
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="M"
+                    className="form-check-input"
+                  />
+                  M
+                </div>
+                <div>
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="K"
+                    className="form-check-input"
+                  />
+                  K
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" className="btn btn-primary">
+              Wyślij!
+            </button>
+          </Form>
+        );
+      }}
+    </Formik>
+  );
+
+```
+
+Fajne w tym rozwiązaniu jest to, że dopóki w Formiku znajdują się błędy walidacyjne, nie pozwoli on na wysłanie formularza, ale do tego jeszcze dojdziemy.
+
+Na ten moment skupmy się na walidacji drugiego (i w sumie ostaniego) pola czyli email. Zacznijmy od zmodyfikowania Schemy
+
+```jsx
+
+email: Yup.string()
+    .required("Pole wymagane")
+    .matches(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      "Wpisany email nie jest poprawny"
+    ),
+```
+
+Jak widzisz, Yup pozwala nam na "chainowanie" bardzo przydatnych funkcji zwiekszając restrykcje związane z danym polem.
+`.matches` upewni się dla nas, że wartość w polu email jest zgodna z hieroglifem pradawnych dzikusów z kosmosu zwanym `RegExp`, przekazanym jako pierwszy argument.
+
+Użycie w Formiku jest analogiczne
+
+```jsx
+<Field
+  type="text"
+  id="email"
+  className="form-control"
+  value={props.values.email}
+/>
+
+  <ErrorMessage name="email" className="text-danger">
+    {(msg) => <div className="text-danger">{msg}</div>}
+  </ErrorMessage>
+
+```
+
+Działanie rownież analogicznie. Odpwiedni komunikat znajdzie się w obiekcie `errors` i dzięki komponentowi `<errorMsg>` pojawi się na naszym UI
+
+Plik na ten moment wyglada tak
+
+```jsx
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import "../src/form.css";
+
+const initialValues = {
+  nameSurname: "",
+  email: "",
+  gender: "",
+};
+
+const userValidationSchema = Yup.object().shape({
+  nameSurname: Yup.string().required("Pole wymagane"),
+  email: Yup.string()
+    .required("Pole wymagane")
+    .matches(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+      "Wpisany email nie jest poprawny"
+    ),
+});
+
+export const FormikForm = () => {
+  return (
+    <Formik
+      initialValues={initialValues}
+      validationSchema={userValidationSchema}
+    >
+      {(props) => {
+        return (
+          <Form>
+            <div>
+              <label htmlFor="nameSurname">Imię i Nazwisko</label>
+              <Field
+                type="text"
+                id="nameSurname"
+                className="form-control"
+                value={props.values.nameSurname}
+              />
+              <ErrorMessage name="nameSurname">
+                {(msg) => <div className="text-danger">{msg}</div>}
+              </ErrorMessage>
+            </div>
+            <div>
+              <label htmlFor="email">E-mail</label>
+              <Field
+                type="text"
+                id="email"
+                className="form-control"
+                value={props.values.email}
+              />
+
+              <ErrorMessage name="email" className="text-danger">
+                {(msg) => <div className="text-danger">{msg}</div>}
+              </ErrorMessage>
+            </div>
+            <div>
+              <label htmlFor="gender" className="form-check-label">
+                Płeć
+              </label>
+              <div className="radio-wrapper form-check">
+                <div>
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="M"
+                    className="form-check-input"
+                  />
+                  M
+                </div>
+                <div>
+                  <Field
+                    type="radio"
+                    name="gender"
+                    value="K"
+                    className="form-check-input"
+                  />
+                  K
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" className="btn btn-primary">
+              Wyślij!
+            </button>
+          </Form>
+        );
+      }}
+    </Formik>
+  );
+};
+```
+
+Przyszła pora na obsługę przycisku. W jaki sposób obsłużyć submitowanie formularza z pomocą Formika? Musimy przekazać kolejnego propa do komponentu `Formik`
+
+```jsx
+ <Formik
+       initialValues={initialValues}
+       onSubmit={() => alert("Formularz wysłany!")}
+       validationSchema={userValidationSchema}
+     >
+```
+
+`onSubmit` jest funkcją, która odpali się w momencie gdy formularz będzie poprawnie wypełniony = nie bedzie błędów walidacyjnych.
+
+Jeśli rzuciłeś się na formularz i submitowanie jak Javowiec na nową dziewczynę na recepcji to możesz sie zdziwić, że żaden alert się nie wyświetla 🙂 Na spokojnie, najpierw wpisz wszystkie pola. Poprawnie.
+
+No dobra. Wiemy już, że Formik w locie odpala walidację podczas submita i blokuje jego wysłanie. Fajnie, ale co jeśli chcemy w tym callbacku wysłać już nasz zestaw danych do backendu? Jak dostać się do danych w funckcji `onSubmit`?
+
+Możemy to zrobić w ten sposób
+
+```jsx
+onSubmit={(values) => console.log(values)}
+```
+
+Oczywiscie nie musi się to nazywać `values`. Chodzi tylko o fakt, że możesz wrzucić coś w parametr tej funkcji i automatycznie będziesz miał dostęp do wartości z naszego formularza
+
+Efekt (w zaleznosci od tego co nawymyślałeś w formularzu) będzie wyglądał mniej więcej tak:
+
+```javascript
+{email: "cokolwiek@cokolwiek.pl", nameSurname: "Adam Kniec", gender: "K"}
+```
+
+Mając te dane w `onSubmit` jesteś w stanie wysłać je do backendu lub zrobić z nimi cokolwiek innego sobie tylko wymyślisz.
+
+## Podsumowanie
+
+Zdecydowanie przekonałem się do pracy z bibliotekami Formik i Yup. Praca, która często bywa męcząca, jest z nimi znacznie ułatwiona i zdecydowanie przyjemniejsza. Dokumentacja jest całkiem niezła i dzięki przykładom, które się na niej znajdują jesteśmy w stanie poradzić sobie z większością standardowych formularzy, które zazwyczaj tworzymy.
+
+Jeśli chcesz osobiście pogrzebać w repozytorium z działającym przykładem to zapraszam serdecznie na mojego githuba!
+
+<a href="https://github.com/AdamKniec/yupformik" target="_blank">github.com/AdamKniec/yupformik</a>
+
+## Źródła
+
+<a href="https://formik.org/" target="_blank">formik.org</a>
+
+<a href="https://github.com/jquense/yup" target="_blank">github.com/jquense/yup</a>
