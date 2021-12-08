@@ -1,6 +1,7 @@
 import { graphql, Link } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+import ArticleCardLink from "../components/ArticleCardLink";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
@@ -40,35 +41,10 @@ interface HeaderProps {
 
 const Header = (props: HeaderProps) => {
   const { data } = props;
+
   const latestBlogPosts = () =>
     data.allMarkdownRemark.edges.map((post) => {
-      return (
-        <React.Fragment key={post.node.id}>
-          <Link
-            to={post.node.frontmatter.path}
-            className="latest-article-link latest-article-box"
-          >
-            <div className="tags-wrapper">
-              {post.node.frontmatter.tags.map((tag) => {
-                return (
-                  <img
-                    alt="UZUPELNIC"
-                    src={
-                      data.allImageSharp.edges.filter((item) =>
-                        item.node.fluid.src.includes(tag)
-                      )[0]?.node.fluid.src
-                    }
-                    className="category-img"
-                  />
-                );
-              })}
-            </div>
-
-            {post.node.frontmatter.title}
-            <p className="link-description">{post.node.frontmatter.intro}</p>
-          </Link>
-        </React.Fragment>
-      );
+      return <ArticleCardLink post={post} imgData={data} />;
     });
 
   return (
