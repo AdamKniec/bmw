@@ -1,7 +1,7 @@
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
-import ArticleCardLink from "../components/ArticleCardLink";
+import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
