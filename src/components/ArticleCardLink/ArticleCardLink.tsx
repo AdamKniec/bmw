@@ -4,6 +4,7 @@ import { ArticleCardLinkProps, ImageItemData } from "./ArticleCardLink.types";
 
 const ArticleCardLink = (article: ArticleCardLinkProps) => {
   const { post, imgData } = article;
+
   return (
     <React.Fragment key={post.node?.id}>
       <Link
@@ -17,7 +18,7 @@ const ArticleCardLink = (article: ArticleCardLinkProps) => {
                 alt="UZUPELNIC"
                 key={i.toString()} // TODO -> Add id on  graph CMS if possible
                 src={
-                  imgData.allImageSharp.edges.filter((item: ImageItemData) =>
+                  imgData?.allImageSharp.edges.filter((item: ImageItemData) =>
                     item.node.fluid.src.includes(tag)
                   )[0]?.node.fluid.src
                 }

@@ -6,7 +6,7 @@ import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
-interface HeaderProps {
+export interface PostsAndImagesData {
   data: {
     allMarkdownRemark: {
       edges: [
@@ -39,7 +39,7 @@ interface HeaderProps {
   };
 }
 
-const Header = (props: HeaderProps) => {
+const Header = (props: PostsAndImagesData) => {
   const { data } = props;
 
   const latestBlogPosts = () =>
@@ -99,11 +99,11 @@ const Header = (props: HeaderProps) => {
         </h2>
         <div className="stats-inner-wrapper">
           <div className="numberBox">
-            <p className="number-value">64</p>
+            <p className="number-value">82</p>
             <p className="service">ohMyDev</p>
           </div>
           <div className="numberBox">
-            <p className="number-value">1255</p>
+            <p className="number-value">1310</p>
             <p className="service">Stack Overflow</p>
           </div>
           <div className="numberBox">
@@ -174,8 +174,6 @@ export const latestBlogPosts = graphql`
             intro
             title
             author
-            readTime
-            date
           }
         }
       }
