@@ -1,41 +1,13 @@
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
+import { PostsAndImagesData } from ".";
+import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
-interface blogProps {
-  data: {
-    allImageSharp: {
-      edges: {
-        node: {
-          fluid: {
-            src: string;
-          };
-        };
-      }[];
-    };
-    allMarkdownRemark: {
-      edges: [
-        {
-          node: {
-            frontmatter: {
-              date: string;
-              readTime: string;
-              path: string;
-              intro: string;
-              title: string;
-              tags: string[];
-            };
-          };
-        }
-      ];
-    };
-  };
-}
-
-const Blog = (props: blogProps) => {
+const Blog = (props: PostsAndImagesData) => {
   const { data } = props;
 
   return (
@@ -50,35 +22,13 @@ const Blog = (props: blogProps) => {
           <StaticImage src="../images/brain.png" alt="" className="brain-img" />
         </div>
         <div className="articles-container">
-          {data.allMarkdownRemark.edges.map((article) => {
+          {data.allMarkdownRemark.edges.map((article, i) => {
             return (
-              <Link
-                to={article.node.frontmatter.path}
-                className="latest-article-link latest-article-box"
-              >
-                <div className="tags-wrapper">
-                  {article.node.frontmatter.tags.map((tag) => {
-                    return (
-                      <img
-                        alt="UZUPELNIC"
-                        src={
-                          data.allImageSharp.edges.filter((item) =>
-                            item.node.fluid.src.includes(tag)
-                          )[0]?.node.fluid.src
-                        }
-                        className="category-img"
-                      />
-                    );
-                  })}
-                </div>
-
-                {article.node.frontmatter.title}
-                {/* <p className="metadata-short">{`${post.node.frontmatter.date} (${post.node.frontmatter.readTime} min)`}</p> */}
-
-                <p className="link-description">
-                  {article.node.frontmatter.intro}
-                </p>
-              </Link>
+              <ArticleCardLink
+                post={article}
+                imgData={data}
+                key={i.toString()} // TODO - take the id from the graphQL if possible
+              />
             );
           })}
         </div>
@@ -93,11 +43,9 @@ export const allBlogPosts = graphql`
       edges {
         node {
           frontmatter {
-            date(locale: "")
             tags
             path
             title
-            readTime
             intro
             author
           }

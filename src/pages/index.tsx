@@ -1,11 +1,12 @@
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 
 import Layout from "../components/Layout";
 import Seo from "../components/seo";
 
-interface HeaderProps {
+export interface PostsAndImagesData {
   data: {
     allMarkdownRemark: {
       edges: [
@@ -38,37 +39,12 @@ interface HeaderProps {
   };
 }
 
-const Header = (props: HeaderProps) => {
+const Header = (props: PostsAndImagesData) => {
   const { data } = props;
+
   const latestBlogPosts = () =>
     data.allMarkdownRemark.edges.map((post) => {
-      return (
-        <React.Fragment key={post.node.id}>
-          <Link
-            to={post.node.frontmatter.path}
-            className="latest-article-link latest-article-box"
-          >
-            <div className="tags-wrapper">
-              {post.node.frontmatter.tags.map((tag) => {
-                return (
-                  <img
-                    alt="UZUPELNIC"
-                    src={
-                      data.allImageSharp.edges.filter((item) =>
-                        item.node.fluid.src.includes(tag)
-                      )[0]?.node.fluid.src
-                    }
-                    className="category-img"
-                  />
-                );
-              })}
-            </div>
-
-            {post.node.frontmatter.title}
-            <p className="link-description">{post.node.frontmatter.intro}</p>
-          </Link>
-        </React.Fragment>
-      );
+      return <ArticleCardLink post={post} imgData={data} />;
     });
 
   return (
@@ -123,11 +99,11 @@ const Header = (props: HeaderProps) => {
         </h2>
         <div className="stats-inner-wrapper">
           <div className="numberBox">
-            <p className="number-value">64</p>
+            <p className="number-value">82</p>
             <p className="service">ohMyDev</p>
           </div>
           <div className="numberBox">
-            <p className="number-value">1255</p>
+            <p className="number-value">1310</p>
             <p className="service">Stack Overflow</p>
           </div>
           <div className="numberBox">
@@ -198,8 +174,6 @@ export const latestBlogPosts = graphql`
             intro
             title
             author
-            readTime
-            date
           }
         }
       }
