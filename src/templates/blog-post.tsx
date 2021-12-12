@@ -38,6 +38,7 @@ export default function Template({ data }: TemplateProps) {
       <Seo
         title={`Boli Mnie Web  - ${post.frontmatter.title}`}
         description={post.frontmatter.description}
+        lang="pl-PL"
       />
       <div className="blog-post-wrapper">
         <h1 className="main-blog-header">{post.frontmatter.title}</h1>
