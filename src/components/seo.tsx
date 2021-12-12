@@ -11,8 +11,8 @@ import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from "gatsby";
 
 interface SeoProps {
-  description?: string;
-  lang?: string;
+  description: string;
+  lang: string;
   meta?: any;
   title: string;
 }
@@ -78,8 +78,6 @@ const Seo = ({ description = " ", lang, meta, title }: SeoProps) => {
 };
 
 Seo.defaultProps = {
-  description: "",
-  lang: "",
   meta: {},
 };
 export default Seo;

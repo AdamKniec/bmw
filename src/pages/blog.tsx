@@ -15,6 +15,7 @@ const Blog = (props: PostsAndImagesData) => {
       <Seo
         title="Boli Mnie Web - Blog"
         description="Artykuły związane ze światem web-developmentu"
+        lang="pl-PL"
       />
       <div className="articles-list">
         <div className="intro-wrapper">

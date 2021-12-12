@@ -50,6 +50,7 @@ const Header = (props: PostsAndImagesData) => {
   return (
     <Layout>
       <Seo
+        lang="pl-PL"
         title="Boli Mnie Web by Adam Knieć"
         description="Artykuły związane ze światem web-developmentu"
       />
