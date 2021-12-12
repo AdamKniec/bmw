@@ -40,7 +40,7 @@ npm install -S yup
 
 Jeśli wolisz czytać dalszą częsć wpisu jednocześnie przeglądając repo to zapraszam na mojego githuba:
 
-<a href="https://github.com/AdamKniec/yupformik" target="_blank">github.com/AdamKniec/yupformik</a>
+<a href="https://github.com/AdamKniec/yupformik" target="_blank" rel="noopener" >github.com/AdamKniec/yupformik</a>
 
 ## Podstawowe style (opcjonalnie)
 
@@ -696,10 +696,10 @@ Zdecydowanie przekonałem się do pracy z bibliotekami Formik i Yup. Praca, któ
 
 Jeśli chcesz osobiście pogrzebać w repozytorium z działającym przykładem to zapraszam serdecznie na mojego githuba!
 
-<a href="https://github.com/AdamKniec/yupformik" target="_blank">github.com/AdamKniec/yupformik</a>
+<a href="https://github.com/AdamKniec/yupformik" target="_blank" rel="noopener" >github.com/AdamKniec/yupformik</a>
 
 ## Źródła
 
-<a href="https://formik.org/" target="_blank">formik.org</a>
+<a href="https://formik.org/" target="_blank" rel="noopener">formik.org</a>
 
-<a href="https://github.com/jquense/yup" target="_blank">github.com/jquense/yup</a>
+<a href="https://github.com/jquense/yup" target="_blank" rel="noopener" >github.com/jquense/yup</a>
