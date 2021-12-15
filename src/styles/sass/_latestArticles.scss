@@ -1,4 +1,5 @@
 @use 'colors';
+@use "mixins";
 
 .latest-articles {
   font-family: Roboto;
@@ -40,6 +41,9 @@
         box-sizing: border-box;
         &:hover {
           color: colors.$text-red;
+        }
+        @include mixins.breakpoint(mobileonly) {
+          margin-right: 0;
         }
         .link-description {
           color: colors.$text-lighter-gray;

@@ -1,5 +1,6 @@
 @use "colors";
 @use "mixins";
+
 .articles-list {
   font-family: Roboto;
   padding-left: 1rem;
@@ -64,6 +65,9 @@
       box-sizing: border-box;
       &:hover {
         color: colors.$text-red;
+      }
+      @include mixins.breakpoint(mobileonly) {
+        margin-right: 0;
       }
       .tags-wrapper {
         position: absolute;
