@@ -172,6 +172,11 @@
   margin-bottom: 20px;
   text-align: center;
 }
+@media (max-width: 880px) {
+  .blog-post-wrapper .main-blog-header {
+    font-size: 2rem;
+  }
+}
 .blog-post-wrapper .metadata-short {
   color: #848484;
   text-align: center;
