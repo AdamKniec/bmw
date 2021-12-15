@@ -1,10 +1,10 @@
-import { graphql } from "gatsby";
 import React from "react";
-import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 
+import { graphql } from "gatsby";
+import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
 import { DiscussionEmbed } from "disqus-react";
-import Layout from "../components/Layout";
-import Seo from "../components/seo";
+import Layout from "../components/Layout/Layout";
+import Seo from "../components/Seo/seo";
 
 deckDeckGoHighlightElement();
 
@@ -42,20 +42,6 @@ export default function Template({ data }: TemplateProps) {
       />
       <div className="blog-post-wrapper">
         <h1 className="main-blog-header">{post.frontmatter.title}</h1>
-        {/* <p className="metadata-short">
-          {post.frontmatter.date} ({post.frontmatter.readTime} min.)
-        </p> */}
-        <div className="tags-container">
-          {/* {data.markdownRemark.frontmatter.tags.map(
-            (tag: string, index: number) => {
-              return (
-                <span className="tag" key={index.toString()}>
-                  {tag}
-                </span>
-              );
-            }
-          )} */}
-        </div>
         <div
           dangerouslySetInnerHTML={{ __html: post.html }}
           className="content-wrapper"

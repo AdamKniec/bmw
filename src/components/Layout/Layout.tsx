@@ -1,15 +1,9 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
- */
-
 import React from "react";
 
-import Navbar from "./Navbar";
-import "../styles/css/combined.css";
-import Footer from "../pages/footer";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../../pages/footer";
+
+import "../../styles/css/combined.css";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (

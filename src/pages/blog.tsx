@@ -4,8 +4,8 @@ import * as React from "react";
 import { PostsAndImagesData } from ".";
 import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 
-import Layout from "../components/Layout";
-import Seo from "../components/seo";
+import Layout from "../components/Layout/Layout";
+import Seo from "../components/Seo/seo";
 
 const Blog = (props: PostsAndImagesData) => {
   const { data } = props;
