@@ -130,6 +130,11 @@
 .latest-articles .inner-wrapper .latest-articles-container .latest-article-link:hover {
   color: #a64141;
 }
+@media (max-width: 760px) {
+  .latest-articles .inner-wrapper .latest-articles-container .latest-article-link {
+    margin-right: 0;
+  }
+}
 .latest-articles .inner-wrapper .latest-articles-container .latest-article-link .link-description {
   color: #585858;
   font-family: Roboto;
@@ -364,6 +369,11 @@
 }
 .articles-list .articles-container .latest-article-link:hover {
   color: #a64141;
+}
+@media (max-width: 760px) {
+  .articles-list .articles-container .latest-article-link {
+    margin-right: 0;
+  }
 }
 .articles-list .articles-container .latest-article-link .tags-wrapper {
   position: absolute;
