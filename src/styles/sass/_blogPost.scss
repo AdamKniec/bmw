@@ -1,4 +1,6 @@
 @use 'colors';
+@use 'mixins';
+
 *::selection {
   background-color: #ffe8e8;
 }
@@ -15,6 +17,9 @@
     color: colors.$bg-gray;
     margin-bottom: 20px;
     text-align: center;
+    @include mixins.breakpoint(tablet) {
+      font-size: 2rem;
+    }
   }
 
   .metadata-short {
