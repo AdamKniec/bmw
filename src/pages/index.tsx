@@ -3,8 +3,8 @@ import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
 import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 
-import Layout from "../components/Layout";
-import Seo from "../components/seo";
+import Layout from "../components/Layout/Layout";
+import Seo from "../components/Seo/seo";
 
 export interface PostsAndImagesData {
   data: {
