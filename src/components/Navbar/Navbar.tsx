@@ -1,5 +1,4 @@
 import React from "react";
-// import "../styles/css/"
 import { StaticImage } from "gatsby-plugin-image";
 
 import { Link } from "gatsby";
@@ -8,7 +7,7 @@ const Navbar = () => (
   <nav className="navbar">
     <a href="/">
       <StaticImage
-        src="../images/headache.png"
+        src="../../images/headache.png"
         alt="Boli mnie Web - Strona główna"
         className="headache-png"
       />
