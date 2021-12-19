@@ -5,6 +5,8 @@
 Witaj na blogu Boli Mnie Web.
 Więcej informacji znajdziesz <a href="https://www.bolimnieweb.pl/blog/pilot">Tutaj</a>
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5cefb9f6-9c44-4b70-bafe-1954f64cb897/deploy-status)](https://app.netlify.com/sites/festive-hamilton-354713/deploys)
+
 ## Instalacja
 
 1. Sklonuj repozytorium
