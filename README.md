@@ -1,19 +1,20 @@
-
-<img width="100%" src="https://i.ibb.co/df1qTM6/banner.png" alt="" />
+<img width="100%" src="https://i.ibb.co/TwWZ91j/Zrzut-ekranu-2021-12-19-o-21-19-56.png" alt="" />
 
 ## Intro
-Witaj na blogu Boli Mnie Web. 
+
+Witaj na blogu Boli Mnie Web.
 Więcej informacji znajdziesz <a href="https://www.bolimnieweb.pl/blog/pilot">Tutaj</a>
 
 ## Instalacja
 
-1) Sklonuj repozytorium
-2) Przejdż do niego przy pomocy terminala: cd nazwaFolderu
-3) Terminal: npm install - instalacja zależności
-4) Terminal: gatsby develop - uruchomienie aplikacji w trybie deweloperskim
-5) W osobnym oknie terminala: npx sass --watch src/styles/sass:src/styles/css - dynamiczne kompilowanie SCSS -> CSS
+1. Sklonuj repozytorium
+2. Przejdż do niego przy pomocy terminala: cd nazwaFolderu
+3. Terminal: npm install - instalacja zależności
+4. Terminal: gatsby develop - uruchomienie aplikacji w trybie deweloperskim
+5. W osobnym oknie terminala: npx sass --watch src/styles/sass:src/styles/css - dynamiczne kompilowanie SCSS -> CSS
 
 ## Użyte technologie
+
 - React
 - Gatsby
 - Typescript
@@ -21,7 +22,8 @@ Więcej informacji znajdziesz <a href="https://www.bolimnieweb.pl/blog/pilot">Tu
 - Markdown
 - Prism
 
-## Kontakt 
+## Kontakt
+
 adam.k.kniec@gmail.com
 
 https://www.instagram.com/bolimnieweb/
