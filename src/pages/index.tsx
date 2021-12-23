@@ -180,7 +180,9 @@ export const latestBlogPosts = graphql`
       }
     }
     allImageSharp(
-      filter: { fluid: { src: { regex: "/typescript|blah|css|tools|react/" } } }
+      filter: {
+        fluid: { src: { regex: "/typescript|blah|css|tools|react|js/" } }
+      }
     ) {
       edges {
         node {
