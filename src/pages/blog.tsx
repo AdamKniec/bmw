@@ -54,7 +54,9 @@ export const allBlogPosts = graphql`
       }
     }
     allImageSharp(
-      filter: { fluid: { src: { regex: "/typescript|css|blah|tools|react/" } } }
+      filter: {
+        fluid: { src: { regex: "/typescript|css|blah|tools|react|js/" } }
+      }
     ) {
       edges {
         node {
