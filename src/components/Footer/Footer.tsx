@@ -13,7 +13,7 @@ const Footer = () => {
       </div>
       <div className="footer-box">
         <a
-          aria-label="Link do mojego konta Linkedin"
+          aria-label="Link do konta Linkedin"
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.linkedin.com/in/adamkniec/"
@@ -25,7 +25,7 @@ const Footer = () => {
           />
         </a>
         <a
-          aria-label="Link do mojego konta Stackoverflow"
+          aria-label="Link do konta Stackoverflow"
           target="_blank"
           rel="noopener noreferrer"
           href="https://stackexchange.com/users/16949824/adamkniec?tab=accounts"
@@ -37,7 +37,7 @@ const Footer = () => {
           />
         </a>
         <a
-          aria-label="Link do mojego Githuba"
+          aria-label="Link do Githuba"
           target="_blank"
           rel="noopener noreferrer"
           href="https://github.com/AdamKniec"
@@ -49,7 +49,7 @@ const Footer = () => {
           />
         </a>
         <a
-          aria-label="Link do mojego Instagrama"
+          aria-label="Link do Instagrama"
           target="_blank"
           rel="noopener noreferrer"
           href="https://www.instagram.com/bolimnieweb/"

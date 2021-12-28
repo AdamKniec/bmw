@@ -1,8 +1,9 @@
+import React from "react";
+
 import { graphql } from "gatsby";
 import { StaticImage } from "gatsby-plugin-image";
-import React from "react";
-import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 
+import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 import Layout from "../components/Layout/Layout";
 import Seo from "../components/Seo/seo";
 
@@ -39,7 +40,7 @@ export interface PostsAndImagesData {
   };
 }
 
-const Header = (props: PostsAndImagesData) => {
+const Homepage = (props: PostsAndImagesData) => {
   const { data } = props;
 
   const latestBlogPosts = () =>
@@ -195,4 +196,4 @@ export const latestBlogPosts = graphql`
     }
   }
 `;
-export default Header;
+export default Homepage;
