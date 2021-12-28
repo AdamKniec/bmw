@@ -1,8 +1,8 @@
 import { StaticImage } from "gatsby-plugin-image";
 import * as React from "react";
 
-import Layout from "../Layout/Layout";
-import Seo from "../Seo/seo";
+import Layout from "../components/Layout/Layout";
+import Seo from "../components/Seo/seo";
 
 const NotFoundPage = () => (
   <Layout>
