@@ -19,7 +19,7 @@ const Footer = () => {
           href="https://www.linkedin.com/in/adamkniec/"
         >
           <StaticImage
-            src="../images/linkedin.svg"
+            src="../../images/linkedin.svg"
             alt=""
             className="footer-icon"
           />
@@ -31,7 +31,7 @@ const Footer = () => {
           href="https://stackexchange.com/users/16949824/adamkniec?tab=accounts"
         >
           <StaticImage
-            src="../images/stack-overflow.svg"
+            src="../../images/stack-overflow.svg"
             alt=""
             className="footer-icon"
           />
@@ -43,7 +43,7 @@ const Footer = () => {
           href="https://github.com/AdamKniec"
         >
           <StaticImage
-            src="../images/github.svg"
+            src="../../images/github.svg"
             alt=""
             className="footer-icon"
           />
@@ -55,7 +55,7 @@ const Footer = () => {
           href="https://www.instagram.com/bolimnieweb/"
         >
           <StaticImage
-            src="../images/instagram.svg"
+            src="../../images/instagram.svg"
             alt=""
             className="footer-icon"
           />
