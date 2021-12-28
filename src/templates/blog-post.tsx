@@ -1,8 +1,9 @@
 import React from "react";
 
+import { DiscussionEmbed } from "disqus-react";
 import { graphql } from "gatsby";
 import { defineCustomElements as deckDeckGoHighlightElement } from "@deckdeckgo/highlight-code/dist/loader";
-import { DiscussionEmbed } from "disqus-react";
+
 import Layout from "../components/Layout/Layout";
 import Seo from "../components/Seo/seo";
 
