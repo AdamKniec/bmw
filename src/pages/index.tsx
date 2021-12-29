@@ -1,11 +1,11 @@
 import React from "react";
 
 import { graphql } from "gatsby";
-import { StaticImage } from "gatsby-plugin-image";
 
-import ArticleCardLink from "../components/ArticleCardLink/ArticleCardLink";
 import Layout from "../components/Layout/Layout";
 import Seo from "../components/Seo/seo";
+import HomePageHeader from "../components/sections/HomePageHeader";
+import HomePageLatestArticles from "../components/sections/HomePageLatestArticles";
 
 export interface PostsAndImagesData {
   data: {
@@ -43,11 +43,6 @@ export interface PostsAndImagesData {
 const Homepage = (props: PostsAndImagesData) => {
   const { data } = props;
 
-  const latestBlogPosts = () =>
-    data.allMarkdownRemark.edges.map((post) => {
-      return <ArticleCardLink post={post} imgData={data} />;
-    });
-
   return (
     <Layout>
       <Seo
@@ -55,46 +50,8 @@ const Homepage = (props: PostsAndImagesData) => {
         title="Boli Mnie Web by Adam Knieć"
         description="Artykuły związane ze światem web-developmentu"
       />
-      <div className="header-wrapper">
-        <h1 className="mainHeader">
-          boli mnie <span className="theme-red">web</span>.
-        </h1>
-        <p className="hero-intro-text">
-          <span className="theme-red">blog</span> o technologiach i narzędziach
-          webowych oraz o wszystkim co mnie interesuje / wk*rwia / bawi i smuci
-          w branży <span className="theme-red">IT</span>{" "}
-        </p>
-        <StaticImage src="../images/brain.png" alt="" className="brain-png" />
-        <div>
-          <span className="theme-red">{"->"} </span>
-          <a
-            className="header-link"
-            href="https://github.com/AdamKniec/bmw"
-            target="_blank"
-            rel="noreferrer"
-          >
-            {" "}
-            github
-          </a>{" "}
-          |{" "}
-          <a
-            className="header-link"
-            href="https://www.instagram.com/bolimnieweb/"
-            target="_blank"
-            rel="noreferrer"
-          >
-            instagram
-          </a>
-        </div>
-      </div>
-      <section className="latest-articles">
-        <div className="inner-wrapper">
-          <h2 className="section-header">
-            ostatnie <span className="theme-red">wpisy</span>
-          </h2>
-          <div className="latest-articles-container">{latestBlogPosts()}</div>
-        </div>
-      </section>
+      <HomePageHeader />
+      <HomePageLatestArticles articlesData={data} />
       <section className="statistics">
         <h2>
           blog w <span className="text-red">liczbach</span>
