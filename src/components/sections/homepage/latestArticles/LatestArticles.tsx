@@ -1,12 +1,13 @@
 import React from "react";
 
-import ArticleCardLink from "../ArticleCardLink/ArticleCardLink";
+import { PostsAndImagesData } from "../../../../pages";
 
-const HomePageLatestArticles = ({ articlesData }) => {
+import ArticleCardLink from "../../../ArticleCardLink/ArticleCardLink";
+
+const HomePageLatestArticles = ({ data }: PostsAndImagesData) => {
   const latestBlogPosts = () =>
-    articlesData.allMarkdownRemark?.edges.map((post) => {
-      console.log(post);
-      return <ArticleCardLink post={post} imgData={articlesData} />;
+    data.allMarkdownRemark?.edges.map((post) => {
+      return <ArticleCardLink post={post} imgData={data} />;
     });
 
   return (
