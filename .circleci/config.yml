@@ -2,25 +2,71 @@
 # See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
 jobs:
-  say-hello:
-    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
-    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+  install-packages:
     docker:
-      - image: cimg/base:stable
-    # Add steps to the job
-    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+     - image: cimg/node:17.3.0
     steps:
       - checkout
+      - restore_cache:
+          name: Restore Yarn Package Cache
+          keys:
+            - yarn-packages-{{ checksum "yarn.lock" }}
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: Install Dependencies
+          command: yarn install
+      - save_cache:
+          name: Save Yarn Package Cache
+          key: yarn-packages-{{ checksum "yarn.lock" }}
+          paths:
+            - .yarn/cache
+            - .yarn/unpluggedgp -
+      - persist_to_workspace:
+          root: ~/
+          paths: .
 
-# Invoke jobs via workflows
-# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+  build-app-to-dist:
+    docker:
+      - image: cimg/node:17.3.0
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: 'Build app to dist'
+          command: 'yarn build'
+
+  type-check:
+    docker:
+      - image: cimg/node:17.3.0
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: 'Check types'
+          command: 'yarn check-types'
+
+  test:
+    docker:
+      - image: cimg/node:17.3.0
+    steps:
+      - attach_workspace:
+          at: ~/
+      - run:
+          name: 'Test app'
+          command: 'yarn test'
+
 workflows:
-  say-hello-workflow:
+  deployment:
     jobs:
-      - say-hello
+      - install-packages
+      - type-check:
+          requires:
+            - install-packages
+      - test:
+          requires:
+            - install-packages
+      - build-app-to-dist:
+          requires:
+            - install-packages
+            - test
+            - type-check
