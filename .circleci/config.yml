@@ -35,7 +35,7 @@ jobs:
           at: ~/
       - run:
           name: 'Check types'
-          command: 'npm type-check'
+          command: 'npm run type-check'
 
   test:
     docker:
