@@ -4,10 +4,10 @@ import { graphql } from "gatsby";
 
 import Layout from "../components/Layout/Layout";
 import Seo from "../components/Seo/seo";
-import HomePageHeader from "../components/sections/homepage/header/Header";
 import HomePageLatestArticles from "../components/sections/homepage/latestArticles/LatestArticles";
 import Statistics from "../components/sections/homepage/statistics/Statistics";
 import Info from "../components/sections/homepage/info/Info";
+import Header from "../components/sections/homepage/header/Header";
 
 export interface PostsAndImagesData {
   data: {
@@ -52,13 +52,14 @@ const Homepage = (props: PostsAndImagesData) => {
         title="Boli Mnie Web by Adam Knieć"
         description="Artykuły związane ze światem web-developmentu"
       />
-      <HomePageHeader />
+      <Header />
       <HomePageLatestArticles data={data} />
       <Statistics />
       <Info />
     </Layout>
   );
 };
+
 export const latestBlogPosts = graphql`
   query latestPostsQuery {
     allMarkdownRemark(
