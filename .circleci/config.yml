@@ -25,15 +25,7 @@ jobs:
           root: ~/
           paths: .
 
-  build-app-to-dist:
-    docker:
-      - image: cimg/node:17.3.0
-    steps:
-      - attach_workspace:
-          at: ~/
-      - run:
-          name: 'Build app to dist'
-          command: 'yarn build'
+ 
 
   type-check:
     docker:
@@ -65,8 +57,3 @@ workflows:
       - test:
           requires:
             - install-packages
-      - build-app-to-dist:
-          requires:
-            - install-packages
-            - test
-            - type-check
