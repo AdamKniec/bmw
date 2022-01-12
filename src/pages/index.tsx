@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { graphql } from "gatsby";
 
@@ -8,6 +8,7 @@ import HomePageLatestArticles from "../components/sections/homepage/latestArticl
 import Statistics from "../components/sections/homepage/statistics/Statistics";
 import Info from "../components/sections/homepage/info/Info";
 import Header from "../components/sections/homepage/header/Header";
+import getStackData from "../api/api";
 
 export interface PostsAndImagesData {
   data: {
@@ -45,6 +46,18 @@ export interface PostsAndImagesData {
 const Homepage = (props: PostsAndImagesData) => {
   const { data } = props;
 
+  const [apiData, setApiData] = useState<{
+    stackRep: number;
+  }>({
+    stackRep: 0,
+  });
+
+  useEffect(() => {
+    getStackData().then((responseData) =>
+      setApiData({ ...apiData, stackRep: responseData.items[0].reputation })
+    );
+  }, []);
+
   return (
     <Layout>
       <Seo
@@ -54,7 +67,7 @@ const Homepage = (props: PostsAndImagesData) => {
       />
       <Header />
       <HomePageLatestArticles data={data} />
-      <Statistics />
+      <Statistics apiData={apiData} />
       <Info />
     </Layout>
   );
