@@ -380,3 +380,17 @@ console.log(personB); // {name: "Adam", age: 50}
 ## Podsumowanie
 
 Czytając ten wpis możesz odnieść wrażenie, że wielokrotnie tłumaczę te same zagadnienia. Jeśli tak było, to był to zamierzony efekt. Jak pierwszy raz zacząłem zgłębiać tematy wartości i referencji to każdy, nawet najkrótszy artykuł generował u mnie złudzenie kompetencji. Byłem pewien, że wszystko jest dla mnie jasne. Po jakimś czasie trafiałem w internecie (lub na rekrutacji :) ) na zadanie sprawdzające u mnie właśnie te umiejętności i okazywało się, że nie byłem w stanie "skompilować" poprawnego rozwiązania w swojej głowie. Po kilku porażkach wziąłem się za ten temat na poważnie i zrozumiałem, że właśnie przeoranie wielu przykładów z wieloma pułapkami pozwoliło mi poczuć się pewniej i przenieść moje zrozumienie tematu na wyższy level. To samo polecam Tobie i dokładnie takie podejście starałem się zastosować w tym wpisie.
+
+## Źródła
+
+TODO
+
+- Chyba jednak troche trzeba bedzie popracowac nad podsumowaniem bo na ten moment brzmi bardziej niz wstep
+
+<a href="https://www.javatpoint.com/shallow-copy-in-javascript" target="_blank" rel="noopener">javatpoint.com/shallow-copy-in-javascript</a>
+
+<a href="https://masteringjs.io/tutorials/fundamentals/shallow-copy" target="_blank" rel="noopener">masteringjs.io/tutorials/fundamentals/shallow-copy</a>
+
+<a href="https://dmitripavlutin.com/value-vs-reference-javascript/" target="_blank" rel="noopener">dmitripavlutin.com/value-vs-reference-javascript/</a>
+
+<a href="https://javascript.info/object-copy" target="_blank" rel="noopener">javascript.info/object-copy</a>
