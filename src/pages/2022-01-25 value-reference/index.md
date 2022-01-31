@@ -379,13 +379,10 @@ console.log(personB); // {name: "Adam", age: 50}
 
 ## Podsumowanie
 
-Czytając ten wpis możesz odnieść wrażenie, że wielokrotnie tłumaczę te same zagadnienia. Jeśli tak było, to był to zamierzony efekt. Jak pierwszy raz zacząłem zgłębiać tematy wartości i referencji to każdy, nawet najkrótszy artykuł generował u mnie złudzenie kompetencji. Byłem pewien, że wszystko jest dla mnie jasne. Po jakimś czasie trafiałem w internecie (lub na rekrutacji :) ) na zadanie sprawdzające u mnie właśnie te umiejętności i okazywało się, że nie byłem w stanie "skompilować" poprawnego rozwiązania w swojej głowie. Po kilku porażkach wziąłem się za ten temat na poważnie i zrozumiałem, że właśnie przeoranie wielu przykładów z wieloma pułapkami pozwoliło mi poczuć się pewniej i przenieść moje zrozumienie tematu na wyższy level. To samo polecam Tobie i dokładnie takie podejście starałem się zastosować w tym wpisie.
+Znajomość praw jakimi rządzą się wartości i referencje nie tylko podniesie Twoje zrozumienie JS-a i tego, w których sytuacjach może on kopnąć Cię w tyłek. Zrozumienie ich sprawi także, że poczujesz się znacznie pewniej podczas technicznych rozmów rekrutacyjnych. Niestety rekruterzy uwielbiają zadania typu "Jaki będzie wynik console.loga".
+Czytając ten wpis możesz odnieść wrażenie, że wielokrotnie tłumaczę te same zagadnienia. Jeśli tak było, to był to zamierzony efekt. Jak pierwszy raz zacząłem zgłębiać tematy wartości i referencji to każdy, nawet najkrótszy artykuł generował u mnie złudzenie kompetencji. Byłem pewien, że wszystko jest dla mnie jasne. Po jakimś czasie trafiałem w internecie (lub na rekrutacji :) ) na zadanie sprawdzające u mnie właśnie te umiejętności i okazywało się, że nie byłem w stanie "skompilować" poprawnego rozwiązania w swojej głowie. Po kilku porażkach wziąłem się za ten temat na poważnie i zrozumiałem, że właśnie przeoranie wielu przykładów z wieloma pułapkami pozwoliło mi poczuć się pewniej i przenieść moje zrozumienie tematu na wyższy level. To samo polecam Tobie :)
 
 ## Źródła
-
-TODO
-
-- Chyba jednak troche trzeba bedzie popracowac nad podsumowaniem bo na ten moment brzmi bardziej niz wstep
 
 <a href="https://www.javatpoint.com/shallow-copy-in-javascript" target="_blank" rel="noopener">javatpoint.com/shallow-copy-in-javascript</a>
 
