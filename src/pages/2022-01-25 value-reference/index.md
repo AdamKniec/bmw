@@ -1,9 +1,9 @@
 ---
 path: "/blog/wartosci-i-referencje"
-date: "2022-01-25"
+date: "2022-01-31"
 title: "Wartości i referencje"
 author: "Adam Knieć"
-intro: "Dokładne wyjaśnienie różnic między referencją a wartością. W tym wpisie poznamy jakie pułapki czekają na developerów nie znających tych zagadnień"
+intro: "Dokładne wyjaśnienie różnic pomiędzy referencją a wartością. W tym wpisie poznamy pułapki czekające na developerów, którzy nie znają tych zagadnień."
 description: "Wartość i referencja w JS. Dokładne wyjaśnienie i praktyczne przykłady"
 tags: ["js"]
 ---
