@@ -16,7 +16,7 @@ tags: ["js"]
 
 Mamy w JS dwa podstawowe typy danych. Są nimi typy `prymitywne/proste` i `obiekty`.
 Jest to hasło jasno przedstawiane w każdym kursie dot. JS-a. Jest to dość szybkie do wyjaśnienia zagadnienie ale poza prostą formułką trzeba być również świadomym tego w jaki sposób te typy zachowują się w różnych praktycznych przypadkach.
-Są one bardzo lubiane przez rekruterów i zakładam, że każdy z nas spotkał na swojej drodze przynajmniej jedno pytanie, w którym musiał przewidzieć co stanie się z daną zmienną po jej uprzednim skopiowaniu, nadpisaniu i przeoraniu na wszelkie możliwe sposoby. Czy lubię tego typu zadania? Oczywiście, że nie. Czy sprawdzają one wiedzę kandydata? No niestety tak.
+Są one bardzo lubiane przez rekruterów i pewnie każdy z nas spotkał (lub spotka!) na swojej drodze przynajmniej jedno pytanie, w którym musiał przewidzieć co stanie się z daną zmienną po jej uprzednim skopiowaniu, nadpisaniu i przeoraniu na wszelkie możliwe sposoby. Czy lubię tego typu zadania? Oczywiście, że nie. Czy sprawdzają one wiedzę kandydata? No niestety tak.
 
 W tym wpisie postaram się przybliżyć zagrożenia i pułapki płynące z różnic między typami złożonymi i prostymi.
 
@@ -48,7 +48,7 @@ console.log(a); // 2
 console.log(b); // 1
 ```
 
-Bardzo istotne w tym prostym przykładzie jest to, że stworzyliśmy dwa całkowicie inne pudełka z zawartością. Dwie całkowicie inne i niezależne zmienne mające swoje unikalne miejsce w pamięci komputera. W przypadku typów prymitywnych, nawet gdy jedna zmienna budowana jest na podstawwie drugiej, to nadal są to całkowicie osobne byty (kopie) i w powyższym przypadku, mimo, ze zmienna `a` otrzymuje nową wartość to zmienna `b` (budowana na jej podstawie) juz nie jest tym zainteresowana. W momencie jej tworzenia dostala ona kopię ówczesnego stanu zmiennej `a` (ktory na poczatku wynosił 1) i tak juz zostało. Zmiana `a` nie zmieni już jej wartości bo ich drogi w pamięci komputera całkowicie się rozeszły.
+Bardzo istotne w tym prostym przykładzie jest to, że stworzyliśmy dwa całkowicie inne pudełka z zawartością. Dwie całkowicie inne i niezależne zmienne mające swoje unikalne miejsce w pamięci komputera. W przypadku typów prymitywnych, nawet gdy jedna zmienna budowana jest na podstawie drugiej, to nadal są to całkowicie osobne byty (kopie) i w powyższym przypadku, mimo, ze zmienna `a` otrzymuje nową wartość to zmienna `b` (budowana na jej podstawie) już nie jest tym zainteresowana. W momencie jej tworzenia dostala ona kopię ówczesnego stanu zmiennej `a` (który na poczatku wynosił 1) i tak już zostało. Zmiana `a` nie zmieni już jej wartości bo ich drogi w pamięci komputera całkowicie się rozeszły.
 
 W skrócie - nadpisanie jednej z tych zmiennych po ich wcześniejszym zadeklarowaniu nie ma wpływu na drugą.
 
@@ -59,7 +59,7 @@ Nieco inna sytuacja ma miejsce w przypadku gdy operujemy na typach złożonych, 
 
 ## Obiekty (typy referencyjne)
 
-Na start przekmińmy sobie prosty przykład:
+Na start przeanalizujmy sobie prosty przykład:
 
 ```javascript
 const person = {
@@ -75,7 +75,7 @@ console.log(name); // ?
 ```
 
 Zatrzymaj się teraz na chwilę i zastanów jaki będzie wynik powyższych logów.
-Jest on dość prosty i wręcz oczywiste wydaje się, że...
+Kod jest dość prosty i wręcz oczywiste wydaje się, że...
 
 ```javascript
 console.log(person); // {name: "Adam"}
@@ -89,7 +89,7 @@ console.log(person); // {name: "Edyta Górniak"}
 console.log(alien); // {name: "Edyta Górniak"}
 ```
 
-Zrób teraz kolejny przystanek. Czy jesteś w stanie wyjaśnić dlaczego tak się stało? Jeśli nie wiesz lub podświadomie czułeś, że kręciłeś się wokół własnej osi próbując wyjaśnić to czytaj dalej.
+Zrób teraz kolejny przystanek. Czy jesteś w stanie wyjaśnić dlaczego tak się stało? Jeśli nie wiesz lub podświadomie czułeś, że kręciłeś się wokół własnej osi próbując to czytaj dalej.
 
 Jak już zapewne zauważyłeś, zmodyfikowanie obiektu `alien`...
 
@@ -99,7 +99,7 @@ alien.name = "Edyta Górniak";
 
 ...wpłynęło również na obiekt `person`. Dlaczego?
 
-Prawda jest taka, że obiekty są ksasyfikowane jako `typy referencyjne` nie bez przyczyny. `person` i `alien` nie mają na swój użytek osobnych kopii tego obiektu. Przetrzymują one jedynie **referencję** do tej struktury. Gdy ją zmodyfikujemy (strukturę), wpłynie na oba obiekty.
+Prawda jest taka, że obiekty są klasyfikowane jako `typy referencyjne` nie bez przyczyny. `person` i `alien` nie mają na swój użytek osobnych kopii tego obiektu. Przetrzymują one jedynie **referencję** do tej struktury. Gdy ją zmodyfikujemy (strukturę), wpłynie na oba obiekty.
 
 Jest to dość abstrakcyjne i jeśli masz problem ze zrozumieniem tego zagadnienia to wyobraź sobie wielką pustynię. Znajdują sie na niej dwie wioski i między nimi jedyny zbiornik wodny. Obie wioski czerpią z tego samego źródła i jeśli jakiś dureń wpadłby na pomysł żeby to źródło zatruć, powybija obie społeczności.
 
@@ -150,7 +150,7 @@ Sporo się na tym snippecie wydarzyło ale ze spokojem - przeanalizujmy go sobi
 Po pierwsze - tworzymy nowy obiekt o nazwie `programmer`. Ma on w sobie kilka właściwości z wartościami typu prostego (`name`, `position`,`company`) i jedną właściwość o nazwie `personalDetails`, która trzyma referencję do obiektu z kilkoma dodatkowymi informacjami na temat naszego programisty.
 
 Kolejna linijka to tworzenie kopii naszego obiektu `programmer` i przypisywanie tej kopii do nowej zmiennej o nazwie `fakeProgrammer`. Korzystamy w tym momencie z natywnie dostępnej metody
-`Object.assing()`. Jesli nie jesteś pewien jak działa ta metoda to zapraszam do zapoznania sie z poniższym linkiem.
+`Object.assing()`. Jeśli nie jesteś pewien jak działa ta metoda to zapraszam do zapoznania sie z poniższym linkiem.
 
 <a href="https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Object/assign" target="_blank" rel="noopener">MDN Object.assign()</a>
 
@@ -170,7 +170,7 @@ console.log(programmer);
 
 Zacznijmy może od zmiennej `fakeProgrammer`. I tak nic konkretnego się tam nie dzieje.
 
-W pierszej kolejności nadpisujemy kilka prostych zmiennych a potem kilka wartości z zagnieżdżonego obiektu wiec na chłopski rozum wynik `console.log(fakeProgrammer)` powinien wyglądać mniej więcej w ten sposób
+W pierwszej kolejności nadpisujemy kilka prostych zmiennych a potem kilka wartości z zagnieżdżonego obiektu, więc na chłopski rozum wynik `console.log(fakeProgrammer)` powinien wyglądać mniej więcej w ten sposób
 
 ```javascript
 {
@@ -186,7 +186,7 @@ W pierszej kolejności nadpisujemy kilka prostych zmiennych a potem kilka warto�
 }
 ```
 
-Jeśli również Twoje rozwiązanie wyglądało w ten sposób to gratuluję :) Myślę, że druga część zadania pójdzie równie gładko. Nie zapomnijmy, że mamy jeszcze jednego console.loga do przekminienia.
+Jeśli również Twoje rozwiązanie wyglądało w ten sposób to gratuluję :) Myślę, że druga część zadania pójdzie równie gładko. Nie zapomnijmy, że mamy jeszcze jednego console.loga do rozpracowania.
 
 Tutaj sprawa jest dość prosta bo przecież nie zmienialiśmy oryginalnego obiektu “programmer” prawda? Wynik `console.log(programmer)` oczywiście musi wyglądać tak:
 
@@ -232,9 +232,9 @@ Po pierwsze - jak wygląda poprawne rozwiązanie?
 
 No i znowu ta gówniana sytuacja... grzebanie w kopii namieszało w oryginalnym obiekcie, którego teoretycznie nawet nie ruszaliśmy.
 
-W kopii `fakeProgrammer` modyfikujemy dwie różne struktury: typy proste i wartości w obiekcie. Zauważ, że nadpisywanie w kopii propertisów trzymających typy proste (`name`, `company`) nie ma żadnego wpływu na odpowiadające im, te same właściwości w oryginale.
+W kopii `fakeProgrammer` modyfikujemy dwie różne struktury: typy proste i wartości w obiekcie. Zauważ, że nadpisywanie w kopii właściwości trzymających typy proste (`name`, `company`) nie ma żadnego wpływu na odpowiadające im, te same właściwości w oryginale.
 
-Dziaje się tak, ponieważ w naszym obiekcie `fakeProgrammer` stworzyliśmy całkowicie inne właściwości (skopiowaliśmy)...
+Dzieje się tak, ponieważ w naszym obiekcie `fakeProgrammer` stworzyliśmy całkowicie inne właściwości (skopiowaliśmy je)...
 
 ```javascript
 name: "Adam",
@@ -249,8 +249,8 @@ Sprawa ma się inaczej jeśli chodzi o zagnieżdżony obiekt `personalDetails`. 
 
 Cóż - dochodziemy tutaj do tematu zwanego płytką kopią `(shallow copy)`. Do stworzenia zmiennej `fakeProgrammer` skorzystaliśmy właśnie z takiego mechanizmu.
 
-Wykorzystalismy metodę `Object.assign` i dzięki niej jesteśmy w stanie uzyskać kopię tego typu.
-Jest ona w stanie skopiowac dla nas pola, które przechowują wartości prymitywne (dlatego właśnie mogliśmy nadpisac w kopii pola `name`, `position` i `company` bez większych konsekwencji) ale w przypadku gdy w oryginalnym obiekcie, który chcemy skopiować znajduje się obiekt (lub inny typ referencyjny np `array`) to płytka kopia przetrzyma dla nas tylko REFERENCJĘ tej struktury.
+Metoda `Object.assign`, którą wykorzystaliśmy
+jest w stanie skopiować dla nas pola, które przechowują wartości prymitywne (dlatego właśnie mogliśmy nadpisac w kopii pola `name`, `position` i `company` bez większych konsekwencji) ale w przypadku gdy w oryginalnym obiekcie, który chcemy skopiować znajduje się obiekt (lub inny typ referencyjny np `array`) to płytka kopia przetrzyma dla nas tylko REFERENCJĘ tej struktury.
 
 Przypomnij sobie moje poprzednie porównanie do pustyni i dwóch wiosek, które czerpały z tego samego źródła. Podobna sytuacja miała miejsce w przypadku naszych zmiennych `programmer` i `fakeProgrammer`. `Shallow copy` stworzyło dla nas całkowicie nowe
 `name`, `position`, `company` w kopii `fakeProgrammer` ale w przypadku zagnieżdżonego obiektu `personalDetails` przekopiowana została jedynie **referecja** do struktury:
