@@ -71,7 +71,7 @@ let alien = person;
 alien.name = "Edyta Górniak";
 
 console.log(person); // ?
-console.log(name); // ?
+console.log(alien); // ?
 ```
 
 Zatrzymaj się teraz na chwilę i zastanów jaki będzie wynik powyższych logów.
@@ -79,7 +79,7 @@ Kod jest dość prosty i wręcz oczywiste wydaje się, że...
 
 ```javascript
 console.log(person); // {name: "Adam"}
-console.log(alein); // {name: "Edyta Górniak"}
+console.log(alien); // {name: "Edyta Górniak"}
 ```
 
 No niestety `powyższy snippet nie pokazuje poprawnych odpowiedzi`. Prawidłowy wynik jest następujący:
@@ -108,7 +108,7 @@ Wygląda to mniej wiecej w ten sposób:
 
 Po pierwsze - ani słowa na temat wyglądu mojego diagramu. Nie każdy jest tak uzdolniony graficznie jak ty.
 
-Po drugie - diagram przedstawia nasze zmienne `person` i `alien`. Obie przetrzymują `REFERENCJĘ` do tego samego obiektu (źródla) i zmodyfikowanie go wpłynie na obie zmienne.
+Po drugie - diagram przedstawia nasze zmienne `person` i `alien`. Obie przetrzymują `REFERENCJĘ` do tego samego obiektu (źródła) i zmodyfikowanie go wpłynie na obie zmienne.
 
 Dlaczego zrozumienie tego jest istotne? Są pewne operacje, które nas w tej kwestii sprawdzają i podkładają nogi. Jedną z takich operacji jest kopiowanie obiektów.
 
