@@ -423,9 +423,10 @@
   }
 }
 .not-found-wrapper .not-found-sub-header {
-  color: #ff6b00;
+  color: #a64141;
   max-width: 500px;
   text-align: center;
+  margin-bottom: 50px;
 }
 @media (max-width: 37.5em) {
   .not-found-wrapper .not-found-sub-header {
