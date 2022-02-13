@@ -15,8 +15,8 @@ const NotFoundPage = () => (
       <h1>
         <span className="header-letter">4</span>
         <StaticImage
-          src="../images/headache.svg"
-          alt="Boli mnie Web - Strona główna"
+          src="../images/headache.png"
+          alt="Brain image"
           className="headache-svg"
         />
         <span className="header-letter">4</span>

@@ -2,34 +2,35 @@
 @use 'mixins';
 
 .not-found-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: Roboto;
-    font-weight: lighter;
-    flex-direction: column;
-    color: colors.$bg-gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Roboto;
+  font-weight: lighter;
+  flex-direction: column;
+  color: colors.$bg-gray;
 
-    .headache-svg {
-        width: 140px;
-        @include mixins.breakpoint(phablet){
-            width: 60px;
-        }
+  .headache-svg {
+    width: 140px;
+    @include mixins.breakpoint(phablet) {
+      width: 60px;
     }
-    .header-letter {
-        font-size: 12rem;
-        @include mixins.breakpoint(phablet){
-            font-size: 5rem;
-        }
+  }
+  .header-letter {
+    font-size: 12rem;
+    @include mixins.breakpoint(phablet) {
+      font-size: 5rem;
     }
-    .not-found-sub-header {
-        color: colors.$main-orange;
-        max-width: 500px;
-        text-align: center;
-        @include mixins.breakpoint(phablet){
-            font-size: 1.2rem;
-            width: 400px;
-            text-align: center;
-        }
+  }
+  .not-found-sub-header {
+    color: colors.$text-red;
+    max-width: 500px;
+    text-align: center;
+    margin-bottom: 50px;
+    @include mixins.breakpoint(phablet) {
+      font-size: 1.2rem;
+      width: 400px;
+      text-align: center;
     }
+  }
 }
