@@ -19,7 +19,6 @@
     "gatsby-plugin-react-helmet": "^4.4.0",
     "gatsby-plugin-sharp": "^3.14.3",
     "gatsby-remark-highlight-code": "^3.0.0",
-    "gatsby-remark-images": "^6.3.0",
     "gatsby-remark-prismjs": "^5.7.0",
     "gatsby-remark-relative-images": "^2.0.2",
     "gatsby-source-filesystem": "^3.4.0",
