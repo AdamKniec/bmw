@@ -3,7 +3,7 @@ path: "/blog/event-delegation"
 date: "2021-12-23"
 title: "Event Delegation"
 author: "Adam Knieć"
-intro: "W czasach niekończącej się gonitwy frameworków zdarza się zapomnieć o podstawowych mechanizmach JS-a. W tym wpisie postaram się w jasny i prosty sposób wyjaśnić jak działa i jak wykorzystać event delegation"
+intro: "W czasach niekończącej się gonitwy frameworków zdarza się zapomnieć o podstawowych mechanizmach JS-a. W tym wpisie postaram się w jasny i prosty sposób wyjaśnić jak działa i jak wykorzystać event delegation."
 description: "Event Delegation - korzyści i praktyczne zastosowanie"
 tags: ["js"]
 ---
