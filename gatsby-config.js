@@ -128,7 +128,9 @@ module.exports = {
         icon: `src/images/headache.png`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
+    //TODO BELOW PLUGIN THROWS ERRORS
+    // `gatsby-plugin-gatsby-cloud`,
+      // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
