@@ -131,6 +131,8 @@ Przejdźmy na chwilę na CircleCi. Zwróć uwagę, że teraz workflow odpalił s
 
 <img src="../2022-05-26 netlify-config/imgs/mainbranchcircle.png" />
 
+## Konfiguracja CircleCi z poziomu kodu
+
 Kolejnym krokiem będzie dodanie nieco konkretniejszej konfiguracji w pliku config.yml.
 
 Początkowa jej wersja będzie wyglądać następująco:
@@ -174,8 +176,260 @@ workflows:
       - build
 
 ```
+Powyższa konfiguracja prawdopodobnie nie jest idealna ale zdecydowanie nada się na początek naszej zabawy z CircleCi. Składa się z podstawowych instrukcji oraz tkzw. “jobów” - czyli zadań, które powinny zostać wykonane w określonej kolejności.
 
-- dodac ikonke netlify ?
-- Zapowiecdziec jakos 2 czesc wpisu
+Pamiętajmy, że chcemy aby nasz pipeline był w stanie odpalić testy, zbudować produkcyjną wersję aplikacji i zdeployować kod na konkretnego brancha.
+
+Dla przykładu - jeben z jobów nazywa się `test`. Określamy w nim, na jakiej wersji Node-a ma się wykonać dana operacja, z jakiego managera pakietów korzystamy (npm) i jaka konkretnie komenda ma się wykonać.
+W tym przypadku będzie to  `“npm test”`.
+
+Step `build` działa i wygląda analogicznie.
+
+Na samym końcu naszej konfiguracji określamy `workflow` - czyli informujemy CircleCI, które ze zdefiniowanych wcześniej jobów mają się wykonać i w jakiej kolejności. 
+W naszym przypadku - definiujemy joba o nazwie `test_my_app` i każemy mu odpalić testy a zaraz po nich build aplikacji. 
+
+No dobra, czas sprawdzić czy to zadziała. Zacommituj nowe zmiany na brancha.
+
+Wchodzimy na CircleCi. Powinieneś zastać podobny rezultat:
+
+<img src="../2022-05-26 netlify-config/imgs/new-workflow.png" />
+
+Elegancko! Workflow się odpalił, konkretne joby również. Nie dostaliśmy żadnego błędu. No dobra ale śmierdzi tu troche jakimś "false positivem". Zobaczmy, czy circleCi wyłapie błąd w teście. 
+
+Boilerplate zostawiony przez crete-react-app ma w sobie plik, który możemy wykorzystać. Nazywa się `App.test.js`.
+Jeśli nie ma takiego pliku -  dodaj jakikolwiek z odpowiednim dla testów rozszerzeniem.
+
+Niech wygląda następująco:
+
+```javascript
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Build z testem powinien się wywalić!/i);
+  expect(linkElement).toBeInTheDocument();
+});
+```
+
+Test zakłada, że na stronie znajduje się napis "Build z testem powinien się wywalić". Tego napisu oczywiście nie ma. Zacommituj te zmiany i zobaczmy czy Cyrkiel zareaguje.
+
+Jak mawia klasyk - “Operation failed succesfully”. Job `test` się wywalił. Klikając w niego zobaczysz logi. Błąd brzmi następująco:
+
+    TestingLibraryElementError: Unable to find an element with the text: /Build z testem powinien się wywalić!/i. This could be because the text is broken up by multiple elements. In this case, you can provide a function for your text matcher to make your matcher more flexible.
+
+Ma to sens :) Taki właśnie efekt chcieliśmy osiągnąć. Mamy teraz dowód, że CircleCi faktycznie powoli zaczyna wnosić jakąś wartość. Cofnij zmiany z zesputym testem i wrzuć ponownie na brancha. Zaraz zajmiemy się dalszymi krokami.
+
+Zajmijmy się teraz kwestią deploya na platformę Netlify. Aby było to możliwe, musimy dokonać kilka zmian w konfigutacji pliku `config.yml`. Gotowy plik wygląda następująco:
+
+```bash 
+version: 2.1
+orbs:
+  node: circleci/node@4.7.0
+
+jobs:
+  test:
+    docker:
+      - image: cimg/node:17.2.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm test
+          name: Run tests
+
+  build:
+    docker:
+      - image: cimg/node:17.2.0
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run build
+          name: Build app
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - .
+  deploy: # this can be any name you choose
+    docker:
+      - image: cimg/node:17.2.0
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Deploy to Netlify
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=build
+
+workflows:
+  test_my_app:
+    jobs:
+      - test
+      - build
+      - deploy:
+          requires:
+            - build
+            - test
+          filters:
+            branches:
+              only: main # only deploy when on main
+```
+
+Zwróćmy uwagę na konfigurację na dole pliku: 
+
+```bash
+workflows:
+  test_my_app:
+    jobs:
+      - test
+      - build
+      - deploy:
+          requires:
+            - build
+            - test
+          filters:
+            branches:
+              only: main # only deploy when on main
+```
+
+
+Po jobie `build` uruchamiamy  kolejny job o nazwie `deploy`. Do poprawnego działania potrzebuje on zakończenia kroków zawartych w instrukcji “requires”. W przeciwnym razie krok deploy nie zadziała. Instrukcja `filters` informuje Cyrkla, z jakiego konkretnie brancha chcemy deployowac. W naszym przypadku będzie to main. 
+
+Kolejną zmianą w konfiguracji jest nowy job sam w sobie. Wygląda on tak:
+
+```bash
+deploy: # this can be any name you choose
+    docker:
+      - image: cimg/node:17.2.0
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Deploy to Netlify
+          command: ./node_modules/.bin/netlify deploy --site $NETLIFY_SITE_ID --auth $NETLIFY_ACCESS_TOKEN --prod --dir=build
+```
+
+Najważniejsza jest komenda wykonywana na samym końcu joba. Jak pewnie zauważyłeś, zawiera ona w sobie dwie zmienne, o których wcześniej nie wspominałem. Zmienne te przechowują dane o twojej stronie i dane uwierzytelniające, które porzebne są do poprawnego wykonania tej komendy. 
+
+No okej, ale gdzie one są? Gdzie je znaleźć? Gdzie mam je dodać?
+Spokojnie, zacznijmy od początku.
+
+**Aby zlokalizować SiteId:**
+- Odpal Netlify
+- Wybierz projekt, który stworzyliśmy
+- W górnej nawigacji wybierz Site Settings
+- Znajdź SiteId 
+
+Okej, jedno z głowy. Czas na **Netlify Access Token**: 
+- Odpal Netlify
+- Kliknij na ikonkę swojego profilu w prawym, górym rogu
+- Wybierz User Settings
+- Po lewej stronie wybierz Applications
+- W sekcji `Personal access token` wygeneruj nowy token. Nadaj mu nazwę i skopiuj jej wartość. Będzie zaraz potrzebna. Jest to istotne bo drugi raz nie będzie jej już można zobaczyć.
+
+
+Sukces!
+
+ Nasze zmienne mamy przygotowane. Pozostaje pytanie - gdzie je wrzucić. Cóż, zastanówmy się na jakim etapie będzie ta komenda wykonywana.
+Przyda nam się ona dopiero na etapie wykonywania naszego pipeline-a przez CircleCI więc to Cyrkiel musi mieć do niech dostęp.
+
+**Dodawanie zmiennych środowiskowych w CircleCi:**
+- Odpal CircleCi
+- W lewej nawigacji wybierz "Projects"
+- Wybierz nasz projekt
+- Kliknij "Project Settings" w prawym, górnym rogu
+- Wybierz "Environment Variables" w lewej nawigacji
+- Kliknij "Add new variable" i dodaj odpowiednie wartości. Pamiętaj tylko, żeby ich nazwa odpowiadała tym w komendzie z joba, ktorego mamy w konfiguracji
+
+
+Good job! Jesteśmy prawie na mecie. Fajnie by było w końcu zobaczyć efekt naszych prac. Zanim to nastąpi - wykonajmy ostatni krok. Zainstalujmy Netlify CLI. Ta paczka jest potrzebna aby CircleCi był w stanie wykonać komendę odpowiedzialną za deploy naszej aplikacji do Netlify.
+
+```bash
+npm install --save-dev netlify-cli
+
+```
+
+Po zainstalowaniu paczki, wrzuć wszystko na repo. Pora sprawdzić co się z tego urodzi!
+
+Oto efekt na CircleCi:
+<img src="../2022-05-26 netlify-config/imgs/circle-new-settings.png" />
+
+Tak jest! Pojawił się nasz nowy step, a co najważniejsze - nawet się nie wypieprzył. No dobra ale to tylko circleCi. Zobaczmy czy deploy faktycznie został zarejestrowany przez Netlify.
+
+Otwórz Netlify, wejdź w nasz projekt i kliknij w zakladkę Deploys.
+
+<img src="../2022-05-26 netlify-config/imgs/deploy.png" />
+
+Oto i on! Cały na biało. Nasz deploy!
+
+No dobra, fajnie ale czemu są jakieś dwa dziwne wpisy? Nie powinien być jeden?
+
+No powinien ☹️. Zatrzymajmy się na chwilę. Dlaczego widzimy dwa wpisy? Przecież Cyrkiel triggeruje deploy na Netlify, czy zrobiliśmy gdzieś bląd? I tak i nie. Problem polega na tym, że nasz Netlify jest połączony z naszym GitHubem i ma ustawiony branch main jako galąź produkcyjną. Domyślnie, w takiej konfiguracji, Netlify sam z siebie odpali deployment z produkcyjnego brancha za każdym razem, gdy coś do niego zmergujemy / zacommitujemy. 
+W skrócie - jeden z naszych deployów został zainicjowany z poziomu CircleCi a drugi został odpalony przez Netlify. Nie może tak zostać bo jeśli przykładowo jakiś test będzie się wywalać to Cyrkiel go ładnie wyłapie i przerwie proces. Netlify niestety opublikuje kod tak czy inaczej. 
+
+Jest na to obejście. Stworzymy na GitHubie śmieciowego brancha i ustawimy go jako branch produkcyjną w Netlify. Konfiguracja CircleCi pozostanie bez zmian. Bedzie to wyglądało tak:
+
+Kod mergujemy na main-a  a następnie...
+  
+  → Zmiana wyłapana przez CircleCi → Trigger deploya → Netlify 
+
+  → Zmiana wyłapana przez Netlify → Trigger deploya → Deployment na śmieciowego brancha
+
+  Tym sposobem właściwy deployment będzie triggerowany tylko za pośrednictwem CircleCi. Deployment inicjowany  przez Netlify trafi do śmieci.
+
+  Po pierwsze - trzeba stworzyć naszego śmieciowego brancha. W tym celu odpal GitHuba i stwórz nową gałąź z maina i nazwij ją tak aby nikt nie miał wątpliwość do czego służy. 
+  W moim przypadku będzie to:
+
+`deploy-black-hole`
+
+Następnie, zmienimy konfigurację Netlify aby deploye lądowały na nowym branchu.
+- Odpal Netlify
+- Wybierz projekt
+- Deploys -> Deploys Settings
+
+Twoja konfiguracja powinna wyglądać podobnie jak na poniższym przykładzie.
+
+<img src="../2022-05-26 netlify-config/imgs/netlify-more-config.png" />
+
+Nasza przygoda z podstawową konfiguracją powoli dobiega końca. Pozostaje przetestowanie całości. Dokonaj prostej zmiany tekstowej w apikacji, pusznij zmiany na repozytorium. Upewnij się, że workflow na CircleCi przeszedł bez żadnego problemu. Po zakończonym procesie na Cyrklu, sprawdź czy jesteś w stanie zobaczyć  czy deploy przez niego triggerowany  został wychwycony przez Netlify. Na sam koniec  upewnij się, że po odwiedzeniu linka prowadzącego do wyhostowanej aplikacji, dostępnego na Netlify jesteś w stanie zobaczyc zmiany, które przed chwilą wprowadziłeś. 
+
+Upewnijmy się też, że negatywna ścieżka też jest obsłużona poprawnie. Wróć jeszcze na chwilę do kodu. Wprowadź   zmianę tekstową ale przy tym zepsuj rownież test. Chcemy sprawdzić, czy Cyrkiel przerwie proces I czy powstrzyma deployment. 
+
+Oto zepsuty test:
+
+```javascript
+
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/Build z testem powinien się wywalić!/i);
+  expect(linkElement).toBeInTheDocument();
+});
+```
+Zacommituj  zmianę na repozytorium i obserwuj zachowanie CircleCi. Powinien się wywalić na teście i  zatrzymać proces deploymentu. Jeśli wejdziesz w wyhostowaną aplikację przez Netlify to najnowsza zmiana tekstowa nie powinna być widoczna.
+
+## Podsumowanie
+
+Udało nam się zrobić naprawdę dużo rzeczy. Stworzyliśmy podstawę konfiguracji projektu opartego na React, Netlify i CircleCi. Połączyliśmy ze sobą te narzędzia i stworzyliśmy pipeline, który usprawnia bezpieczeństwo naszej aplikacji i automatyzuje deployment. Każdy push na repozytorium jest wychwytywany przez CircleCi. Ten z kolei triggeruje joby, które spełniają określone zadania. One również są ze sobą powiązane bo ostatni krok - deployment,  nie zostanie uruchomiony jeśli testy z poprzedniego kroku wychwycą błąd. 
+
+
+
+W planie mam nastepną część wpisu, która będzie dotyczyła podobnego tematu więc obserwuj bloga :) Stay tuned!
+
+Projekt, na podstawie którego tworzyłem ten wpis znajdziesz pod poniższym linkiem:
+
+<a href="https://github.com/AdamKniec/circlecireacttraining" target="_blank" rel="noopener" >https://github.com/AdamKniec/circlecireacttraining</a>
+
+## Źródła
+<a href="https://circleci.com/blog/react-netlify-deploy/?utm_source=google&utm_medium=sem&utm_campaign=sem-google-dg--emea-en-dsa-maxConv-auth-brand&utm_term=g_-_c__dsa_&utm_content=&gclid=CjwKCAjwx46TBhBhEiwArA_DjMsMuvd-sStTj9ty04sAYocwdBbiLuwKMTXEmlbbCs84PmUTZKqSsBoCk8cQAvD_BwE" target="_blank" rel="noopener" >https://circleci.com/blog/react-netlify-deploy/</a>
+
+
+<a href="https://circleci.com/docs/" target="_blank" rel="noopener" >https://circleci.com/docs/</a>
+
 - fix data
 - zminifikowac obrazki
+- Poprawne naglowki i logiczny podział
