@@ -1,11 +1,11 @@
 ---
-path: "/blog/netlify-config"
-date: "2022-05-26"
+path: "/blog/netlify-circle-react"
+date: "2022-06-13"
 title: "CI/CD z Netlify + React oraz CircleCi"
 readTime: "10"
 author: "Adam Knieć"
-intro: "W tym wpisie stworzymy podstawową konfigurację CircleCi. Pozwoli to na zautomatyzowanie i zabezpieczenie deploymentu aplikacji"
-description: "Podstawowa konfiguracja CircleCi i zautomatyzowany deployment"
+intro: "W tym wpisie stworzymy podstawową konfigurację CircleCi dla projektu. Pozwoli to na zautomatyzowanie i zabezpieczenie deploymentu aplikacji"
+description: "Podstawowa konfiguracja CircleCi i zautomatyzowany deployment na platformę Netlify"
 tags: ["tools", "react"]
 ---
 
@@ -425,11 +425,8 @@ Projekt, na podstawie którego tworzyłem ten wpis znajdziesz pod poniższym lin
 <a href="https://github.com/AdamKniec/circlecireacttraining" target="_blank" rel="noopener" >https://github.com/AdamKniec/circlecireacttraining</a>
 
 ## Źródła
-<a href="https://circleci.com/blog/react-netlify-deploy/?utm_source=google&utm_medium=sem&utm_campaign=sem-google-dg--emea-en-dsa-maxConv-auth-brand&utm_term=g_-_c__dsa_&utm_content=&gclid=CjwKCAjwx46TBhBhEiwArA_DjMsMuvd-sStTj9ty04sAYocwdBbiLuwKMTXEmlbbCs84PmUTZKqSsBoCk8cQAvD_BwE" target="_blank" rel="noopener" >https://circleci.com/blog/react-netlify-deploy/</a>
+<a href="https://circleci.com/blog/react-netlify-deploy/?utm_source=google&utm_medium=sem&utm_campaign=sem-google-dg--emea-en-dsa-maxConv-auth-brand&utm_term=g_-_c__dsa_&utm_content=&gclid=CjwKCAjwx46TBhBhEiwArA_DjMsMuvd-sStTj9ty04sAYocwdBbiLuwKMTXEmlbbCs84PmUTZKqSsBoCk8cQAvD_BwE" target="_blank" rel="noopener noreferrer" >https://circleci.com/blog/react-netlify-deploy/</a>
 
 
 <a href="https://circleci.com/docs/" target="_blank" rel="noopener" >https://circleci.com/docs/</a>
 
-- fix data
-- zminifikowac obrazki
-- Poprawne naglowki i logiczny podział
