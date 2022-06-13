@@ -63,11 +63,11 @@ Wejdź na stronę główna Netlify i stwórz darmowe konto. Bez tego nie będzi
 
 Pierwszy krok to rozwinięcie dropdowna "Add new site" i wybranie opcji "Import an existing project". Kolejny etap to wybranie odpowiedniego "providera". Nasz kod jest na GitHubie więc automatycznie staje się to nasz główny wybór. 
 
-<img src="../2022-05-26 netlify-config/imgs/provider.png" />
+<img src="../2022-06-13 netlify-config/imgs/provider.png" />
 
 Kliknięcie przycisku GitHub spowoduje przejście do widoku wyboru repozytorium (jeśli jesteś już zalogowany do GitHuba lub uwierzytelniony za jego pomocą) lub  poprosi Cię o zalogowanie. Na ekranie powinna się pojawić lista z repozytoriami z Twojego GitHuba. W naszym przypadku wybieramy circlecireacttraining.
 
-<img src="../2022-05-26 netlify-config/imgs/repository.png" />
+<img src="../2022-06-13 netlify-config/imgs/repository.png" />
 
 Po wyborze  repo wylądujemy na ostatnim etapie podstawowej integracji z Netlify.
 
@@ -80,7 +80,7 @@ npm run build
 W polu "Publish directory" wpisz nazwę folderu, który wykorzystany zostanie przez Netlify jako ten zawierający produkcyjną wersję aplikacji. W przypadku Reacta będzie to "build".
 
 
-<img src="../2022-05-26 netlify-config/imgs/settings.png" />
+<img src="../2022-06-13 netlify-config/imgs/settings.png" />
 
 Resztę pól pozostawiamy bez zmian i klikamy “Deploy Site”.
 
@@ -95,7 +95,7 @@ Jeszcze jedna szybka rzecz...
 
  Musimy doprecyzować w konfiguracji, który branch będzie u nas tym produkcyjnym. Otwórz projekt w Netlify a następnie "Site Settings" > "Build And deploy". Upewnij się, że Twoja konfiguracja wygląda następująco.
 
-<img src="../2022-05-26 netlify-config/imgs/settings2.png" />
+<img src="../2022-06-13 netlify-config/imgs/settings2.png" />
 
 ## Wyklikanie aplikacji w CircleCi
 
@@ -104,19 +104,19 @@ Najszybszym sposobem logowania jest uwierzytelnienie za pomocą GitHuba.
 
 Przejdź przez wszystkie kroki. Jeśli wszystko przejdzie zgodnie z planem to na dashboardzie CircleCi powinny się pojawić projekty z Twojego GitHuba. Powinno to wyglądać mniej więcej tak:
 
-<img src="../2022-05-26 netlify-config/imgs/circledashboard.png" />
+<img src="../2022-06-13 netlify-config/imgs/circledashboard.png" />
 
 Klikamy "Set Up Project" obok nazwy naszego repo.
 
 Pojawi się następujący widok:
 
-<img src="../2022-05-26 netlify-config/imgs/ymlconfig.png" />
+<img src="../2022-06-13 netlify-config/imgs/ymlconfig.png" />
 
 Opcja "Fastest" zakłada, że masz już w repozytorium plik config.yml. Plik ten służy do tworzenia instrukcji dla mechanizmów CircleCi. (Więcej na ten temat w późniejszym etapie wpisu). Nie mamy w naszym repozytorium takiego pliku więc zdecydujemy się na opcję ”Faster”. Wrzuci ona na nasze repo podstawową konfigrację CircleCi. Fajny bajer, nie? Klikamy w "Set Up Project".
 
 Zostaniemy przekierowani do kolejnego widoku.
 
-<img src="../2022-05-26 netlify-config/imgs/circleview.png" />
+<img src="../2022-06-13 netlify-config/imgs/circleview.png" />
 
 Czego możemy się tutaj dowiedzieć? Został stworzony nowy branch o nazwie circle-ci-project-setup. Został on wygenerowany przez CircleCi. Branch ten zawiera już konfigurację w pliku config.yml więc  automatycznie został wyłapany przez “Cyrkla” (tak czasami nazywa się CircleCi). Uruchomiony został również say-hello-workflow czyli testowy i bardzo prosty wokflow, którego znajdziemy w pliku konfiguracyjnym. 
 
@@ -129,7 +129,7 @@ PR będzie z "circleci-project-setup" do "main". Merguj gdy tylko będziesz goto
 Przejdźmy na chwilę na CircleCi. Zwróć uwagę, że teraz workflow odpalił się dla brancha main. Ma to sens bo dopiero co domergowaliśmy do niego nową konfigurację.
 
 
-<img src="../2022-05-26 netlify-config/imgs/mainbranchcircle.png" />
+<img src="../2022-06-13 netlify-config/imgs/mainbranchcircle.png" />
 
 ## Konfiguracja CircleCi z poziomu kodu
 
@@ -192,7 +192,7 @@ No dobra, czas sprawdzić czy to zadziała. Zacommituj nowe zmiany na brancha.
 
 Wchodzimy na CircleCi. Powinieneś zastać podobny rezultat:
 
-<img src="../2022-05-26 netlify-config/imgs/new-workflow.png" />
+<img src="../2022-06-13 netlify-config/imgs/new-workflow.png" />
 
 Elegancko! Workflow się odpalił, konkretne joby również. Nie dostaliśmy żadnego błędu. No dobra ale śmierdzi tu troche jakimś "false positivem". Zobaczmy, czy circleCi wyłapie błąd w teście. 
 
@@ -354,13 +354,13 @@ npm install --save-dev netlify-cli
 Po zainstalowaniu paczki, wrzuć wszystko na repo. Pora sprawdzić co się z tego urodzi!
 
 Oto efekt na CircleCi:
-<img src="../2022-05-26 netlify-config/imgs/circle-new-settings.png" />
+<img src="../2022-06-13 netlify-config/imgs/circle-new-settings.png" />
 
 Tak jest! Pojawił się nasz nowy step, a co najważniejsze - nawet się nie wypieprzył. No dobra ale to tylko circleCi. Zobaczmy czy deploy faktycznie został zarejestrowany przez Netlify.
 
 Otwórz Netlify, wejdź w nasz projekt i kliknij w zakladkę Deploys.
 
-<img src="../2022-05-26 netlify-config/imgs/deploy.png" />
+<img src="../2022-06-13 netlify-config/imgs/deploy.png" />
 
 Oto i on! Cały na biało. Nasz deploy!
 
@@ -391,7 +391,7 @@ Następnie, zmienimy konfigurację Netlify aby deploye lądowały na nowym bran
 
 Twoja konfiguracja powinna wyglądać podobnie jak na poniższym przykładzie.
 
-<img src="../2022-05-26 netlify-config/imgs/netlify-more-config.png" />
+<img src="../2022-06-13 netlify-config/imgs/netlify-more-config.png" />
 
 Nasza przygoda z podstawową konfiguracją powoli dobiega końca. Pozostaje przetestowanie całości. Dokonaj prostej zmiany tekstowej w apikacji, pusznij zmiany na repozytorium. Upewnij się, że workflow na CircleCi przeszedł bez żadnego problemu. Po zakończonym procesie na Cyrklu, sprawdź czy jesteś w stanie zobaczyć  czy deploy przez niego triggerowany  został wychwycony przez Netlify. Na sam koniec  upewnij się, że po odwiedzeniu linka prowadzącego do wyhostowanej aplikacji, dostępnego na Netlify jesteś w stanie zobaczyc zmiany, które przed chwilą wprowadziłeś. 
 
