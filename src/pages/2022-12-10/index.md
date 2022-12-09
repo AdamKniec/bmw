@@ -1,6 +1,6 @@
 ---
 path: "/blog/css-has-is-where-not"
-date: "2022-12-07"
+date: "2022-12-10"
 title: "CSS - has(), not(), is(), where()"
 readTime: "10"
 author: "Adam Knieć"
