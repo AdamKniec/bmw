@@ -65,7 +65,7 @@ div:has(> span) {
 ```
 Powyższy snippet pokazuje, że jesteśmy w stanie również skorzystać z kombinatorów w celu wyselekcjonowania konkretnego elementu. W powyższym przykładzie łapiemy diva, którego dzieckiem jest span.
 
-Już na tem etapie prawdopodobnie wpadłeś/aś na kilka pomysłów praktycznego zastosowanie tej pseudoklasy. Niejednokrotnie przyjdzie nam zmierzyć się z sytuacją, gdzie będziemy musieli ostylować kilka komponentów, które są praktycznie identyczne ale jeden z nich będzie miał mały detal, który   wpłynie na paddingi / layout lub inne kosmetyczne zmiany. Do tej pory, najpopularniejszym rozwiązaniem w takiej sytuacji było dodanie dodatkowej klasy, na podstawie której będziemy w stanie dodać kilka unikalnych modyfikacji. To jedna z sytuacji, gdzie has() może zabłysnąć. Sprawdźmy co jeszcze potrafi!
+Już na tym etapie prawdopodobnie wpadłeś/aś na kilka pomysłów praktycznego zastosowanie tej pseudoklasy. Niejednokrotnie przyjdzie nam zmierzyć się z sytuacją, gdzie będziemy musieli ostylować kilka komponentów, które są praktycznie identyczne ale jeden z nich będzie miał mały detal, który   wpłynie na paddingi / layout lub inne kosmetyczne zmiany. Do tej pory, najpopularniejszym rozwiązaniem w takiej sytuacji było dodanie dodatkowej klasy, na podstawie której będziemy w stanie dodać kilka unikalnych modyfikacji. To jedna z sytuacji, gdzie has() może zabłysnąć. Sprawdźmy co jeszcze potrafi!
 
 **Targetowanie dziecka**
 
@@ -192,9 +192,9 @@ W przypadku drugiej reguły:
 - .section
 - p
 
-**Połącznie where() i is()**
+**Połącznie has() i is()**
 
-Pseudoklasy where() oraz is() możemy łączyć. Oto dowód:
+Pseudoklasy has() oraz is() możemy łączyć. Oto dowód:
 
 ```css
 :is(article, div, section):has(+ :is(h2, h3, h4)) {
