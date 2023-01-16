@@ -85,6 +85,10 @@ Bez dopisania żadnej dodatkowej klasy znaleźliśmy parenta na podstawie jego c
 
 ### "Forgiving" selector list
 
+`UPDATE: (16.01.2023)`
+
+`Lista selektorów przekazywana do has() nie jest już "forgiving". Więcej informacji poniżej`.
+
 Do tej pory każdy podtytuł w tym poście był po polsku. Po 20 minutach zastanawiania się jak przetłumaczyć “forgiving selector” zdecydowałem się to tłumaczenie olać. Może ktoś oświeci mnie w komentarzach 😃
 
 Do rzeczy…
@@ -110,6 +114,11 @@ div:has(p, span, article:whatever) {
 ```
 
 Powiedzmy, że szukamy diva, który ma w sobie dany content. Lista argumentów jest identyczna jak w poprzednim snippecie. Pomimo błędu, style zostaną zaaplikowane dla diva, który w swoim contencie zawiera `p` oraz `span`.
+
+
+`UPDATE: (16.01.2023)`
+
+Pod koniec roku 2022 został zgłoszony problem dotyczący has(). Ma on związek z najpotężniejszym frontendowym narzędziem. Oczywiście mowa o ~~React~~ J-Query. Więcej informacji na ten temat można przeczytać w tym wątku <a href="https://github.com/w3c/csswg-drafts/issues/7676">github.com/w3c/csswg-drafts/issues/7676</a>. `TLDR - najważniejsza informacja jest taka, że lista elementów przekazywana do has(), nie jest już "forgiving". Zmiana ta dotyczy tylko pseudoklasy has().`
 
 ## is()
 Kolejna z omawianych dzisiaj pseudo-klas. Przydaje się zwłaszcza w sytuacjach, w których mamy do czynienia z  zagnieżdżonymi selektorami. W wielu przypadkach taki selektor staje się niezwykle nieczytelny i nieelegancki. Przejdźmy do przykładu.
