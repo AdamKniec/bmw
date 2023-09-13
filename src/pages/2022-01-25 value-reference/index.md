@@ -309,7 +309,7 @@ W tym momencie fanboye wszystkiego co jest "anty-js" aż się obudzili z podjar
 
 -> "CO ZA GÓWNO!", "BOŻE CO ZA BEZSENS"... itp :)
 
-Po pierwsze - nie zesrajcie się. Po drugie, jest to tylko pewien mankament i "dziwność" JS-a, wystarczy raz to zrozumieć i mieć z głowy całą frustrację :)
+Jest to dziwne, zgadzam się. Zdaję sobie też sprawę, że inne języki programowania nie robią takich "szpagatów". Z drugiej strony, powiedzmy sobie szczerze, to nie jest aż taki duży problem. Wystarczy raz to zrozumieć i mieć z głowy całą frustrację :)
 
 Ale do rzeczy, dlaczego tym razem `false`?
 
