@@ -101,7 +101,7 @@ alien.name = "Edyta Górniak";
 
 Prawda jest taka, że obiekty są klasyfikowane jako `typy referencyjne` nie bez przyczyny. `person` i `alien` nie mają na swój użytek osobnych kopii tego obiektu. Przetrzymują one jedynie **referencję** do tej struktury. Gdy ją zmodyfikujemy (strukturę), wpłynie na oba obiekty.
 
-Jest to dość abstrakcyjne i jeśli masz problem ze zrozumieniem tego zagadnienia to wyobraź sobie wielką pustynię. Znajdują sie na niej dwie wioski i między nimi jedyny zbiornik wodny. Obie wioski czerpią z tego samego źródła i jeśli jakiś dureń wpadłby na pomysł żeby to źródło zatruć, powybija obie społeczności.
+Jest to dość abstrakcyjne i jeśli masz problem ze zrozumieniem tego zagadnienia to wyobraź sobie wielką pustynię. Znajdują sie na niej dwie wioski i między nimi jedyny zbiornik wodny. Obie wioski czerpią z tego samego źródła i jeśli ktoś wpadłby na pomysł żeby to źródło zatruć, powybija obie społeczności.
 
 Wygląda to mniej wiecej w ten sposób:
 <img src="../2022-01-25 value-reference/imgs/reference-diagram.png" />

@@ -16,7 +16,7 @@ Myślę, że każdy z nas widział to pytanie na rozmaitych forach i grupach tem
 W znacznej większości przypadków pod takim pytaniem, w sekcji komentarzy pojawiają się ONI - cali na biało - "AntyJQuerowcy". Obrońcy nowoczesnych technologii i niszczyciele tych przestarzałych.
 
 Aż huczy od wypowiedzi w stylu:
-"Nie trać czasu", "Daj sobie spokój", "Nawet nie pokazuj tego w CV bo się ośmieszysz", "Wywal to z listy umiejętności", "Tym to bym się nie chwalił", "Żadnej firmy to nie interesuje - wywal to" itp. Niekiedy to nastawienie "anty" jest tak jadowite jakby twórcy JQ zabierali im kanapki na przerwie w szkole, zupełnie jak w amerykańskich filmach o gówniarzach. Raczej tak nie było. Każdy wie, że programiści są 2D.
+"Nie trać czasu", "Daj sobie spokój", "Nawet nie pokazuj tego w CV bo się ośmieszysz", "Wywal to z listy umiejętności", "Tym to bym się nie chwalił", "Żadnej firmy to nie interesuje - wywal to" itp. Czy takie podejście jest uzasadnione?
 
 Fakt, że to pytanie pojawia się na forach cyklicznie może być spowodowane tym, że nadal lwia część internetu stoi na jQuery. Niejednokrotnie szukając rozwiązania jakiegoś problemu w internecie, natrafiamy na kod oparty na tym frameworku. Z jednej strony każdy odradza, a z drugiej co chwilę go spotykamy...
 Osobiście rozumiem zmieszanie początkujących, którzy i tak mają już garba od dźwigania na plecach długiej listy rzeczy, których muszą się nauczyć.
