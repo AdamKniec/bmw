@@ -15,10 +15,6 @@ const Statistics = (props: StatisticsProps) => {
       </h2>
       <div className="stats-inner-wrapper">
         <div className="numberBox">
-          <p className="number-value">97</p>
-          <p className="service">ohMyDev</p>
-        </div>
-        <div className="numberBox">
           <p className="number-value">
             {apiData.stackRep !== 0 ? apiData.stackRep : "Wczytuję..."}
           </p>
