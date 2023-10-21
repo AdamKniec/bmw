@@ -1,7 +1,6 @@
 import React from "react";
 
 import { Link } from "gatsby";
-
 import { ArticleCardLinkProps, ImageItemData } from "./ArticleCardLink.types";
 
 const ArticleCardLink = (article: ArticleCardLinkProps) => {
@@ -17,7 +16,7 @@ const ArticleCardLink = (article: ArticleCardLinkProps) => {
           {post.node?.frontmatter?.tags.map((tag: string, i) => {
             return (
               <img
-                alt="UZUPELNIC" // TODO -> Change that
+                alt=""
                 key={i.toString()} // TODO -> Add id on  graph CMS if possible
                 src={
                   imgData?.allImageSharp.edges.filter((item: ImageItemData) =>
