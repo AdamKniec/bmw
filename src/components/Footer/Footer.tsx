@@ -1,5 +1,6 @@
-import { StaticImage } from "gatsby-plugin-image";
 import React from "react";
+
+import { StaticImage } from "gatsby-plugin-image";
 
 const Footer = () => {
   return (
