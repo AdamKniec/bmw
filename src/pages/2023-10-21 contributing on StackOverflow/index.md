@@ -1,11 +1,11 @@
 ---
-path: "/blog/stack-overflow-wady-i-zalety"
+path: "/blog/stack-overflow-czy-warto-sie-udzielac"
 date: "2023-09-25"
 title: "Stack Overflow - czy warto się udzielać?"
 readTime: "10"
 author: "Adam Knieć"
 intro: "Czy warto poświęcać śwój prywatny czas na pomaganie innym i rozwiązywanie ich technicznych problemów na Stack Overflow?"
-description: "Wady i zalety płynące z pomagania innym na platformie Stack Overflow"
+description: "Zalety płynące z pomagania innym na platformie Stack Overflow"
 tags: ["blah"]
 ---
 
@@ -35,9 +35,9 @@ Znaczna większość użytkowników Stacka zatrzymuje się na poprzednim etapie.
 
 Niestety - jak to w życiu bywa - nie wszytko jest piękne i kolorowe a pomaganie na Stacku nie jest w tym przypadku wyjątkiem.
 
-## Wady
+## Na co się przygotować?
 
-Pewne aspekty Stacka nie są satysfakcjonujące i przyjemne. Jest to dość specyficzna platforma ze specyficznym rodzajem użytkowników i z bardzo restrykcyjnymi zasadami. Poniżej postaram się przedstawić kilka minusów płynących z angażowania się w to community, które zauważyłem na przestrzeni lat.
+Pewne aspekty Stacka nie są satysfakcjonujące i przyjemne. Jest to dość specyficzna platforma ze specyficznym rodzajem użytkowników i z bardzo restrykcyjnymi zasadami. Poniżej postaram się przedstawić kilka aspektów, które warto wziąć pod uwagę.
 
 **Czas**
 
